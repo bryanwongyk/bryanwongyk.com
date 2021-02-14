@@ -1,5 +1,5 @@
 ---
-date: "14-02-2021"
+date: "14/02/2021"
 title: Welcome
 description: My first post on my personal portfolio
 path: "/welcome"

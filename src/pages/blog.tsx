@@ -21,9 +21,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
                   >
                     <header>
                       <h2>
-                        <Link to={post.node.frontmatter.path}>
                           <span itemProp="headline">{title}</span>
-                        </Link>
                       </h2>
                       <small>{post.node.frontmatter.date}</small>
                     </header>
@@ -35,6 +33,11 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
                         itemProp="description"
                       />
                     </section>
+                    <footer>
+                        <Link to={post.node.frontmatter.path}>
+                          Read More
+                        </Link>
+                    </footer>
                   </article>
                 </li>
               )
