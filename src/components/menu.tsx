@@ -1,19 +1,22 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from "gatsby";
+import { css } from "@emotion/react"
+import MenuItem from './menu-item'
 
 const Menu: FunctionComponent<{}> = () => (
-    <div style={{
-        background: '#f4f4f4',
-        paddingTop: '10px',
-    }}>
+    <div 
+        css={css`
+            padding-top: 10px;
+    `}>
     
-    <ul style = {{
-        listStyle: 'none',
-        display: 'flex',
-        justifyContent: 'space-evenly',
-    }}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
+    <ul css = {css`
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: #fff;
+    `}>
+        <MenuItem path="/" name="Home"/>
+        <MenuItem path="/blog" name="Blog"/>
     </ul>
 
     </div>

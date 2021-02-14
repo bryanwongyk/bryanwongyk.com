@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -5,12 +7,18 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
 }
+header h1 > a{
+  font-family: 'Maven Pro', sans-serif !important;
+  font-size: 52px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -18,6 +26,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  background-color: #111216;
 }
 article,
 aside,
@@ -53,7 +62,8 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: #000;
+  color: #fff;
+  text-decoration: none;
 }
 a:active,
 a:hover {

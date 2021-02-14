@@ -4,14 +4,13 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Menu from "../components/menu"
 
 const IndexPage: FunctionComponent<{}> = () => (
   <Layout>
     <SEO title="Home" />
     <main className="profile">
-        {/* <div className="profile-picture">
-            <img src="../images/bryan-wong.jpg" className="profile-picture--img"></img>
-        </div> */}
+        <Menu/>
         <div className="profile-content">
             <p>
                 Hi! I'm a <b>Software Engineer</b> currently in Melbourne, Australia.
@@ -32,7 +31,7 @@ const IndexPage: FunctionComponent<{}> = () => (
                 target="_blank" 
                 title="LinkedIn" 
             >
-                <i className="fab fa-linkedin"></i>    
+                LinkedIn
             </a>
 
             <a 
@@ -40,22 +39,20 @@ const IndexPage: FunctionComponent<{}> = () => (
                 target="_blank" 
                 title="GitHub" 
             >
-            <i className="fab fa-github-square"></i> 
+                GitHub
             </a>
 
             <a 
             href="mailto:bryanwyk@gmail.com" 
             title="Email" 
             >
-            <i className="fas fa-envelope-square"></i>
+                Email
             </a>
         </div>
     </main>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 
