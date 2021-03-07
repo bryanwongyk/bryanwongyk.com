@@ -10,12 +10,12 @@ html {
 }
 header h1 > a {
 	font-family: 'Maven Pro', sans-serif !important;
-	font-size: 52px;
+	font-size: 2rem;
 	font-weight: 600;
 	text-transform: uppercase;
 }
 body {
-	margin: 0 auto;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #fff;

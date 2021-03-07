@@ -2,11 +2,16 @@
 
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { css, jsx, keyframes, useTheme } from '@emotion/react';
 import Menu from '../components/menu';
+import MenuHamburger from './menu-hamburger/menu-hamburger';
 
-const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
+const Header: FunctionComponent<{}> = ({
+	siteTitle,
+	toggleMobileMenu,
+	children,
+}) => {
 	const theme = useTheme();
 
 	/*
@@ -14,7 +19,7 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
   */
 	const typing = keyframes`
     from { width: 0 }
-    to { width: 10.5em } // have to use a unit that is not %, because % fills from the center outwards.
+    to { width: 280px } // have to use a unit that is not %, because % fills from the center outwards. 10.5em for desktop
   `;
 
 	const blinkCaret = keyframes`
@@ -22,24 +27,35 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
     50% { border-color: ${theme.colours.white} }
   `;
 
+	/*
+	Logic for mobile nav
+	*/
+	const [showMenuToggle, setShowMenuToggle] = useState(false);
+
 	return (
 		<header
 			css={css`
 				display: flex;
 				align-items: center;
 				margin-bottom: 0px;
-				width: 100%;
+				width: 100vw;
 				padding-top: 50px;
+				position: fixed;
 			`}
 		>
 			<div
 				css={css`
-					padding: 1.45rem 1.0875rem;
+					padding: 1.45rem 2rem;
 				`}
 			>
 				<h1
 					css={css`
-						width: 10.5em;
+						// Align text with border-right
+						display: flex;
+						align-items: center;
+
+						// Styling for typing animation
+						width: 280px;
 						overflow: hidden; /* Ensures the content is not revealed until the animation */
 						border-right: 0.15em solid ${theme.colours.white}; /* The typwriter cursor */
 						white-space: nowrap; /* Keeps the content on a single line */
@@ -60,7 +76,11 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
 					</Link>
 				</h1>
 			</div>
-			<Menu />
+			{showMenuToggle ? (
+				<Menu />
+			) : (
+				<MenuHamburger toggleMobileMenu={toggleMobileMenu} />
+			)}
 			{children}
 		</header>
 	);

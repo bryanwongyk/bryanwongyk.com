@@ -5,12 +5,13 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import '../content/assets/stylesheets/layout.css';
+import MobileMenu from './mobile-menu/mobile-menu';
 
 const Layout: FunctionComponent<{}> = ({ children }) => {
 	const data = useStaticQuery(graphql`
@@ -23,11 +24,21 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 		}
 	`);
 
+	const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+	const handleToggleMobileMenu = (): void => {
+		setShowMobileMenu(!showMobileMenu);
+	};
+
 	return (
 		<>
 			<Header
 				siteTitle={data.site.siteMetadata?.title || `Title`}
+				toggleMobileMenu={handleToggleMobileMenu}
 			></Header>
+			<MobileMenu
+				show={showMobileMenu}
+			/>
 			<div
 				style={{
 					margin: `0 auto`,

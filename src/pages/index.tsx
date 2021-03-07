@@ -3,7 +3,7 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx, ThemeProvider } from '@emotion/react';
-import theme from '../themes/baseTheme';
+import theme from '../styling/baseTheme';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -27,34 +27,97 @@ const IndexPage: FunctionComponent<{}> = () => (
 						src={profile}
 						css={css`
 							width: 200px;
-							margin-left: 50px;
+							margin: 25px auto;
 						`}
 					></img>
 				</section>
-				<section>
-					<FaMapMarkerAlt />
+				<section
+					css={css`
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						margin: 25px auto;
+						width: 225px;
+					`}
+				>
+					<FaMapMarkerAlt
+						size={32}
+						style={{ color: `${theme.colours.pink}` }}
+					/>
+					Melbourne, Australia
 				</section>
-				<section>
+				<section
+					css={css`
+						line-height: 1.5;
+					`}
+				>
 					<p>
-						Hi! I'm a final year
+						Hi! I'm a final year{' '}
 						<b>Software Engineering & Accounting</b> student
 						currently in Melbourne, Australia.
 					</p>
 					<p>
-						I have a passion for solving problems with technology,
-						building awesome experiences for people and leadership
-						development. Right now, I am fulfilling the first two
-						passions through the <b>web</b>.
+						I have a <b>passion for creation</b> that has ignited
+						pursuits into{' '}
+						<a
+							href="https://www.youtube.com/channel/UC_9QYf3yFIL4HkK5ZzD7Eiw"
+							css={css`
+								opacity: 0.7;
+								transition: opacity 0.3s ease 0s;
+								transition: color 0.3s ease 0s;
+								&:hover {
+									opacity: 1;
+									color: ${theme.colours.gold};
+								}
+							`}
+						>
+							video-making
+						</a>
+						,
+						<a
+							href="http://instagram.com/b2uyk"
+							css={css`
+								opacity: 0.7;
+								transition: opacity 0.3s ease 0s;
+								transition: color 0.3s ease 0s;
+								&:hover {
+									opacity: 1;
+									color: ${theme.colours.gold};
+								}
+							`}
+						>
+							{' '}
+							art
+						</a>
+						, and{' '}
+						<a
+							href="https://soundcloud.com/bwyk"
+							css={css`
+								opacity: 0.7;
+								transition: opacity 0.3s ease 0s;
+								transition: color 0.3s ease 0s;
+								&:hover {
+									opacity: 1;
+									color: ${theme.colours.gold};
+								}
+							`}
+						>
+							music production
+						</a>
+						. This passion is what fuels my desire to build
+						experiences through <b>technology</b>. Right now, I am
+						particularly interested in creating for the <b>web</b>.
 					</p>
 					<p>
-						Building a deeper understanding of efficient software
-						architecture, tooling, and processes across the{' '}
-						<b>full stack</b> is a desire of mine.
+						I am always seeking to broaden my skills across the full
+						stack, to deepen my understanding of efficient software
+						architectures and tooling, as well as to develop myself
+						as a leader.
 					</p>
 					<p>
-						In my spare time, you can find me working out,
-						expressing my creativity through producing music/art, or
-						just having a great time with friends.
+						In my spare time, you can find me working out, getting
+						lost in my next hobby, or just having a great time with
+						friends.
 					</p>
 				</section>
 				<section>
