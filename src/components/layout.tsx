@@ -5,10 +5,9 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, {FunctionComponent} from "react"
+import React, { FunctionComponent } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Global, css } from "@emotion/react"
 
 import Header from "./header"
 import Menu from "./menu"
@@ -27,8 +26,7 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`}>
-      </Header>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`}></Header>
       <div
         style={{
           margin: `0 auto`,

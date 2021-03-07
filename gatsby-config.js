@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Bryan Wong`,
+    title: `BRYAN WONG`,
     description: `Bryan Wong's Portfolio`,
     author: `Bryan Wong`,
   },
@@ -23,16 +23,16 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: `pages`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content/blog`,
         name: `posts`,
-      }
+      },
     },
-    `gatsby-transformer-remark`,        
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
