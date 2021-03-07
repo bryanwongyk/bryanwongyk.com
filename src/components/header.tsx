@@ -14,7 +14,7 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
   */
 	const typing = keyframes`
     from { width: 0 }
-    to { width: 10em } // have to use a unit that is not %, because % fills from the center outwards.
+    to { width: 10.5em } // have to use a unit that is not %, because % fills from the center outwards.
   `;
 
 	const blinkCaret = keyframes`
@@ -28,7 +28,8 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
 				display: flex;
 				align-items: center;
 				margin-bottom: 0px;
-				width: 100vw;
+				width: 100%;
+				padding-top: 50px;
 			`}
 		>
 			<div
@@ -38,14 +39,14 @@ const Header: FunctionComponent<{}> = ({ siteTitle, children }) => {
 			>
 				<h1
 					css={css`
-						width: 10em;
+						width: 10.5em;
 						overflow: hidden; /* Ensures the content is not revealed until the animation */
 						border-right: 0.15em solid ${theme.colours.white}; /* The typwriter cursor */
 						white-space: nowrap; /* Keeps the content on a single line */
 						margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 						letter-spacing: 0.15em; /* Adjust as needed */
-						animation: ${typing} 3.5s steps(30, end),
-							${blinkCaret} 1s linear infinite;
+						animation: ${typing} 3s steps(30, end),
+							${blinkCaret} 2.5s linear infinite;
 					`}
 				>
 					<Link

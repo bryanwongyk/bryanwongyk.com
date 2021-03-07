@@ -16,7 +16,6 @@ const Menu: FunctionComponent<{}> = () => {
 					list-style: none;
 					display: flex;
 					flex-direction: row;
-					color: ${theme.colours.white};
 					margin: 0;
 				`}
 			>

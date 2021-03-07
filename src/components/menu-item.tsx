@@ -6,11 +6,13 @@ const menuArrow: SerializedStyles = css`
 	width: 0;
 	height: 0;
 
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 10px solid white;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 8px solid white;
 
 	position: absolute;
+	left: -20px;
+	top: 5px;
 `;
 
 interface MenuItemProps {
@@ -27,7 +29,12 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({ path, name }) => {
 			onMouseLeave={() => setHovered(false)}
 			css={css`
 				position: relative;
-				margin: 0 0 0 50px;
+				margin: 0 0 0 70px;
+				opacity: 0.5;
+				transition: opacity 0.3s ease 0s;
+				&:hover {
+					opacity: 1;
+				}
 			`}
 		>
 			<span

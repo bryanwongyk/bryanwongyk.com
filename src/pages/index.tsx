@@ -6,17 +6,23 @@ import { css, jsx, ThemeProvider } from '@emotion/react';
 import theme from '../themes/baseTheme';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
 
-import profile from '../../public/profile.png';
+import profile from '../content/assets/images/profile.png';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { MdEmail } from 'react-icons/md';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 const IndexPage: FunctionComponent<{}> = () => (
 	<ThemeProvider theme={theme}>
 		<Layout>
 			<SEO title="Home" />
-			<main className="profile">
-				<section>
+			<main>
+				<section
+					css={css`
+						text-align: center;
+					`}
+				>
 					<img
 						src={profile}
 						css={css`
@@ -25,9 +31,12 @@ const IndexPage: FunctionComponent<{}> = () => (
 						`}
 					></img>
 				</section>
-				<section className="profile-content">
+				<section>
+					<FaMapMarkerAlt />
+				</section>
+				<section>
 					<p>
-						Hi! I'm a final year{' '}
+						Hi! I'm a final year
 						<b>Software Engineering & Accounting</b> student
 						currently in Melbourne, Australia.
 					</p>
@@ -44,36 +53,56 @@ const IndexPage: FunctionComponent<{}> = () => (
 					</p>
 					<p>
 						In my spare time, you can find me working out,
-						expressing my creativity through producing
-						music/design/art, or just having a great time with
-						friends.
+						expressing my creativity through producing music/art, or
+						just having a great time with friends.
 					</p>
 				</section>
-				<section className="profile-socials">
+				<section>
 					<a
 						href="https://www.linkedin.com/in/bryanwongyk/"
 						target="_blank"
 						title="LinkedIn"
+						css={css`
+							opacity: 0.5;
+							transition: opacity 0.3s ease 0s;
+							&:hover {
+								opacity: 1;
+							}
+						`}
 					>
-						LinkedIn
+						<AiFillLinkedin size={32} />
 					</a>
 
 					<a
 						href="https://github.com/bryanwyk"
 						target="_blank"
 						title="GitHub"
+						css={css`
+							opacity: 0.5;
+							transition: opacity 0.3s ease 0s;
+							&:hover {
+								opacity: 1;
+							}
+						`}
 					>
-						GitHub
+						<AiFillGithub size={32} />
 					</a>
 
-					<a href="mailto:bryanwyk@gmail.com" title="Email">
-						Email
+					<a
+						href="mailto:bryanwyk@gmail.com"
+						title="Email"
+						css={css`
+							opacity: 0.5;
+							transition: opacity 0.3s ease 0s;
+							&:hover {
+								opacity: 1;
+							}
+						`}
+					>
+						<MdEmail size={32} />
 					</a>
 				</section>
 			</main>
-			<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-				<Image />
-			</div>
 		</Layout>
 	</ThemeProvider>
 );
