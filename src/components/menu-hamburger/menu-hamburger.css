@@ -1,13 +1,13 @@
 /*!
- * Hamburgers
+ * Hamburgers 
  * @description Tasty CSS-animated hamburgers
  * @author Jonathan Suh @jonsuh
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
+
+ Stylings have been edited for my own use.
  */
 .hamburger {
-	padding: 15px 15px;
-	display: inline-block;
 	cursor: pointer;
 	transition-property: opacity, filter;
 	transition-duration: 0.15s;
@@ -20,6 +20,12 @@
 	margin: 0;
 	overflow: visible;
 	outline: none;
+
+	display: flex;
+	align-items: center;
+	position: fixed;
+	left: 87vw;
+	top: 39px;
 }
 .hamburger:hover {
 	opacity: 0.7;
@@ -28,15 +34,10 @@
 	opacity: 0.7;
 }
 
-/* .hamburger:hover .hamburger-inner::before,
-.hamburger:hover .hamburger-inner,
-.hamburger:hover .hamburger-inner::after {
-	background-color: #ffcf74;
-} */
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-	background-color: #ffcf74;
+	background-color: #111216;
 }
 
 .hamburger-box {
@@ -54,8 +55,8 @@
 .hamburger-inner,
 .hamburger-inner::before,
 .hamburger-inner::after {
-	width: 40px;
-	height: 4px;
+	width: 30px;
+	height: 3px;
 	background-color: #ffcf74;
 	border-radius: 4px;
 	position: absolute;

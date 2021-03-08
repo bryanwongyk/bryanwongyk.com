@@ -5,7 +5,8 @@ const baseTheme = {
 		white: '#fff',
 		red: '#A0133C',
 		gold: '#ffcf74',
-		pink: 'E27396',
+		pink: '#E27396',
+		blue: '#4472CA',
 	},
 };
 

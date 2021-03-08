@@ -8,12 +8,13 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
+	const theme = useTheme();
 	return (
 		<div
 			css={css`
 				position: fixed;
 				z-index: 500;
-				background-color: white;
+				background-color: ${theme.colours.gold};
 				width: 100vw;
 				height: 100%;
 				box-sizing: border-box;

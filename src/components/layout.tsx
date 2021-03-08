@@ -35,10 +35,9 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 			<Header
 				siteTitle={data.site.siteMetadata?.title || `Title`}
 				toggleMobileMenu={handleToggleMobileMenu}
+				mobileMenuShown={showMobileMenu}
 			></Header>
-			<MobileMenu
-				show={showMobileMenu}
-			/>
+			<MobileMenu show={showMobileMenu} />
 			<div
 				style={{
 					margin: `0 auto`,
