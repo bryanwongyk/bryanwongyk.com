@@ -38,21 +38,20 @@ const IndexPage: FunctionComponent<{}> = () => {
 						// Align text with border-right
 						display: flex;
 						align-items: center;
-
-						// Styling for typing animation
-						width: 302px;
-						overflow: hidden; /* Ensures the content is not revealed until the animation */
-						border-right: 0.15em solid ${darkTheme.colours.white}; /*The typwriter cursor*/
-						white-space: nowrap; /* Keeps the content on a single line */
-						margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-						/* letter-spacing: 0.15em; Adjust as needed */
-						animation: ${typing} 3s steps(24, end),
-							${blinkCaret} 2.5s linear infinite;
 					`}
 				>
 					<h1
 						css={css`
 							margin: 0 auto;
+							// Styling for typing animation
+							overflow: hidden; /* Ensures the content is not revealed until the animation */
+							border-right: 0.08em solid
+								${darkTheme.colours.white}; /*The typwriter cursor*/
+							white-space: nowrap; /* Keeps the content on a single line */
+							margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+							/* letter-spacing: 0.15em; Adjust as needed */
+							animation: ${typing} 3s steps(24, end),
+								${blinkCaret} 2.5s linear infinite;
 						`}
 					>
 						Hi, I'm Bryan!
