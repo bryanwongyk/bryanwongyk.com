@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { css, useTheme } from '@emotion/react';
-import theme from '../../styling/baseTheme';
+import { darkTheme } from '../../styling/themes';
 
 interface MobileMenuProps {
 	show: boolean;
@@ -13,7 +13,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 			css={css`
 				position: fixed;
 				z-index: 500;
-				background-color: ${theme.colours.gold};
+				background-color: ${darkTheme.colours.black};
 				width: 100vw;
 				height: 100%;
 				box-sizing: border-box;

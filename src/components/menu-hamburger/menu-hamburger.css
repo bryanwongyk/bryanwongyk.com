@@ -23,9 +23,7 @@
 
 	display: flex;
 	align-items: center;
-	position: fixed;
-	left: 87vw;
-	top: 39px;
+	padding-bottom: 10px;
 }
 .hamburger:hover {
 	opacity: 0.7;

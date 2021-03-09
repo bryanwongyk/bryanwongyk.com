@@ -6,7 +6,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { css, jsx, useTheme } from '@emotion/react';
 import Menu from '../components/menu';
 import MenuHamburger from './menu-hamburger/menu-hamburger';
-import theme from '../styling/baseTheme';
+import { darkTheme } from '../styling/themes';
 
 interface HeaderProps {
 	siteTitle: string;
@@ -31,6 +31,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 			css={css`
 				display: flex;
 				align-items: center;
+				justify-content: space-around;
 				margin-bottom: 0px;
 				width: 100vw;
 				padding-top: 10px;
@@ -48,11 +49,11 @@ const Header: FunctionComponent<HeaderProps> = ({
 						to="/"
 						css={css`
 							color: ${mobileMenuShown
-								? `${theme.colours.black}`
-								: `${theme.colours.white}`};
+								? `${darkTheme.colours.black}`
+								: `${darkTheme.colours.white}`};
 							text-decoration: none;
-							writing-mode: vertical-lr;
-							text-orientation: upright;
+							/* writing-mode: vertical-lr;
+							text-orientation: upright; */
 							transition: color 1s ease;
 							transition: opacity 0.2s ease;
 							&:hover {

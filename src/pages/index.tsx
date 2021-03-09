@@ -3,7 +3,7 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx, keyframes, ThemeProvider } from '@emotion/react';
-import theme from '../styling/baseTheme';
+import { darkTheme } from '../styling/themes';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -24,7 +24,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 
 	const blinkCaret = keyframes`
 	from, to { border-color: transparent }
-	50% { border-color: ${theme.colours.white} }
+	50% { border-color: ${darkTheme.colours.white} }
 		`;
 	return (
 		<Layout>
@@ -42,7 +42,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 						// Styling for typing animation
 						width: 302px;
 						overflow: hidden; /* Ensures the content is not revealed until the animation */
-						border-right: 0.15em solid ${theme.colours.white}; /*The typwriter cursor*/
+						border-right: 0.15em solid ${darkTheme.colours.white}; /*The typwriter cursor*/
 						white-space: nowrap; /* Keeps the content on a single line */
 						margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 						/* letter-spacing: 0.15em; Adjust as needed */
@@ -78,18 +78,18 @@ const IndexPage: FunctionComponent<{}> = () => {
 						display: flex;
 						justify-content: space-between;
 						align-items: center;
-						margin: 25px auto;
-						width: 200px;
+						margin: 0 auto;
+						width: 190px;
 					`}
 				>
 					<FaMapMarkerAlt
 						size={28}
 						css={css`
-							color: ${theme.colours.pink};
+							color: ${darkTheme.colours.pink};
 							filter: drop-shadow(5px 6px 5px #000000);
 						`}
 					/>
-					Melbourne, Australia
+					<em>Melbourne, Australia</em>
 				</section>
 				<div
 					css={css`
@@ -99,7 +99,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 					<section
 						css={css`
 							line-height: 1.5;
-							margin: 50px auto;
+							margin: 60px auto;
 							text-align: center;
 						`}
 					>
@@ -107,7 +107,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 							I'm a final year{' '}
 							<span
 								css={css`
-									color: ${theme.colours.gold};
+									color: ${darkTheme.colours.gold};
 								`}
 							>
 								<b>Software Engineering & Accounting</b>
@@ -129,7 +129,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 									transition: color 0.3s ease 0s;
 									&:hover {
 										opacity: 1;
-										color: ${theme.colours.gold};
+										color: ${darkTheme.colours.gold};
 									}
 								`}
 							>
@@ -144,7 +144,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 									transition: color 0.3s ease 0s;
 									&:hover {
 										opacity: 1;
-										color: ${theme.colours.gold};
+										color: ${darkTheme.colours.gold};
 									}
 								`}
 							>
@@ -160,7 +160,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 									transition: color 0.3s ease 0s;
 									&:hover {
 										opacity: 1;
-										color: ${theme.colours.gold};
+										color: ${darkTheme.colours.gold};
 									}
 								`}
 							>
@@ -170,7 +170,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 							build experiences on the
 							<span
 								css={css`
-									color: ${theme.colours.gold};
+									color: ${darkTheme.colours.gold};
 								`}
 							>
 								<b> web</b>
@@ -210,7 +210,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 						css={css`
 							display: flex;
 							justify-content: space-around;
-							margin: 25px auto;
+							margin: 30px auto;
 							width: 200px;
 						`}
 					>

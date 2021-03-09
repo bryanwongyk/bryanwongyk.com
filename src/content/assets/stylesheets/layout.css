@@ -8,9 +8,8 @@ html {
 	overflow-y: scroll;
 	cursor: default;
 }
-header h1 {
-	position: fixed;
-	right: 87vw;
+header {
+	background-color: #111216;
 }
 header h1 > a {
 	font-family: 'Maven Pro', sans-serif !important;
@@ -35,26 +34,8 @@ body {
 	/* background-image: url('../images/bg-black.png'); */
 	/* max-width: 1280px; */
 }
-body:after {
-	/* content is required when using :after */
-	content: '';
-	/* The grainy image */
-	background-image: url('../images/grain.jpg');
-	/* Specify a height and width above and beyond the page header for movement */
-	height: 300%;
-	width: 300%;
-	top: -100%;
-	left: -50%;
-	/* We're using opacity in place of a transparent image */
-	opacity: 0.05;
-	/* We'll need this when the animation kicks in to hold the position of the texture */
-	position: fixed;
-	z-index: -1;
-	/* The animation */
-	animation: grain 8s steps(10) infinite;
-}
 main {
-	padding-top: 55px;
+	padding-top: 75px;
 	/* margin: 0 30px; */
 }
 
