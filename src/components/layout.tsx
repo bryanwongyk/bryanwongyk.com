@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -30,11 +30,12 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 		setShowMobileMenu(!showMobileMenu);
 	};
 
-	if (showMobileMenu) {
-		document.body.style.position = 'fixed';
-	} else {
-		document.body.style.position = 'static';
-	}
+	// Only try to access document once the component has mounted
+	useEffect(() => {
+		showMobileMenu
+			? (document.body.style.position = 'fixed')
+			: (document.body.style.position = 'static');
+	}, [showMobileMenu]);
 
 	return (
 		<>
