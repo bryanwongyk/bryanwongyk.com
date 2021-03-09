@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { css } from '@emotion/react';
+import mediaQueries from '../../styling/breakpoints.utils';
 
 // Credit to https://jonsuh.com/hamburgers/ 3DX Hamburger
 // Using a normal .css file here as it is how the library is intended to be used
@@ -23,6 +24,11 @@ const MenuHamburger: FunctionComponent<{}> = ({ toggleMobileMenu }) => {
 					? buttonBaseClassNames + ' ' + isActiveClassName
 					: buttonBaseClassNames
 			}
+			css={css`
+				${mediaQueries[0]} {
+					display: none;
+				}
+			`}
 			type="button"
 		>
 			<span

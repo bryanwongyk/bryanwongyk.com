@@ -1,14 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { css, useTheme } from '@emotion/react';
 import MenuItem from './menu-item';
+import mediaQueries from '../styling/breakpoints.utils';
 
 const Menu: FunctionComponent<{}> = () => {
-	const theme = useTheme();
 	return (
 		<div
 			css={css`
-				position: absolute;
-				left: 75vw;
+				display: none;
+				${mediaQueries[0]} {
+					display: inline-block;
+				}
 			`}
 		>
 			<ul

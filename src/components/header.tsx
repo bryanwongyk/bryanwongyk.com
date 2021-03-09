@@ -21,11 +21,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 	mobileMenuShown,
 	children,
 }) => {
-	/*
-	Logic for mobile nav
-	*/
-	const [showMenuToggle, setShowMenuToggle] = useState(false);
-
 	return (
 		<header
 			css={css`
@@ -68,11 +63,8 @@ const Header: FunctionComponent<HeaderProps> = ({
 					</Link>
 				</h1>
 			</div>
-			{showMenuToggle ? (
-				<Menu />
-			) : (
-				<MenuHamburger toggleMobileMenu={toggleMobileMenu} />
-			)}
+			<Menu />
+			<MenuHamburger toggleMobileMenu={toggleMobileMenu} />
 			{children}
 		</header>
 	);
