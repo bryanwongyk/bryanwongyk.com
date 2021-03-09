@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
+import { css } from '@emotion/react';
 
 // Credit to https://jonsuh.com/hamburgers/ 3DX Hamburger
 // Using a normal .css file here as it is how the library is intended to be used
@@ -24,7 +25,12 @@ const MenuHamburger: FunctionComponent<{}> = ({ toggleMobileMenu }) => {
 			}
 			type="button"
 		>
-			<span className="hamburger-box">
+			<span
+				className="hamburger-box"
+				css={css`
+					z-index: 100;
+				`}
+			>
 				<span className="hamburger-inner"></span>
 			</span>
 		</button>

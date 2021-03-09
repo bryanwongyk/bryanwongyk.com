@@ -8,6 +8,9 @@ html {
 	overflow-y: scroll;
 	cursor: default;
 }
+header h1 {
+	margin-bottom: 0;
+}
 header h1 > a {
 	font-family: 'Maven Pro', sans-serif !important;
 	font-size: 1.3rem;
@@ -32,8 +35,7 @@ body {
 	/* max-width: 1280px; */
 }
 main {
-	padding-top: 75px;
-	/* margin: 0 30px; */
+	padding-top: 60px;
 }
 
 @keyframes grain {

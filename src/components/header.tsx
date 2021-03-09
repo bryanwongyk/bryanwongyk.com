@@ -34,15 +34,17 @@ const Header: FunctionComponent<HeaderProps> = ({
 				justify-content: space-around;
 				margin-bottom: 0px;
 				width: 100vw;
-				padding-top: 10px;
 				position: fixed;
 				z-index: 1000;
-				background-color: transparent;
+				background-color: ${darkTheme.colours.black};
+				height: 60px;
 			`}
 		>
 			<div
 				css={css`
-					padding: 1.45rem 0;
+					display: flex;
+					align-items: center;
+					padding-bottom: 14px;
 				`}
 			>
 				<h1>
@@ -55,8 +57,8 @@ const Header: FunctionComponent<HeaderProps> = ({
 							text-decoration: none;
 							/* writing-mode: vertical-lr;
 							text-orientation: upright; */
-							transition: color 1s ease;
-							transition: opacity 0.2s ease;
+							transition: color 0.4s, opacity 0.2s ease;
+							z-index: 100;
 							&:hover {
 								opacity: 0.7;
 							}

@@ -2,7 +2,7 @@
 
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { css, jsx, keyframes, ThemeProvider } from '@emotion/react';
+import { css, jsx, keyframes } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 
 import Layout from '../components/layout';

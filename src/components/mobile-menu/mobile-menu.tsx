@@ -12,19 +12,21 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 		<div
 			css={css`
 				position: fixed;
-				z-index: 500;
+				z-index: -30;
 				background-color: ${darkTheme.colours.gold};
 				width: 100vw;
-				height: 100%;
+				height: 100vh;
 				box-sizing: border-box;
 				transition: all 0.3s ease-out;
+				top: 0;
+				left: 0;
 
 				transform: ${show
 					? `
-						translateX(0)
+						translateY(0vh)
 						`
 					: `
-						translateX(100vw)
+						translateY(-100vh)
 						`};
 			`}
 		>
