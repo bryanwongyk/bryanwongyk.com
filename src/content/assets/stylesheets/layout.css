@@ -8,9 +8,6 @@ html {
 	overflow-y: scroll;
 	cursor: default;
 }
-header {
-	background-color: #111216;
-}
 header h1 > a {
 	font-family: 'Maven Pro', sans-serif !important;
 	font-size: 1.3rem;

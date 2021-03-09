@@ -37,6 +37,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 				padding-top: 10px;
 				position: fixed;
 				z-index: 1000;
+				background-color: transparent;
 			`}
 		>
 			<div

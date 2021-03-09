@@ -13,7 +13,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 			css={css`
 				position: fixed;
 				z-index: 500;
-				background-color: ${darkTheme.colours.black};
+				background-color: ${darkTheme.colours.gold};
 				width: 100vw;
 				height: 100%;
 				box-sizing: border-box;
