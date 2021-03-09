@@ -13,7 +13,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 			css={css`
 				position: fixed;
 				z-index: -30;
-				display: ${show ? `flex` : `none`};
+				display: flex;
 			`}
 		>
 			<div
