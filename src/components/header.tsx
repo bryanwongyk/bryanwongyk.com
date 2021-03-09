@@ -37,7 +37,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 				position: fixed;
 				z-index: 1000;
 				background-color: ${darkTheme.colours.black};
-				height: 60px;
+				height: 70px;
 			`}
 		>
 			<div
