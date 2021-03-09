@@ -1,19 +1,32 @@
 import React, { FunctionComponent, useState } from 'react';
 import { css, useTheme } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
+import MobileMenuItem from './mobile-menu-item';
+import mediaQueries from '../../styling/breakpoints.utils';
 
 interface MobileMenuProps {
 	show: boolean;
+	toggleMobileMenu: () => void;
+	currentPath: string;
 	children?: React.ReactNode;
 }
 
-const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
+const MobileMenu: FunctionComponent<MobileMenuProps> = ({
+	show,
+	toggleMobileMenu,
+	currentPath,
+	children,
+}) => {
 	return (
 		<div
 			css={css`
 				position: fixed;
 				z-index: -30;
 				display: flex;
+
+				${mediaQueries[0]} {
+					display: none;
+				}
 			`}
 		>
 			<div
@@ -35,8 +48,52 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 						translateY(-200vh)
 						`};
 				`}
-			></div>
-			<nav>{children}</nav>
+			>
+				<nav>
+					<ul
+						css={css`
+							position: fixed;
+							top: 40%;
+							left: 25%;
+							list-style: none;
+							/* Have to use visibility instead of display or opacity animation will not work */
+							visibility: ${show
+								? `
+							visible
+						`
+								: `
+							hidden
+						`};
+							opacity: ${show
+								? `
+							1
+						`
+								: `
+							0
+						`};
+							transition: all 0.2s 0.5s linear;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: space-around;
+							height: 125px;
+						`}
+					>
+						<MobileMenuItem
+							path="/"
+							name="Home"
+							toggleMobileMenu={toggleMobileMenu}
+							currentPath={currentPath}
+						/>
+						<MobileMenuItem
+							path="/blog"
+							name="Blog"
+							toggleMobileMenu={toggleMobileMenu}
+							currentPath={currentPath}
+						/>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	);
 };

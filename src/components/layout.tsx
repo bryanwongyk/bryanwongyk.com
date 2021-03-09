@@ -13,7 +13,7 @@ import Header from './header';
 import '../content/assets/stylesheets/layout.css';
 import MobileMenu from './mobile-menu/mobile-menu';
 
-const Layout: FunctionComponent<{}> = ({ children }) => {
+const Layout: FunctionComponent<{}> = ({ currentPath, children }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -44,7 +44,11 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 				toggleMobileMenu={handleToggleMobileMenu}
 				mobileMenuShown={showMobileMenu}
 			>
-				<MobileMenu show={showMobileMenu} />
+				<MobileMenu
+					show={showMobileMenu}
+					toggleMobileMenu={handleToggleMobileMenu}
+					currentPath={currentPath}
+				/>
 			</Header>
 			<div
 				style={{

@@ -26,8 +26,9 @@ const IndexPage: FunctionComponent<{}> = () => {
 	from, to { border-color: transparent }
 	50% { border-color: ${darkTheme.colours.white} }
 		`;
+
 	return (
-		<Layout>
+		<Layout currentPath={location.pathname}>
 			<SEO title="Home" />
 			<main>
 				<section

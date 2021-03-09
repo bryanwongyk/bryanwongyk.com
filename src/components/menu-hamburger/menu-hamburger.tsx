@@ -6,7 +6,15 @@ import mediaQueries from '../../styling/breakpoints.utils';
 // Using a normal .css file here as it is how the library is intended to be used
 import './menu-hamburger.css';
 
-const MenuHamburger: FunctionComponent<{}> = ({ toggleMobileMenu }) => {
+interface MenuHamburgerProps {
+	toggleMobileMenu: () => void;
+	mobileMenuShown: boolean;
+}
+
+const MenuHamburger: FunctionComponent<MenuHamburgerProps> = ({
+	toggleMobileMenu,
+	mobileMenuShown,
+}) => {
 	const [isActive, setIsActive] = useState(false);
 	const buttonBaseClassNames = 'hamburger hamburger--3dx';
 	const isActiveClassName = 'is-active';
@@ -20,7 +28,7 @@ const MenuHamburger: FunctionComponent<{}> = ({ toggleMobileMenu }) => {
 		<button
 			onClick={handleToggle}
 			className={
-				isActive
+				mobileMenuShown
 					? buttonBaseClassNames + ' ' + isActiveClassName
 					: buttonBaseClassNames
 			}

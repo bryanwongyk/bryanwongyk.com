@@ -12,6 +12,7 @@ interface HeaderProps {
 	siteTitle: string;
 	toggleMobileMenu: () => void;
 	mobileMenuShown: boolean;
+	currentPath: string;
 	children?: React.ReactNode;
 }
 
@@ -64,7 +65,10 @@ const Header: FunctionComponent<HeaderProps> = ({
 				</h1>
 			</div>
 			<Menu />
-			<MenuHamburger toggleMobileMenu={toggleMobileMenu} />
+			<MenuHamburger
+				toggleMobileMenu={toggleMobileMenu}
+				mobileMenuShown={mobileMenuShown}
+			/>
 			{children}
 		</header>
 	);
