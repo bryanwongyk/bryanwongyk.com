@@ -6,15 +6,21 @@ import React, { FunctionComponent, useState } from 'react';
 import { css, jsx, useTheme } from '@emotion/react';
 import Menu from '../components/menu';
 import MenuHamburger from './menu-hamburger/menu-hamburger';
+import theme from '../styling/baseTheme';
 
-const Header: FunctionComponent<{}> = ({
+interface HeaderProps {
+	siteTitle: string;
+	toggleMobileMenu: () => void;
+	mobileMenuShown: boolean;
+	children?: React.ReactNode;
+}
+
+const Header: FunctionComponent<HeaderProps> = ({
 	siteTitle,
 	toggleMobileMenu,
 	mobileMenuShown,
 	children,
 }) => {
-	const theme = useTheme();
-
 	/*
 	Logic for mobile nav
 	*/

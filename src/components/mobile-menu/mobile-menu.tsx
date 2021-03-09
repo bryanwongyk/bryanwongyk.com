@@ -1,14 +1,13 @@
 import React, { FunctionComponent, useState } from 'react';
 import { css, useTheme } from '@emotion/react';
+import theme from '../../styling/baseTheme';
 
 interface MobileMenuProps {
 	show: boolean;
-	closeMobileMenu: () => void;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 }
 
 const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
-	const theme = useTheme();
 	return (
 		<div
 			css={css`
