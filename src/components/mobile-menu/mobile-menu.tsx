@@ -13,23 +13,29 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({ show, children }) => {
 			css={css`
 				position: fixed;
 				z-index: -30;
-				background-color: ${darkTheme.colours.gold};
-				width: 100vw;
-				height: 100vh;
-				box-sizing: border-box;
-				transition: all 0.3s ease-out;
-				top: 0;
-				left: 0;
-
-				transform: ${show
-					? `
-						translateY(0vh)
-						`
-					: `
-						translateY(-100vh)
-						`};
+				display: ${show ? `flex` : `none`};
 			`}
 		>
+			<div
+				css={css`
+					position: fixed;
+					background-color: ${darkTheme.colours.gold};
+					width: 100vw;
+					height: 100vh;
+					box-sizing: border-box;
+					transition: transform 0.5s ease-out;
+					top: 0;
+					left: 0;
+					/* Setting initial transform at -200vh prevents bug where resizing vertically flickers the mobile menu. */
+					transform: ${show
+						? `
+						translateY(0vh)
+						`
+						: `
+						translateY(-200vh)
+						`};
+				`}
+			></div>
 			<nav>{children}</nav>
 		</div>
 	);
