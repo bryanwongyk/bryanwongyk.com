@@ -30,6 +30,10 @@ const Layout: FunctionComponent<{}> = ({ currentPath, children }) => {
 		setShowMobileMenu(!showMobileMenu);
 	};
 
+	const handleCloseMobileMenu = (): void => {
+		setShowMobileMenu(false);
+	};
+
 	// Only try to access document once the component has mounted
 	useEffect(() => {
 		showMobileMenu
@@ -42,7 +46,9 @@ const Layout: FunctionComponent<{}> = ({ currentPath, children }) => {
 			<Header
 				siteTitle={data.site.siteMetadata?.title || `Title`}
 				toggleMobileMenu={handleToggleMobileMenu}
+				closeMobileMenu={handleCloseMobileMenu}
 				mobileMenuShown={showMobileMenu}
+				currentPath={currentPath}
 			>
 				<MobileMenu
 					show={showMobileMenu}

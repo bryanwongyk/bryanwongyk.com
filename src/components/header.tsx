@@ -11,6 +11,7 @@ import { darkTheme } from '../styling/themes';
 interface HeaderProps {
 	siteTitle: string;
 	toggleMobileMenu: () => void;
+	closeMobileMenu: () => void;
 	mobileMenuShown: boolean;
 	currentPath: string;
 	children?: React.ReactNode;
@@ -19,9 +20,17 @@ interface HeaderProps {
 const Header: FunctionComponent<HeaderProps> = ({
 	siteTitle,
 	toggleMobileMenu,
+	closeMobileMenu,
 	mobileMenuShown,
+	currentPath,
 	children,
 }) => {
+	// If the user is already on the Home page and they click the logo, just close the mobile menu.
+	const handleClickLink = () => {
+		if (mobileMenuShown && currentPath === '/') {
+			closeMobileMenu();
+		}
+	};
 	return (
 		<header
 			css={css`
@@ -59,6 +68,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 								opacity: 0.7;
 							}
 						`}
+						onClick={handleClickLink}
 					>
 						{siteTitle}
 					</Link>
