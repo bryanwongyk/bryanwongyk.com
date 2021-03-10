@@ -23,6 +23,7 @@ const Menu: FunctionComponent<{}> = () => {
 			>
 				<MenuItem path="/" name="Home" />
 				<MenuItem path="/blog" name="Blog" />
+				<MenuItem path="/portfolio" name="Portfolio" />
 			</ul>
 		</div>
 	);
