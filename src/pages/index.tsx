@@ -167,13 +167,9 @@ const IndexPage: FunctionComponent<{}> = () => {
 								music production
 							</a>
 							. Today, this passion is what fuels my desire to
-							build experiences on the
-							<span
-								css={css`
-									color: ${darkTheme.colours.gold};
-								`}
-							>
-								<b> web</b>
+							build experiences through
+							<span>
+								<b> technology</b>
 							</span>
 							.
 						</p>
