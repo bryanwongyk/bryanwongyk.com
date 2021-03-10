@@ -33,6 +33,8 @@ body {
 	background-color: #111216;
 	/* background-image: url('../images/bg-black.png'); */
 	/* max-width: 1280px; */
+	width: 100%;
+	height: 100%;
 }
 main {
 	padding-top: 60px;
