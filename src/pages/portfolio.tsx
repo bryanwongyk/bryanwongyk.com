@@ -20,7 +20,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 				<h1
 					css={css`
 						text-align: center;
-						border-bottom: 3px solid ${darkTheme.colours.white};
+						border-bottom: 3px solid ${darkTheme.colours.gold};
 						height: 50px;
 						width: 270px;
 						margin: 0 auto;

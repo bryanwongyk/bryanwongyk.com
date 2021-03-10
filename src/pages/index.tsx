@@ -32,7 +32,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 			<SEO title="Home" />
 			<div
 				css={css`
-					padding: 0 1.0875rem 1.45rem;
+					padding: 0 1.0875rem 0 1.45rem;
 				`}
 			>
 				<section

@@ -8,6 +8,13 @@ html {
 	box-sizing: border-box;
 	overflow-y: scroll;
 	cursor: default;
+	min-height: 100%;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
 header h1 {
 	margin-bottom: 0;

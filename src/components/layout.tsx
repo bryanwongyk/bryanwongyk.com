@@ -8,7 +8,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useLocation } from '@reach/router';
+import { css } from '@emotion/react';
 
 import Header from './header';
 import '../content/assets/stylesheets/layout.css';
@@ -63,11 +63,71 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 			>
 				<main>{children}</main>
 				<footer
-					style={{
-						marginTop: `2rem`,
-					}}
+					css={css`
+						margin: 2rem 0 1rem 0;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						opacity: 0.7;
+						text-align: center;
+						font-size: 0.9rem;
+					`}
 				>
-					{/* © {new Date().getFullYear()} */}
+					© Bryan Wong {new Date().getFullYear()}
+					<div
+						css={css`
+							display: flex;
+							margin: 10px 0;
+						`}
+					>
+						<a
+							href="https://www.linkedin.com/in/bryanwongyk/"
+							target="_blank"
+							title="LinkedIn"
+							css={css`
+								opacity: 0.5;
+								transition: opacity 0.3s ease 0s;
+								margin: 0 10px;
+								&:hover {
+									opacity: 1;
+								}
+							`}
+						>
+							LinkedIn
+						</a>
+
+						<a
+							href="https://github.com/bryanwyk"
+							target="_blank"
+							title="GitHub"
+							css={css`
+								opacity: 0.5;
+								transition: opacity 0.3s ease 0s;
+								margin: 0 10px;
+								&:hover {
+									opacity: 1;
+								}
+							`}
+						>
+							GitHub
+						</a>
+
+						<a
+							href="mailto:bryanwyk@gmail.com"
+							title="Email"
+							css={css`
+								opacity: 0.5;
+								transition: opacity 0.3s ease 0s;
+								margin: 0 10px;
+								&:hover {
+									opacity: 1;
+								}
+							`}
+						>
+							Email
+						</a>
+					</div>
 				</footer>
 			</div>
 		</>
