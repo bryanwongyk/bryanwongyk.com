@@ -166,12 +166,16 @@ const IndexPage: FunctionComponent<{}> = () => {
 							>
 								music production
 							</a>
-							. Today, this passion is what fuels my desire to
-							build experiences through
-							<span>
-								<b> technology</b>
+							. This passion is what fuels my desire to build
+							experiences through technology. Currently, my avenue
+							is the
+							<span
+								css={css`
+									color: ${darkTheme.colours.gold};
+								`}
+							>
+								<b> web.</b>
 							</span>
-							.
 						</p>
 						<p>
 							I am always seeking to broaden my skills across the
