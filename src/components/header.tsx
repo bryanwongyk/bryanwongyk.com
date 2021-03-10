@@ -8,6 +8,7 @@ import Menu from '../components/menu';
 import MenuHamburger from './menu-hamburger/menu-hamburger';
 import { darkTheme } from '../styling/themes';
 import { useLocation } from '@reach/router';
+import checkHoverMediaQuery from '../styling/checkHover.utils';
 
 interface HeaderProps {
 	siteTitle: string;
@@ -64,8 +65,10 @@ const Header: FunctionComponent<HeaderProps> = ({
 							text-orientation: upright; */
 							transition: color 0.4s, opacity 0.2s ease;
 							z-index: 100;
-							&:hover {
-								opacity: 0.7;
+							${checkHoverMediaQuery} {
+								&:hover {
+									opacity: 0.7;
+								}
 							}
 						`}
 						onClick={handleClickLink}

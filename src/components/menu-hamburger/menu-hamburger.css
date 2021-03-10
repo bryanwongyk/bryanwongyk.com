@@ -24,11 +24,13 @@
 	display: flex;
 	align-items: center;
 }
-.hamburger:hover {
-	opacity: 0.7;
-}
-.hamburger.is-active:hover {
-	opacity: 0.7;
+@media (hover: hover) {
+	.hamburger:hover {
+		opacity: 0.7;
+	}
+	.hamburger.is-active:hover {
+		opacity: 0.7;
+	}
 }
 
 .hamburger.is-active .hamburger-inner,
