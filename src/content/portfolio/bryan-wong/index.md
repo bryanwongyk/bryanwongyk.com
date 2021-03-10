@@ -1,7 +1,7 @@
 ---
 title: Personal Website
 featuredImage: bryan-wong.png
-description: My personal website/blog/portfolio
+description: My personal website/blog/portfolio.
 technologies: GatsbyJS, TypeScript, React, Emotion (CSS)
 linkToProject: https://bryanwong.netlify.app/
 linkToGithub: https://github.com/bryanwyk/personal-portfolio

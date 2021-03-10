@@ -6,6 +6,25 @@ import { css } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import profile from '../content/assets/images/profile.png';
 import mediaQueries from '../styling/breakpoints.utils';
+import styled from '@emotion/styled';
+
+const Button = styled.button`
+	background-color: transparent;
+	border: 3px solid ${darkTheme.colours.gold};
+	color: ${darkTheme.colours.white};
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	&:hover {
+		background-color: ${darkTheme.colours.gold};
+		color: ${darkTheme.colours.black};
+	}
+`;
 
 const Portfolio: FunctionComponent<{}> = ({ data }) => {
 	const projects = data.allMarkdownRemark.edges;
@@ -50,7 +69,8 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 							margin: 0;
 						`}
 					>
-						These are my latest projects.
+						These are my latest projects.{' '}
+						<u>Click on them to view more information.</u>
 					</p>
 				</section>
 				<ol
@@ -90,7 +110,6 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 											h2 {
 												color: ${darkTheme.colours
 													.gold};
-												opacity: 0.9;
 											}
 										}
 									`}
@@ -113,6 +132,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 														.white};
 													transition: color 0.3s ease;
 													margin-bottom: 0;
+													text-align: center;
 												`}
 											>
 												<span itemProp="headline">
@@ -125,8 +145,11 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 												itemProp="description"
 												css={css`
 													color: ${darkTheme.colours
-														.grey};
+														.white};
+													opacity: 0.49;
 													margin: 10px 0;
+													line-height: 1.7;
+													text-align: center;
 												`}
 											>
 												{
@@ -134,7 +157,10 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 														.description
 												}{' '}
 												<br />
-												Technologies used:{' '}
+												<br />
+												<u>
+													<b>Technologies:</b>
+												</u>{' '}
 												{
 													project.node.frontmatter
 														.technologies
@@ -143,6 +169,33 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 										</section>
 									</article>
 								</Link>
+								<section
+									css={css`
+										display: flex;
+										justify-content: space-around;
+										margin-top: 20px;
+									`}
+								>
+									{project.node.frontmatter.linkToProject ===
+									'null' ? null : (
+										<a
+											href={
+												project.node.frontmatter
+													.linkToProject
+											}
+										>
+											<Button>View website</Button>
+										</a>
+									)}
+									<a
+										href={
+											project.node.frontmatter
+												.linkToGithub
+										}
+									>
+										<Button>View code</Button>
+									</a>
+								</section>
 							</li>
 						);
 					})}
