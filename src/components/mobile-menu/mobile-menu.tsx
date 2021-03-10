@@ -7,14 +7,12 @@ import mediaQueries from '../../styling/breakpoints.utils';
 interface MobileMenuProps {
 	show: boolean;
 	toggleMobileMenu: () => void;
-	currentPath: string;
 	children?: React.ReactNode;
 }
 
 const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 	show,
 	toggleMobileMenu,
-	currentPath,
 	children,
 }) => {
 	return (
@@ -49,12 +47,17 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 						`};
 				`}
 			>
-				<nav>
+				<nav
+					css={css`
+						height: 100vh;
+						width: 100vw;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					`}
+				>
 					<ul
 						css={css`
-							position: fixed;
-							top: 40%;
-							left: 25%;
 							list-style: none;
 							/* Have to use visibility instead of display or opacity animation will not work */
 							visibility: ${show
@@ -72,24 +75,19 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							0
 						`};
 							transition: all 0.2s 0.5s linear;
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-							justify-content: space-around;
 							height: 125px;
+							text-align: center;
 						`}
 					>
 						<MobileMenuItem
 							path="/"
 							name="Home"
 							toggleMobileMenu={toggleMobileMenu}
-							currentPath={currentPath}
 						/>
 						<MobileMenuItem
 							path="/blog"
 							name="Blog"
 							toggleMobileMenu={toggleMobileMenu}
-							currentPath={currentPath}
 						/>
 					</ul>
 				</nav>

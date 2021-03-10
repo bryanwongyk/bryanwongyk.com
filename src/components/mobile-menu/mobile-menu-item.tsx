@@ -27,7 +27,6 @@ const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
 		<li
 			css={css`
 				position: relative;
-				margin: 0 0 0 70px;
 				color: ${darkTheme.colours.black};
 				opacity: 1;
 				font-size: 2rem;
