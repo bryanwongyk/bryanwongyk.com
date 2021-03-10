@@ -6,7 +6,7 @@ const darkTheme = {
 		red: '#A0133C',
 		gold: '#ffcf74',
 		pink: '#E27396',
-		blue: '#4472CA',
+		blue: '#2D5873',
 	},
 };
 

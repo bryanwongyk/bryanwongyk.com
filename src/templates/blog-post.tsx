@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { css } from '@emotion/react';
 import Img from 'gatsby-image';
+import { darkTheme } from '../styling/themes';
+import postSignature from '../content/assets/images/post-signature.png';
 
 interface BlogPostData {
 	markdownRemark: {
@@ -29,7 +31,22 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 				description={post.frontmatter.description || post.excerpt}
 			/>
 			<div>
-				<Link to="/blog">Go Back</Link>
+				<Link
+					to="/blog"
+					css={css`
+						margin-left: 9%;
+						transition: all 0.3s ease 0s;
+						opacity: 0.8;
+						display: inline-block;
+						height: 22px;
+						&:hover {
+							opacity: 0.6;
+							border-bottom: 1px solid ${darkTheme.colours.white};
+						}
+					`}
+				>
+					Go Back
+				</Link>
 				<hr />
 				<article
 					className="blog-post"
@@ -70,9 +87,22 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 						dangerouslySetInnerHTML={{ __html: post.html }}
 						itemProp="articleBody"
 						css={css`
-							padding: 40px 9%;
+							padding: 40px 9% 12px 9%;
 						`}
 					/>
+					<address
+						css={css`
+							text-align: center;
+						`}
+					>
+						<img
+							src={postSignature}
+							alt="Bryan's Post Ending Signature"
+							css={css`
+								height: 45px;
+							`}
+						></img>
+					</address>
 				</article>
 			</div>
 		</Layout>
