@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: `BRYAN WONG`,
-		description: `Bryan Wong's Portfolio`,
+		description: `Bryan Wong's Personal Website`,
 		author: `Bryan Wong`,
 	},
 	plugins: [
