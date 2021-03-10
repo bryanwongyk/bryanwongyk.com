@@ -8,12 +8,13 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useLocation } from '@reach/router';
 
 import Header from './header';
 import '../content/assets/stylesheets/layout.css';
 import MobileMenu from './mobile-menu/mobile-menu';
 
-const Layout: FunctionComponent<{}> = ({ currentPath, children }) => {
+const Layout: FunctionComponent<{}> = ({ children }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -48,12 +49,10 @@ const Layout: FunctionComponent<{}> = ({ currentPath, children }) => {
 				toggleMobileMenu={handleToggleMobileMenu}
 				closeMobileMenu={handleCloseMobileMenu}
 				mobileMenuShown={showMobileMenu}
-				currentPath={currentPath}
 			>
 				<MobileMenu
 					show={showMobileMenu}
 					toggleMobileMenu={handleToggleMobileMenu}
-					currentPath={currentPath}
 				/>
 			</Header>
 			<div

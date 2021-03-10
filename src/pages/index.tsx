@@ -28,7 +28,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 		`;
 
 	return (
-		<Layout currentPath={location.pathname}>
+		<Layout>
 			<SEO title="Home" />
 			<main>
 				<section

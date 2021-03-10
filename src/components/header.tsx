@@ -7,13 +7,13 @@ import { css, jsx, useTheme } from '@emotion/react';
 import Menu from '../components/menu';
 import MenuHamburger from './menu-hamburger/menu-hamburger';
 import { darkTheme } from '../styling/themes';
+import { useLocation } from '@reach/router';
 
 interface HeaderProps {
 	siteTitle: string;
 	toggleMobileMenu: () => void;
 	closeMobileMenu: () => void;
 	mobileMenuShown: boolean;
-	currentPath: string;
 	children?: React.ReactNode;
 }
 
@@ -22,12 +22,12 @@ const Header: FunctionComponent<HeaderProps> = ({
 	toggleMobileMenu,
 	closeMobileMenu,
 	mobileMenuShown,
-	currentPath,
 	children,
 }) => {
+	const location = useLocation();
 	// If the user is already on the Home page and they click the logo, just close the mobile menu.
 	const handleClickLink = () => {
-		if (mobileMenuShown && currentPath === '/') {
+		if (mobileMenuShown && location.pathname === '/') {
 			closeMobileMenu();
 		}
 	};

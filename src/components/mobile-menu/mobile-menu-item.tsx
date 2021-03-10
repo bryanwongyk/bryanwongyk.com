@@ -2,24 +2,24 @@ import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import { css, SerializedStyles, ClassNames } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
+import { useLocation } from '@reach/router';
 
 interface MobileMenuItemProps {
 	path: string;
 	name: string;
 	toggleMobileMenu: () => void;
-	currentPath: string;
 }
 
 const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
 	path,
 	name,
 	toggleMobileMenu,
-	currentPath,
 }) => {
+	const location = useLocation();
 	// Note that Gatsby does not reload the pages once they are loaded. If you are on the Home page and click on a Link to home, it will not refresh.
 	// If the user is already on the Home page, just close the mobile menu.
 	const handleClickLink = () => {
-		if (currentPath === path) {
+		if (location.pathname === path) {
 			toggleMobileMenu();
 		}
 	};

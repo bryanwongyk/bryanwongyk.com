@@ -6,7 +6,7 @@ import SEO from '../components/seo';
 const Blog: FunctionComponent<{}> = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges;
 	return (
-		<Layout currentPath={location.pathname}>
+		<Layout>
 			<SEO title="All posts" />
 			<main>
 				<ol style={{ listStyle: `none` }}>
