@@ -90,6 +90,11 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							name="Blog"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
+						<MobileMenuItem
+							path="/portfolio"
+							name="Portfolio"
+							toggleMobileMenu={toggleMobileMenu}
+						/>
 					</ul>
 				</nav>
 			</div>

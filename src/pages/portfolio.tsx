@@ -5,12 +5,13 @@ import SEO from '../components/seo';
 import { css } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import profile from '../content/assets/images/profile.png';
+import mediaQueries from '../styling/breakpoints.utils';
 
-const Blog: FunctionComponent<{}> = ({ data }) => {
-	const posts = data.allMarkdownRemark.edges;
+const Portfolio: FunctionComponent<{}> = ({ data }) => {
+	const projects = data.allMarkdownRemark.edges;
 	return (
 		<Layout>
-			<SEO title="All posts" />
+			<SEO title="Portfolio" />
 			<div
 				css={css`
 					padding: 0 1.0875rem 1.45rem;
@@ -21,11 +22,11 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						text-align: center;
 						border-bottom: 3px solid ${darkTheme.colours.gold};
 						height: 50px;
-						width: 135px;
+						width: 270px;
 						margin: 0 auto;
 					`}
 				>
-					BLOG
+					PORTFOLIO
 				</h1>
 				<section
 					css={css`
@@ -49,7 +50,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 							margin: 0;
 						`}
 					>
-						Below lives a collection of my thoughts.
+						These are my latest projects.
 					</p>
 				</section>
 				<ol
@@ -58,17 +59,34 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						margin: 0 auto;
 						display: flex;
 						justify-content: center;
+						flex-direction: column;
+						${mediaQueries[1]} {
+							flex-direction: row;
+							justify-content: space-around;
+						}
 					`}
 				>
-					{posts.map(post => {
-						const title = post.node.frontmatter.title;
-
+					{projects.map(project => {
+						const title = project.node.frontmatter.title;
+						const imgSrc =
+							project.node.frontmatter.featuredImage.publicURL;
 						return (
-							<li key={post.node.id}>
+							<li
+								key={project.node.id}
+								css={css`
+									margin-bottom: 80px;
+									${mediaQueries[1]} {
+										max-width: 33%;
+									}
+								`}
+							>
 								<Link
-									to={post.node.frontmatter.path}
+									to={project.node.frontmatter.path}
 									css={css`
 										&:hover {
+											img {
+												transform: scale(1.01);
+											}
 											h2 {
 												color: ${darkTheme.colours
 													.gold};
@@ -77,8 +95,14 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 										}
 									`}
 								>
+									<img
+										src={imgSrc}
+										css={css`
+											transition: transform 0.3s ease;
+										`}
+									/>
 									<article
-										className="post-list-item"
+										className="project-list-item"
 										itemScope
 										itemType="http://schema.org/Article"
 									>
@@ -105,21 +129,18 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 													margin: 10px 0;
 												`}
 											>
-												{post.node.frontmatter
-													.description ||
-													post.node.excerpt}
+												{
+													project.node.frontmatter
+														.description
+												}{' '}
+												<br />
+												Technologies used:{' '}
+												{
+													project.node.frontmatter
+														.technologies
+												}
 											</p>
 										</section>
-										<footer
-											css={css`
-												color: ${darkTheme.colours
-													.grey};
-												opacity: 0.5;
-											`}
-										>
-											{post.node.frontmatter.date} //{' '}
-											{post.node.frontmatter.readingTime}
-										</footer>
 									</article>
 								</Link>
 							</li>
@@ -131,22 +152,27 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 	);
 };
 
-export default Blog;
+export default Portfolio;
 
 export const pageQuery = graphql`
-	query BlogQuery {
-		allMarkdownRemark(filter: { frontmatter: { type: { in: ["blog"] } } }) {
+	query PortfolioQuery {
+		allMarkdownRemark(
+			filter: { frontmatter: { type: { in: ["portfolio"] } } }
+		) {
 			edges {
 				node {
 					id
 					excerpt
 					frontmatter {
-						date
 						title
+						featuredImage {
+							publicURL
+						}
 						description
+						technologies
+						linkToProject
+						linkToGithub
 						path
-						author
-						readingTime
 					}
 				}
 			}

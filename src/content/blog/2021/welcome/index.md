@@ -6,6 +6,7 @@ readingTime: '2 min read'
 author: Bryan Wong
 featuredImage: waves.jpg
 path: '/welcome'
+type: blog
 ---
 
 Hi everyone! Welcome to my personal website.

@@ -11,6 +11,7 @@ module.exports = {
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-emotion`,
 		`gatsby-plugin-catch-links`,
+		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -30,6 +31,13 @@ module.exports = {
 			options: {
 				path: `${__dirname}/src/content/blog`,
 				name: `posts`,
+			},
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src/content/portfolio`,
+				name: `projects`,
 			},
 		},
 		`gatsby-transformer-remark`,
