@@ -77,6 +77,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							transition: all 0.2s 0.5s linear;
 							height: 125px;
 							text-align: center;
+							margin: 0;
 						`}
 					>
 						<MobileMenuItem

@@ -30,7 +30,11 @@ const IndexPage: FunctionComponent<{}> = () => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<main>
+			<div
+				css={css`
+					padding: 0 1.0875rem 1.45rem;
+				`}
+			>
 				<section
 					css={css`
 						text-align: center;
@@ -259,7 +263,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 						</a>
 					</div>
 				</section>
-			</main>
+			</div>
 		</Layout>
 	);
 };

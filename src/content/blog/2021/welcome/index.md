@@ -4,6 +4,7 @@ title: Welcome
 description: My first post and what's to come...
 readingTime: '2 min read'
 author: Bryan Wong
+featuredImage: waves.jpg
 path: '/welcome'
 ---
 
@@ -17,6 +18,6 @@ There are still a lot of commitments on my plate at the moment such as:
 
 -   University work (which will soon include the commencement of my final year-long Software Engineering project)
 -   Personal commitments
--   Self-study (I'm still trying to find the time and prioritise between continuing learning React, TypeScript, and a whole heap of other topics. To see more, visit my study GitHub repository [here](https://github.com/bryanwyk/learning-front-end).)
+-   Self-study (I'm still trying to find the time and prioritise between continuing to learn React, TypeScript, and a whole heap of other topics. To see more, visit my study GitHub repository [here](https://github.com/bryanwyk/learning-front-end).)
 
-Otherwise, thank you for visiting!
+So, I'll try my best. Otherwise, thanks for visiting!

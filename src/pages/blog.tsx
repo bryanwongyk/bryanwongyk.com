@@ -11,7 +11,11 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="All posts" />
-			<main>
+			<div
+				css={css`
+					padding: 0 1.0875rem 1.45rem;
+				`}
+			>
 				<h1
 					css={css`
 						text-align: center;
@@ -117,7 +121,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						);
 					})}
 				</ol>
-			</main>
+			</div>
 		</Layout>
 	);
 };
