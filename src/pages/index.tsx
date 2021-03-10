@@ -124,7 +124,17 @@ const IndexPage: FunctionComponent<{}> = () => {
 							<span>
 								<b>passion for creation</b>
 							</span>{' '}
-							that has ignited pursuits into{' '}
+							that has ignited my desire to build experiences
+							through technology (and currently through the{' '}
+							<span
+								css={css`
+									color: ${darkTheme.colours.gold};
+								`}
+							>
+								<b> web</b>
+							</span>
+							!). This passion has also previously led me to
+							pursue{' '}
 							<a
 								href="https://www.youtube.com/channel/UC_9QYf3yFIL4HkK5ZzD7Eiw"
 								css={css`
@@ -170,16 +180,7 @@ const IndexPage: FunctionComponent<{}> = () => {
 							>
 								music production
 							</a>
-							. This passion is what fuels my desire to build
-							experiences through technology. Currently, my avenue
-							is the
-							<span
-								css={css`
-									color: ${darkTheme.colours.gold};
-								`}
-							>
-								<b> web.</b>
-							</span>
+							.
 						</p>
 						<p>
 							I am always seeking to broaden my skills across the
