@@ -31,6 +31,7 @@ const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
 				opacity: 1;
 				font-size: 2rem;
 				transition: opacity 0.3s ease 0s;
+				margin-bottom: 30px;
 				&:hover {
 					opacity: 0.7;
 				}
