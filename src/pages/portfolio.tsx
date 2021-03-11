@@ -80,7 +80,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 						display: flex;
 						justify-content: center;
 						flex-direction: column;
-						${mediaQueries[1]} {
+						${mediaQueries[0]} {
 							flex-direction: row;
 							justify-content: space-around;
 						}
@@ -96,7 +96,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 								css={css`
 									margin-bottom: 80px;
 									${mediaQueries[1]} {
-										max-width: 33%;
+										max-width: 30%;
 									}
 								`}
 							>

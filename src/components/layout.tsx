@@ -56,12 +56,21 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 				/>
 			</Header>
 			<div
-				style={{
-					margin: `0 auto`,
-					maxWidth: 960,
-				}}
+				css={css`
+					margin: 0 auto;
+					max-width: 960;
+					min-height: 100vh;
+					display: flex;
+					flex-direction: column;
+				`}
 			>
-				<main>{children}</main>
+				<main
+					css={css`
+						flex: 1;
+					`}
+				>
+					{children}
+				</main>
 				<footer
 					css={css`
 						margin: 2rem 0 1rem 0;
