@@ -6,6 +6,7 @@ import { css } from '@emotion/react';
 import Img from 'gatsby-image';
 import { darkTheme } from '../styling/themes';
 import postSignature from '../content/assets/images/post-signature.png';
+import mediaQueries from '../styling/breakpoints.utils';
 
 interface BlogPostData {
 	markdownRemark: {
@@ -30,11 +31,19 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 				title={post.frontmatter.title}
 				description={post.frontmatter.description || post.excerpt}
 			/>
-			<div>
+			<div
+				css={css`
+					margin: 0 auto;
+					width: 80%;
+					${mediaQueries[1]} {
+						max-width: 1280px;
+					}
+				`}
+			>
 				<Link
 					to="/blog"
 					css={css`
-						margin-left: 9%;
+						margin-left: 5%;
 						transition: all 0.3s ease 0s;
 						opacity: 0.8;
 						display: inline-block;

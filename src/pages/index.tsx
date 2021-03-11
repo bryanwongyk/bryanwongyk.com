@@ -12,6 +12,7 @@ import profile from '../content/assets/images/profile.png';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import mediaQueries from '../styling/breakpoints.utils';
 
 const IndexPage: FunctionComponent<{}> = () => {
 	/*
@@ -97,7 +98,10 @@ const IndexPage: FunctionComponent<{}> = () => {
 				</section>
 				<div
 					css={css`
-						margin: 0 30px;
+						margin: 0 10%;
+						${mediaQueries[1]} {
+							margin: 0 15%;
+						}
 					`}
 				>
 					<section
