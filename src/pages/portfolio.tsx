@@ -6,25 +6,8 @@ import { css } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import profile from '../content/assets/images/profile.png';
 import mediaQueries from '../styling/breakpoints.utils';
-import styled from '@emotion/styled';
+import Button from '../components/button/button';
 
-const Button = styled.button`
-	background-color: transparent;
-	border: 3px solid ${darkTheme.colours.gold};
-	color: ${darkTheme.colours.white};
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: all 0.3s ease;
-
-	&:hover {
-		background-color: ${darkTheme.colours.gold};
-		color: ${darkTheme.colours.black};
-	}
-`;
 
 const Portfolio: FunctionComponent<{}> = ({ data }) => {
 	const projects = data.allMarkdownRemark.edges;
@@ -70,19 +53,23 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 						`}
 					>
 						These are my latest projects.{' '}
-						<u>Click on them to view more information.</u>
+						Click on them to view more information.
 					</p>
 				</section>
 				<ol
 					css={css`
 						list-style: none;
 						margin: 0 auto;
+
 						display: flex;
 						justify-content: center;
 						flex-direction: column;
 						${mediaQueries[0]} {
 							flex-direction: row;
 							justify-content: space-around;
+						}
+						${mediaQueries[2]} {
+							max-width: 1280px;
 						}
 					`}
 				>
@@ -158,13 +145,6 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 												}{' '}
 												<br />
 												<br />
-												<u>
-													<b>Technologies:</b>
-												</u>{' '}
-												{
-													project.node.frontmatter
-														.technologies
-												}
 											</p>
 										</section>
 									</article>
@@ -173,7 +153,6 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 									css={css`
 										display: flex;
 										justify-content: space-around;
-										margin-top: 20px;
 									`}
 								>
 									{project.node.frontmatter.linkToProject ===
@@ -222,7 +201,6 @@ export const pageQuery = graphql`
 							publicURL
 						}
 						description
-						technologies
 						linkToProject
 						linkToGithub
 						path

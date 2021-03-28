@@ -3,28 +3,29 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { css } from '@emotion/react';
-import Img from 'gatsby-image';
 import { darkTheme } from '../styling/themes';
 import projectSignature from '../content/assets/images/post-signature.png';
+import mediaQueries from '../styling/breakpoints.utils';
+import Button from '../components/button/button';
 
 interface PortfolioProjectData {
-	markdownRemark: {
-		html: string;
-		frontmatter: {
-			title: string;
-			description: string;
-			technologies: string;
-			linkToProject: string;
-			linkToGithub: string;
-			path: string;
+	data : {
+		markdownRemark: {
+			html: string;
+			frontmatter: {
+				title: string;
+				description: string;
+				linkToProject: string;
+				linkToGithub: string;
+				path: string;
+			};
+			excerpt: string;
 		};
 	};
 }
 
-const PortfolioProject: FunctionComponent<{}> = ({ data }) => {
+const PortfolioProject: FunctionComponent<PortfolioProjectData> = ({ data }) => {
 	const project = data.markdownRemark;
-	const featuredImgFluid =
-		project.frontmatter.featuredImage.childImageSharp.fluid;
 
 	return (
 		<Layout>
@@ -32,7 +33,15 @@ const PortfolioProject: FunctionComponent<{}> = ({ data }) => {
 				title={project.frontmatter.title}
 				description={project.frontmatter.description || project.excerpt}
 			/>
-			<div>
+			<div
+				css={css`
+					margin: 0 auto;
+					width: 80%;
+					${mediaQueries[1]} {
+						max-width: 1280px;
+					}
+				`}
+			>
 				<Link
 					to="/portfolio"
 					css={css`
@@ -55,6 +64,17 @@ const PortfolioProject: FunctionComponent<{}> = ({ data }) => {
 					itemScope
 					itemType="http://schema.org/Article"
 				>
+					<time>
+						<h4
+							css={css`
+								font-style: italic;
+								opacity: 0.8;
+								text-align: center;
+							`}
+						>
+							{project.frontmatter.date}
+						</h4>
+					</time>
 					<header
 						css={css`
 							margin: 20px 0;
@@ -63,17 +83,6 @@ const PortfolioProject: FunctionComponent<{}> = ({ data }) => {
 					>
 						<h1>{project.frontmatter.title}</h1>
 					</header>
-					<section>
-						<Img
-							fluid={featuredImgFluid}
-							css={css`
-								object-fit: cover;
-								max-height: 200px;
-								max-width: 90%;
-								margin: 0 auto;
-							`}
-						></Img>
-					</section>
 					<section
 						dangerouslySetInnerHTML={{ __html: project.html }}
 						itemProp="articleBody"
@@ -81,6 +90,38 @@ const PortfolioProject: FunctionComponent<{}> = ({ data }) => {
 							padding: 40px 9% 12px 9%;
 						`}
 					/>
+					<section
+					css={css`
+					padding: 0px 9% 50px 9%;
+					text-align: center;
+					`}>
+						{project.frontmatter.linkToProject ===
+										'null' ? null : (
+											<a
+												href={
+													project.frontmatter
+														.linkToProject
+												}
+												css={css`margin-right: 30px;
+												&:hover {
+													opacity: 1;
+												}`}
+											>
+												<Button>View website</Button>
+											</a>
+										)}
+						<a
+							href={
+								project.frontmatter
+									.linkToGithub
+							}
+							css={css`					&:hover {
+								opacity: 1;
+							}`}
+						>
+							<Button>View code</Button>
+						</a>
+					</section>
 					<address
 						css={css`
 							text-align: center;
@@ -109,7 +150,6 @@ export const pageQuery = graphql`
 			frontmatter {
 				title
 				description
-				technologies
 				linkToProject
 				linkToGithub
 				path

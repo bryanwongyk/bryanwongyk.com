@@ -60,7 +60,6 @@ exports.createPages = ({ actions, graphql }) => {
 								publicURL
 							}
 							description
-							technologies
 							linkToProject
 							linkToGithub
 							path
