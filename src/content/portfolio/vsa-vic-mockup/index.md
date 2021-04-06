@@ -1,12 +1,13 @@
 ---
 title: VSA Victoria Mock-Up
 featuredImage: vsa-vic-mockup.png
-description: Mockup website of VSA Victoria - a university student club I was a part of.
+description: Mockup website of VSA Victoria - a university student club I was a part of
 linkToProject: https://vsavic.netlify.app/
 linkToGithub: https://github.com/bryanwyk/vsavic.netlify.app
 path: '/vsa-vic-mockup'
 type: portfolio
 ---
+
 <h2>About</h2>
 <p>
 This project initially began as a way for me to practice HTML, SCSS, and JavaScript after completing my first two web development online courses. I returned to complete it about a year later implementing new technologies I had learned.

@@ -8,7 +8,6 @@ import profile from '../content/assets/images/profile.png';
 import mediaQueries from '../styling/breakpoints.utils';
 import Button from '../components/button/button';
 
-
 const Portfolio: FunctionComponent<{}> = ({ data }) => {
 	const projects = data.allMarkdownRemark.edges;
 	return (
@@ -52,8 +51,8 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 							margin: 0;
 						`}
 					>
-						These are my latest projects.{' '}
-						Click on them to view more information.
+						These are my latest projects. Click on them to view more
+						information.
 					</p>
 				</section>
 				<ol

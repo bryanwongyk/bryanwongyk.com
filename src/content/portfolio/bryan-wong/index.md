@@ -1,7 +1,7 @@
 ---
 title: Personal Website
 featuredImage: bryan-wong.png
-description: My personal website/blog/portfolio.
+description: My personal website/blog/portfolio
 linkToProject: https://www.bryanwongyk.com/
 linkToGithub: https://github.com/bryanwyk/personal-portfolio
 path: '/personal-website'
