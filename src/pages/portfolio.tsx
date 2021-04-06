@@ -81,7 +81,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 								key={project.node.id}
 								css={css`
 									margin-bottom: 80px;
-									${mediaQueries[1]} {
+									${mediaQueries[0]} {
 										max-width: 30%;
 									}
 								`}
