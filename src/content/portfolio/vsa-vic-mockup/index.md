@@ -1,7 +1,7 @@
 ---
 title: VSA Victoria Mock-Up
 featuredImage: vsa-vic-mockup.png
-description: Mockup website of VSA Victoria - a university student club I was a part of
+description: Mockup website of VSA Victoria - A university student club I was a part of
 linkToProject: https://vsavic.netlify.app/
 linkToGithub: https://github.com/bryanwyk/vsavic.netlify.app
 path: '/vsa-vic-mockup'

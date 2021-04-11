@@ -64,8 +64,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 						justify-content: center;
 						flex-direction: column;
 						${mediaQueries[0]} {
-							flex-direction: row;
-							justify-content: space-around;
+							flex-flow: wrap;
 						}
 						${mediaQueries[2]} {
 							max-width: 1280px;
@@ -74,6 +73,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 				>
 					{projects.map(project => {
 						const title = project.node.frontmatter.title;
+
 						const imgSrc =
 							project.node.frontmatter.featuredImage.publicURL;
 						return (
@@ -81,8 +81,15 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 								key={project.node.id}
 								css={css`
 									margin-bottom: 80px;
+									display: flex;
+									flex-direction: column;
+									align-items: center;
+									justify-content: center;
 									${mediaQueries[0]} {
-										max-width: 30%;
+										flex-direction: row;
+										flex-flow: wrap;
+										flex: 1 0 40%;
+										max-height: auto;
 									}
 								`}
 							>
@@ -154,8 +161,8 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 										justify-content: space-around;
 									`}
 								>
-									{project.node.frontmatter.linkToProject ===
-									'null' ? null : (
+									{!project.node.frontmatter
+										.linkToProject ? null : (
 										<a
 											href={
 												project.node.frontmatter
@@ -165,14 +172,17 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 											<Button>View website</Button>
 										</a>
 									)}
-									<a
-										href={
-											project.node.frontmatter
-												.linkToGithub
-										}
-									>
-										<Button>View code</Button>
-									</a>
+									{!project.node.frontmatter
+										.linkToProject ? null : (
+										<a
+											href={
+												project.node.frontmatter
+													.linkToGithub
+											}
+										>
+											<Button>View code</Button>
+										</a>
+									)}
 								</section>
 							</li>
 						);

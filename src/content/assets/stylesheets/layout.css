@@ -36,7 +36,7 @@ body {
 	width: 100%;
 }
 
-main div:first-child {
+main > div:first-child {
 	padding-top: 120px;
 }
 
