@@ -90,6 +90,7 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 										flex-flow: wrap;
 										flex: 1 0 40%;
 										max-height: auto;
+										margin: 3% 5%;
 									}
 								`}
 							>
