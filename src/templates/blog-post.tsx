@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { css } from '@emotion/react';
 import Img from 'gatsby-image';

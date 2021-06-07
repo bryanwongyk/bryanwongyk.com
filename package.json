@@ -18,11 +18,11 @@
     "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-remark": "^2.16.1",
     "gatsby-transformer-sharp": "^2.12.1",
-    "phosphor-react": "^1.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
     "sass": "^1.32.8"
   },
   "devDependencies": {

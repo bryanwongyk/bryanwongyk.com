@@ -1,16 +1,14 @@
-/** @jsx jsx */
-
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
-import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../../styling/themes';
+import { css, SerializedStyles, ClassNames } from '@emotion/react';
+import { darkTheme } from '../styling/themes';
 
 interface MenuItemProps {
 	path: string;
 	name: string;
 }
 
-const NavBarLink: FunctionComponent<MenuItemProps> = ({ path, name }) => {
+const MenuItem: FunctionComponent<MenuItemProps> = ({ path, name }) => {
 	return (
 		<li
 			css={css`
@@ -29,4 +27,4 @@ const NavBarLink: FunctionComponent<MenuItemProps> = ({ path, name }) => {
 	);
 };
 
-export default NavBarLink;
+export default MenuItem;
