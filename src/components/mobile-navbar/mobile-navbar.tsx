@@ -1,16 +1,18 @@
-import React, { FunctionComponent, useState } from 'react';
-import { css, useTheme } from '@emotion/react';
+/** @jsx jsx */
+
+import React, { FunctionComponent } from 'react';
+import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
-import MobileMenuItem from './mobile-menu-item';
+import MobileNavBarLink from '../mobile-navbar-link/mobile-navbar-link';
 import mediaQueries from '../../styling/breakpoints.utils';
 
-interface MobileMenuProps {
+interface MobileNavBarProps {
 	show: boolean;
 	toggleMobileMenu: () => void;
 	children?: React.ReactNode;
 }
 
-const MobileMenu: FunctionComponent<MobileMenuProps> = ({
+const MobileNavBar: FunctionComponent<MobileNavBarProps> = ({
 	show,
 	toggleMobileMenu,
 	children,
@@ -30,7 +32,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 			<div
 				css={css`
 					position: fixed;
-					background-color: ${darkTheme.colours.gold};
+					background-color: ${darkTheme.colours.grey};
 					width: 100vw;
 					height: 100vh;
 					box-sizing: border-box;
@@ -79,17 +81,17 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							margin: 0;
 						`}
 					>
-						<MobileMenuItem
+						<MobileNavBarLink
 							path="/"
 							name="Home"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
-						<MobileMenuItem
+						<MobileNavBarLink
 							path="/blog"
 							name="Blog"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
-						<MobileMenuItem
+						<MobileNavBarLink
 							path="/portfolio"
 							name="Portfolio"
 							toggleMobileMenu={toggleMobileMenu}
@@ -101,4 +103,4 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 	);
 };
 
-export default MobileMenu;
+export default MobileNavBar;

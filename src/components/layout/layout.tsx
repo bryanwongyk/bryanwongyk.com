@@ -8,11 +8,41 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
-import Header from './header';
-import '../content/assets/stylesheets/layout.css';
-import MobileMenu from './mobile-menu/mobile-menu';
+import Header from '../header/header';
+import '../../content/assets/stylesheets/layout.css';
+import MobileNavBar from '../mobile-navbar/mobile-navbar';
+
+const ContainerDiv = styled.div`
+	margin: 0 auto;
+	max-width: 960;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+`;
+const Main = styled.main`
+	flex: 1;
+`;
+
+const Footer = styled.footer`
+	margin: 2rem 0 1rem 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	opacity: 0.7;
+	text-align: center;
+	font-size: 0.9rem;
+`;
+const FooterAnchor = styled.a`
+	opacity: 0.5;
+	transition: opacity 0.3s ease 0s;
+	margin: 0 10px;
+	&:hover {
+		opacity: 1;
+	}
+`;
 
 const Layout: FunctionComponent<{}> = ({ children }) => {
 	const data = useStaticQuery(graphql`
@@ -45,100 +75,46 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 	return (
 		<>
 			<Header
-				siteTitle={data.site.siteMetadata?.title || `Title`}
+				siteTitle={data.site.siteMetadata?.title}
 				toggleMobileMenu={handleToggleMobileMenu}
 				closeMobileMenu={handleCloseMobileMenu}
 				mobileMenuShown={showMobileMenu}
 			>
-				<MobileMenu
+				<MobileNavBar
 					show={showMobileMenu}
 					toggleMobileMenu={handleToggleMobileMenu}
 				/>
 			</Header>
-			<div
-				css={css`
-					margin: 0 auto;
-					max-width: 960;
-					min-height: 100vh;
-					display: flex;
-					flex-direction: column;
-				`}
-			>
-				<main
-					css={css`
-						flex: 1;
-					`}
-				>
-					{children}
-				</main>
-				<footer
-					css={css`
-						margin: 2rem 0 1rem 0;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						flex-direction: column;
-						opacity: 0.7;
-						text-align: center;
-						font-size: 0.9rem;
-					`}
-				>
+			<ContainerDiv>
+				<Main>{children}</Main>
+				<Footer>
 					© Bryan Wong {new Date().getFullYear()}
-					<div
-						css={css`
-							display: flex;
-							margin: 10px 0;
-						`}
-					>
-						<a
+					<div>
+						<FooterAnchor
 							href="https://www.linkedin.com/in/bryanwongyk/"
 							target="_blank"
 							title="LinkedIn"
-							css={css`
-								opacity: 0.5;
-								transition: opacity 0.3s ease 0s;
-								margin: 0 10px;
-								&:hover {
-									opacity: 1;
-								}
-							`}
 						>
 							LinkedIn
-						</a>
+						</FooterAnchor>
 
-						<a
+						<FooterAnchor
 							href="https://github.com/bryanwyk"
 							target="_blank"
 							title="GitHub"
-							css={css`
-								opacity: 0.5;
-								transition: opacity 0.3s ease 0s;
-								margin: 0 10px;
-								&:hover {
-									opacity: 1;
-								}
-							`}
 						>
 							GitHub
-						</a>
+						</FooterAnchor>
 
-						<a
+						<FooterAnchor
 							href="mailto:bryanwyk@gmail.com"
 							title="Email"
-							css={css`
-								opacity: 0.5;
-								transition: opacity 0.3s ease 0s;
-								margin: 0 10px;
-								&:hover {
-									opacity: 1;
-								}
-							`}
 						>
 							Email
-						</a>
+						</FooterAnchor>
 					</div>
-				</footer>
-			</div>
+				</Footer>
+			</ContainerDiv>
 		</>
 	);
 };

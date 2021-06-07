@@ -1,16 +1,18 @@
-import React, { FunctionComponent, useState } from 'react';
+/** @jsx jsx */
+
+import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { css, SerializedStyles, ClassNames } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
 import { useLocation } from '@reach/router';
 
-interface MobileMenuItemProps {
+interface MobileNavBarLinkProps {
 	path: string;
 	name: string;
 	toggleMobileMenu: () => void;
 }
 
-const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
+const MobileNavBarLink: FunctionComponent<MobileNavBarLinkProps> = ({
 	path,
 	name,
 	toggleMobileMenu,
@@ -27,7 +29,7 @@ const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
 		<li
 			css={css`
 				position: relative;
-				color: ${darkTheme.colours.black};
+				color: ${darkTheme.colours.white};
 				opacity: 1;
 				font-size: 2rem;
 				transition: opacity 0.3s ease 0s;
@@ -44,4 +46,4 @@ const MobileMenuItem: FunctionComponent<MobileMenuItemProps> = ({
 	);
 };
 
-export default MobileMenuItem;
+export default MobileNavBarLink;

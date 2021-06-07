@@ -1,17 +1,19 @@
-import React, { FunctionComponent, useState } from 'react';
-import { css } from '@emotion/react';
+/** @jsx jsx */
+
+import { FunctionComponent, useState } from 'react';
+import { css, jsx } from '@emotion/react';
 import mediaQueries from '../../styling/breakpoints.utils';
 
 // Credit to https://jonsuh.com/hamburgers/ 3DX Hamburger
 // Using a normal .css file here as it is how the library is intended to be used
-import './menu-hamburger.css';
+import './mobile-hamburger.css';
 
-interface MenuHamburgerProps {
+interface MobileHamburgerProps {
 	toggleMobileMenu: () => void;
 	mobileMenuShown: boolean;
 }
 
-const MenuHamburger: FunctionComponent<MenuHamburgerProps> = ({
+const MobileHamburger: FunctionComponent<MobileHamburgerProps> = ({
 	toggleMobileMenu,
 	mobileMenuShown,
 }) => {
@@ -51,4 +53,4 @@ const MenuHamburger: FunctionComponent<MenuHamburgerProps> = ({
 	);
 };
 
-export default MenuHamburger;
+export default MobileHamburger;
