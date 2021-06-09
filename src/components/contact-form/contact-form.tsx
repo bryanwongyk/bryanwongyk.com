@@ -11,6 +11,8 @@ const CenteredPara = styled.p`
 const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	max-width: 480px;
 `;
 
 const StyledLabel = styled.label`

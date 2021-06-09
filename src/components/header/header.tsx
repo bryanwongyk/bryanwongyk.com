@@ -15,7 +15,7 @@ import mediaQueries from '../../styling/breakpoints.utils';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
-	padding-top: 40px;
+	height: 64px;
 	width: 100vw;
 	position: fixed;
 	z-index: 1000;
@@ -23,10 +23,6 @@ const HeaderTag = styled.header`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-
-	${mediaQueries[0]} {
-		display: block;
-	}
 `;
 
 const LogoLinkSpan = styled.span`
@@ -63,6 +59,9 @@ const Header: FunctionComponent<HeaderProps> = ({
 					display: flex;
 					flex-direction: row;
 					justify-content: space-around;
+					${mediaQueries[0]} {
+						width: 88%;
+					}
 				`}
 			>
 				<div

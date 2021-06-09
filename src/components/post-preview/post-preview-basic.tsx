@@ -4,16 +4,11 @@ import PostPreviewCard from './post-preview-card';
 import styled from '@emotion/styled';
 
 interface PostPreviewBasicProps {
-	id: string;
 	thumbnailPath: string;
 	title: string;
 	description: string;
 	path: string;
 }
-
-const ListItem = styled.li`
-	list-style-type: none;
-`;
 
 const CardHeading = styled.h4`
 	opacity: 80%;
@@ -24,14 +19,13 @@ const CardPara = styled.p`
 `;
 
 const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
-	id,
 	thumbnailPath,
 	title,
 	description,
 	path,
 }): ReactElement => {
 	return (
-		<ListItem key={id}>
+		<div>
 			<Link to={path}>
 				<PostPreviewCard>
 					<img src={thumbnailPath} />
@@ -39,7 +33,7 @@ const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
 					<CardPara>{description}</CardPara>
 				</PostPreviewCard>
 			</Link>
-		</ListItem>
+		</div>
 	);
 };
 
