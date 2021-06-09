@@ -35,18 +35,14 @@ const MobileHamburger: FunctionComponent<MobileHamburgerProps> = ({
 					: buttonBaseClassNames
 			}
 			css={css`
+				z-index: 100;
 				${mediaQueries[0]} {
 					display: none;
 				}
 			`}
 			type="button"
 		>
-			<span
-				className="hamburger-box"
-				css={css`
-					z-index: 100;
-				`}
-			>
+			<span className="hamburger-box">
 				<span className="hamburger-inner"></span>
 			</span>
 		</button>

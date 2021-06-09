@@ -99,6 +99,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 			<SEO title="Home" />
 			<Container>
 				<Section
+					id="about"
 					css={css`
 						text-align: center;
 						margin-top: 50px;
@@ -118,7 +119,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						business, and design.
 					</HeroHeading>
 				</Section>
-				<Section>
+				<Section id="work">
 					<h3>WORK</h3>
 					<WorkDescList>
 						<Link to="/portfolio">
@@ -199,7 +200,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						</AnchorButton>
 					</div>
 				</Section>
-				<Section>
+				<Section id="contact">
 					<h3>CONTACT</h3>
 					<p
 						css={css`

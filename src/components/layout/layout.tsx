@@ -27,7 +27,6 @@ const ContainerDiv = styled.div`
 `;
 const Main = styled.main`
 	flex: 1;
-	margin-top: 83px;
 `;
 
 const FooterHr = styled.hr`

@@ -2,7 +2,7 @@
 
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
 import NavBar from '../navbar/navbar';
@@ -10,14 +10,16 @@ import MobileHamburger from '../mobile-hamburger/mobile-hamburger';
 import { darkTheme } from '../../styling/themes';
 import { useLocation } from '@reach/router';
 import checkHoverMediaQuery from '../../styling/checkHover.utils';
-import { Link as LinkIcon, SunDim, Moon } from 'phosphor-react';
+import { Copy, SunDim, Moon } from 'phosphor-react';
 import mediaQueries from '../../styling/breakpoints.utils';
+import IconButton from '../button/icon-button';
+import Tooltip from '../tooltip/tooltip';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
-	height: 64px;
+	padding-top: 48px;
+	padding-bottom: 32px;
 	width: 100vw;
-	position: fixed;
 	z-index: 1000;
 	background-color: ${darkTheme.colours.black};
 	display: flex;
@@ -28,6 +30,7 @@ const HeaderTag = styled.header`
 const LogoLinkSpan = styled.span`
 	display: flex;
 	align-items: center;
+	z-index: 100;
 `;
 
 interface HeaderProps {
@@ -47,11 +50,26 @@ const Header: FunctionComponent<HeaderProps> = ({
 }) => {
 	const location = useLocation();
 	// If the user is already on the Home page and they click the logo, just close the mobile menu.
-	const handleClickLink = () => {
+	const handleClickLogo = (): void => {
 		if (mobileMenuShown && location.pathname === '/') {
 			closeMobileMenu();
 		}
 	};
+
+	// Keep track if link is copied
+	const [copied, setCopied] = useState(false);
+	const handleClickCopy = (): void => {
+		const el = document.createElement('input');
+		el.value = window.location.href;
+		document.body.appendChild(el);
+		el.select();
+		document.execCommand('copy');
+		document.body.removeChild(el);
+		setCopied(true);
+
+		setTimeout(() => setCopied(false), 2000);
+	};
+
 	return (
 		<HeaderTag>
 			<div
@@ -79,14 +97,13 @@ const Header: FunctionComponent<HeaderProps> = ({
 									color: ${darkTheme.colours.white};
 									text-decoration: none;
 									transition: color 0.4s, opacity 0.2s ease;
-									z-index: 100;
 									${checkHoverMediaQuery} {
 										&:hover {
 											opacity: 0.7;
 										}
 									}
 								`}
-								onClick={handleClickLink}
+								onClick={handleClickLogo}
 							>
 								{siteTitle}
 							</Link>
@@ -107,8 +124,41 @@ const Header: FunctionComponent<HeaderProps> = ({
 							}
 						`}
 					>
-						<LinkIcon size={24} />
-						<SunDim size={24} />
+						<span
+							css={css`
+								position: relative;
+								opacity: 0.5;
+								transition: opacity 0.3s ease 0s;
+								&:hover {
+									opacity: 1;
+								}
+							`}
+						>
+							<Tooltip visible={copied}>Copied!</Tooltip>
+							<IconButton
+								title="Copy URL"
+								onClick={handleClickCopy}
+							>
+								<Copy
+									size={24}
+									css={css`
+										cursor: pointer;
+										color: ${darkTheme.colours.white};
+									`}
+								/>
+							</IconButton>
+						</span>
+						<SunDim
+							size={24}
+							css={css`
+								cursor: pointer;
+								opacity: 0.5;
+								transition: opacity 0.3s ease 0s;
+								&:hover {
+									opacity: 1;
+								}
+							`}
+						/>
 					</div>
 				) : null}
 			</div>

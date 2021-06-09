@@ -15,7 +15,7 @@ const NavBarLink: FunctionComponent<MenuItemProps> = ({ path, name }) => {
 		<li
 			css={css`
 				position: relative;
-				margin: 0 0 0 70px;
+				margin: 0 0 0 50px;
 				opacity: 0.5;
 				transition: opacity 0.3s ease 0s;
 				color: ${darkTheme.colours.white};

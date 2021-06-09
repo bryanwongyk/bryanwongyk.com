@@ -21,7 +21,7 @@ const MobileNavBar: FunctionComponent<MobileNavBarProps> = ({
 		<div
 			css={css`
 				position: fixed;
-				z-index: -30;
+				z-index: 10;
 				display: flex;
 
 				${mediaQueries[0]} {
