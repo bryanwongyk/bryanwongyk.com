@@ -2,6 +2,7 @@ const darkTheme = {
 	colours: {
 		black: '#111112',
 		grey: '#252525',
+		lightGrey: '#555555',
 		white: '#F2F2F2',
 		gold: '#C6A15B',
 	},

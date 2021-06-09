@@ -1,3 +1,4 @@
+/** @jsx jsx */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -9,10 +10,15 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
+import { css, jsx } from '@emotion/react';
 
 import Header from '../header/header';
 import '../../content/assets/stylesheets/layout.css';
 import MobileNavBar from '../mobile-navbar/mobile-navbar';
+
+import { darkTheme } from '../../styling/themes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ContainerDiv = styled.div`
 	min-height: 100vh;
@@ -22,6 +28,11 @@ const ContainerDiv = styled.div`
 const Main = styled.main`
 	flex: 1;
 	margin-top: 83px;
+`;
+
+const FooterHr = styled.hr`
+	width: 80%;
+	background-color: ${darkTheme.colours.lightGrey};
 `;
 
 const Footer = styled.footer`
@@ -34,6 +45,12 @@ const Footer = styled.footer`
 	text-align: center;
 	font-size: 0.9rem;
 `;
+
+const FooterPara = styled.p`
+	font-weight: bold;
+	opacity: 50%;
+`;
+
 const FooterAnchor = styled.a`
 	opacity: 0.5;
 	transition: opacity 0.3s ease 0s;
@@ -87,14 +104,22 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 			<ContainerDiv>
 				<Main>{children}</Main>
 				<Footer>
-					© Bryan Wong {new Date().getFullYear()}
+					<FooterHr />
+					<FooterPara>
+						© {new Date().getFullYear()} Bryan Wong
+					</FooterPara>
 					<div>
 						<FooterAnchor
 							href="https://www.linkedin.com/in/bryanwongyk/"
 							target="_blank"
 							title="LinkedIn"
 						>
-							LinkedIn
+							<FontAwesomeIcon
+								icon={faLinkedin}
+								css={css`
+									font-size: 28px;
+								`}
+							/>
 						</FooterAnchor>
 
 						<FooterAnchor
@@ -102,14 +127,12 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 							target="_blank"
 							title="GitHub"
 						>
-							GitHub
-						</FooterAnchor>
-
-						<FooterAnchor
-							href="mailto:bryanwyk@gmail.com"
-							title="Email"
-						>
-							Email
+							<FontAwesomeIcon
+								icon={faGithub}
+								css={css`
+									font-size: 28px;
+								`}
+							/>
 						</FooterAnchor>
 					</div>
 				</Footer>
