@@ -13,11 +13,12 @@ import SEO from '../components/seo';
 import { BlogData } from '../typings/blog';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
+import ContactForm from '../components/contact-form/ContactForm';
 
 import HeroImage from '../content/assets/images/profile.png';
 
 const Section = styled.section`
-	margin-bottom: 60px;
+	margin-bottom: 64px;
 `;
 
 const HeroHeading = styled.h2`
@@ -54,6 +55,13 @@ const CaretSpan = styled.span`
 
 const BlogPostList = styled.ol`
 	margin: 0;
+`;
+
+const EmailAnchor = styled.a`
+	&:hover {
+		text-decoration: underline;
+		text-decoration-style: solid;
+	}
 `;
 
 const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
@@ -128,13 +136,46 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						css={css`
 							display: flex;
 							justify-content: center;
-							margin-top: 5px;
+							margin-top: 30px;
 						`}
 					>
 						<AnchorButton link="/blog" isInternalLink={true}>
 							View all posts
 						</AnchorButton>
 					</div>
+				</Section>
+				<Section>
+					<h3>CONTACT</h3>
+					<p
+						css={css`
+							opacity: 50%;
+						`}
+					>
+						Let's chat about business or work opportunities
+					</p>
+					<div
+						css={css`
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+						`}
+					>
+						<EmailAnchor
+							href="mailto:bryanwyk@gmail.com"
+							title="Email"
+						>
+							bryanwyk@gmail.com
+						</EmailAnchor>
+						<p
+							css={css`
+								margin: 24px 0;
+								opacity: 50%;
+							`}
+						>
+							OR
+						</p>
+					</div>
+					<ContactForm />
 				</Section>
 			</Container>
 		</Layout>
