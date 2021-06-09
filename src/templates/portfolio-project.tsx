@@ -4,12 +4,11 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import { css } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
-import projectSignature from '../content/assets/images/post-signature.png';
 import mediaQueries from '../styling/breakpoints.utils';
-import Button from '../components/button/button';
+import AnchorButton from '../components/anchor-button/anchor-button';
 
 interface PortfolioProjectData {
-	data : {
+	data: {
 		markdownRemark: {
 			html: string;
 			frontmatter: {
@@ -24,7 +23,9 @@ interface PortfolioProjectData {
 	};
 }
 
-const PortfolioProject: FunctionComponent<PortfolioProjectData> = ({ data }) => {
+const PortfolioProject: FunctionComponent<PortfolioProjectData> = ({
+	data,
+}) => {
 	const project = data.markdownRemark;
 
 	return (
@@ -91,35 +92,33 @@ const PortfolioProject: FunctionComponent<PortfolioProjectData> = ({ data }) => 
 						`}
 					/>
 					<section
-					css={css`
-					padding: 0px 9% 50px 9%;
-					text-align: center;
-					`}>
-						{project.frontmatter.linkToProject ===
-										'null' ? null : (
-											<a
-												href={
-													project.frontmatter
-														.linkToProject
-												}
-												css={css`margin-right: 30px;
-												&:hover {
-													opacity: 1;
-												}`}
-											>
-												<Button>View website</Button>
-											</a>
-										)}
+						css={css`
+							padding: 0px 9% 50px 9%;
+							text-align: center;
+						`}
+					>
+						{project.frontmatter.linkToProject === 'null' ? null : (
+							<a
+								href={project.frontmatter.linkToProject}
+								css={css`
+									margin-right: 30px;
+									&:hover {
+										opacity: 1;
+									}
+								`}
+							>
+								<AnchorButton>View website</AnchorButton>
+							</a>
+						)}
 						<a
-							href={
-								project.frontmatter
-									.linkToGithub
-							}
-							css={css`					&:hover {
-								opacity: 1;
-							}`}
+							href={project.frontmatter.linkToGithub}
+							css={css`
+								&:hover {
+									opacity: 1;
+								}
+							`}
 						>
-							<Button>View code</Button>
+							<AnchorButton>View code</AnchorButton>
 						</a>
 					</section>
 					<address
@@ -127,13 +126,7 @@ const PortfolioProject: FunctionComponent<PortfolioProjectData> = ({ data }) => 
 							text-align: center;
 						`}
 					>
-						<img
-							src={projectSignature}
-							alt="Bryan's project Ending Signature"
-							css={css`
-								height: 45px;
-							`}
-						></img>
+						test
 					</address>
 				</article>
 			</div>

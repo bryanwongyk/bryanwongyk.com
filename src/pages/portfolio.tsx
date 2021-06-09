@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import profile from '../content/assets/images/profile.png';
 import mediaQueries from '../styling/breakpoints.utils';
-import Button from '../components/button/button';
+import AnchorButton from '../components/anchor-button/anchor-button';
 
 const Portfolio: FunctionComponent<{}> = ({ data }) => {
 	const projects = data.allMarkdownRemark.edges;
@@ -170,7 +170,9 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 													.linkToProject
 											}
 										>
-											<Button>View website</Button>
+											<AnchorButton>
+												View website
+											</AnchorButton>
 										</a>
 									)}
 									{!project.node.frontmatter
@@ -181,7 +183,9 @@ const Portfolio: FunctionComponent<{}> = ({ data }) => {
 													.linkToGithub
 											}
 										>
-											<Button>View code</Button>
+											<AnchorButton>
+												View code
+											</AnchorButton>
 										</a>
 									)}
 								</section>

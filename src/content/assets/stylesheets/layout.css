@@ -22,7 +22,7 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #fff;
+	color: #f2f2f2;
 	font-family: 'Lato', sans-serif;
 	font-weight: normal;
 	word-wrap: break-word;
@@ -31,12 +31,8 @@ body {
 	-ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	-webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-	background-color: #111216;
+	background-color: #111112;
 	width: 100%;
-}
-
-main > div:first-child {
-	padding-top: 120px;
 }
 
 @keyframes grain {
@@ -152,7 +148,8 @@ h1 {
 	font-family: 'Lora', sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
-	font-size: 2.25rem;
+	/* font-size: 2.25rem; */
+	font-size: 1.5rem;
 	line-height: 1.2;
 }
 mark {
@@ -328,10 +325,10 @@ h2 {
 	margin-bottom: 1.45rem;
 	color: inherit;
 	font-family: 'Poppins', sans-serif;
-	font-weight: bold;
 	text-rendering: optimizeLegibility;
-	font-size: 1.62671rem;
+	font-size: 1rem;
 	line-height: 1.1;
+	font-weight: normal;
 }
 h3 {
 	margin-left: 0;
@@ -348,8 +345,10 @@ h3 {
 		sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
-	font-size: 1.38316rem;
+	font-size: 1rem;
 	line-height: 1.1;
+	opacity: 70%;
+	letter-spacing: 1.5px;
 }
 h4 {
 	margin-left: 0;
@@ -363,7 +362,7 @@ h4 {
 	color: inherit;
 	font-family: 'Lato', 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	line-height: 1.1;
 	font-weight: bold;
 	font-style: normal;

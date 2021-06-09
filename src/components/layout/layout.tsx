@@ -15,14 +15,13 @@ import '../../content/assets/stylesheets/layout.css';
 import MobileNavBar from '../mobile-navbar/mobile-navbar';
 
 const ContainerDiv = styled.div`
-	margin: 0 auto;
-	max-width: 960;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 `;
 const Main = styled.main`
 	flex: 1;
+	margin-top: 83px;
 `;
 
 const Footer = styled.footer`

@@ -5,7 +5,6 @@ import SEO from '../components/seo';
 import { css } from '@emotion/react';
 import Img from 'gatsby-image';
 import { darkTheme } from '../styling/themes';
-import postSignature from '../content/assets/images/post-signature.png';
 import mediaQueries from '../styling/breakpoints.utils';
 
 interface BlogPostData {
@@ -104,13 +103,7 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 							text-align: center;
 						`}
 					>
-						<img
-							src={postSignature}
-							alt="Bryan's Post Ending Signature"
-							css={css`
-								height: 45px;
-							`}
-						></img>
+						test
 					</address>
 				</article>
 			</div>
