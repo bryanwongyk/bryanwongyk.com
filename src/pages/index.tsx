@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { Link, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
@@ -15,8 +15,12 @@ import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
 import ContactForm from '../components/contact-form/contact-form';
 
-import HeroImage from '../content/assets/images/profile.png';
+import HeroImage from '../content/assets/images/profile-circular.png';
 import mediaQueries from '../styling/breakpoints.utils';
+import DeveloperPortfolioThumb from '../content/assets/images/developer-portfolio-thumb.jpeg';
+
+import * as THREE from 'three';
+import NET from '../vanta.net.min';
 
 const Section = styled.section`
 	margin-bottom: 72px;
@@ -31,17 +35,18 @@ const Section = styled.section`
 const HeroHeading = styled.h2`
 	text-align: left;
 	line-height: 150%;
-	margin: 45px auto 0 auto;
+	margin: 0;
 
 	${mediaQueries[0]} {
-		padding: 0 56px;
+		padding: 0 0 0 56px;
 		max-width: 650px;
 	}
 `;
 
 const HeroImg = styled.img`
-	width: 200px;
-	margin: 0;
+	width: 90px;
+	height: 90px;
+	margin: 0 0 0 56px;
 `;
 
 const WorkDescList = styled.dl`
@@ -62,6 +67,8 @@ const WorkDescList = styled.dl`
 
 const WorkDescTitle = styled.dt`
 	display: flex;
+	font-family: 'Lora', 'serif';
+	font-size: 3rem;
 `;
 
 const WorkDescDetails = styled.dd`
@@ -94,45 +101,84 @@ const EmailAnchor = styled.a`
 
 const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	const latestBlogPosts = data.allMarkdownRemark.edges;
+
+	const [vantaEffect, setVantaEffect] = useState(0);
+	const myRef = useRef(null);
+	useEffect(() => {
+		if (!vantaEffect) {
+			setVantaEffect(
+				NET({
+					el: myRef.current,
+					THREE: THREE,
+					color: 0x3fbbff,
+					backgroundColor: '#010101',
+					scale: 1.0,
+					scaleMobile: 1.0,
+					points: 5.0,
+					maxDistance: 20.0,
+				}),
+			);
+		}
+		return () => {
+			if (vantaEffect) vantaEffect.destroy();
+		};
+	}, [vantaEffect]);
+
 	return (
 		<Layout>
 			<SEO title="Home" />
+			<section
+				id="about"
+				ref={myRef}
+				css={css`
+					text-align: center;
+					height: 80vh;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				`}
+			>
+				<div>
+					<div
+						css={css`
+							background-color: rgba(0, 0, 0, 0.5);
+							padding: 20px 0;
+							backdrop-filter: blur(2px);
+							border-radius: 20px;
+							${mediaQueries[0]} {
+								display: flex;
+								justify-content: center;
+								align-items: center;
+							}
+						`}
+					>
+						<HeroImg src={HeroImage} />
+						<HeroHeading>
+							I’m Bryan - a Software Engineer in Australia
+							passionate about creating user-centred experiences.
+						</HeroHeading>
+					</div>
+				</div>
+			</section>
 			<Container>
-				<Section
-					id="about"
-					css={css`
-						text-align: center;
-						margin-top: 50px;
-
-						${mediaQueries[0]} {
-							display: flex;
-							justify-content: center;
-						}
-					`}
-				>
-					<HeroImg src={HeroImage} />
-					<HeroHeading>
-						I’m Bryan - a Software Engineer in Australia passionate
-						about creating user-centred experiences.
-						<br />
-						<br />I have a keen interest in web development,
-						business, and design.
-					</HeroHeading>
-				</Section>
 				<Section id="work">
-					<h3>WORK</h3>
+					<h3>CREATING</h3>
 					<WorkDescList>
-						<Link to="/portfolio">
-							<WorkDescTitle>
-								Developer Portfolio{' '}
-								<CaretSpan>
-									<CaretRight size={18} />
-								</CaretSpan>
-							</WorkDescTitle>
-							<WorkDescDetails>
-								View my projects and work history
-							</WorkDescDetails>
-						</Link>
+						<div>
+							<Link to="/portfolio">
+								<WorkDescTitle>
+									Developer Portfolio{' '}
+								</WorkDescTitle>
+								<WorkDescDetails>
+									View my projects and who I have worked with
+									<CaretSpan>
+										<CaretRight size={18} />
+									</CaretSpan>
+								</WorkDescDetails>
+							</Link>
+							<img src={DeveloperPortfolioThumb} />
+						</div>
 						<a href="https://www.instagram.com/b2uyk/">
 							<WorkDescTitle>
 								Art{' '}

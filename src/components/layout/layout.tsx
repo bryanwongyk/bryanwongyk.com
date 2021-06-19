@@ -89,18 +89,18 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 
 	return (
 		<>
-			<Header
-				siteTitle={data.site.siteMetadata?.title}
-				toggleMobileMenu={handleToggleMobileMenu}
-				closeMobileMenu={handleCloseMobileMenu}
-				mobileMenuShown={showMobileMenu}
-			>
-				<MobileNavBar
-					show={showMobileMenu}
-					toggleMobileMenu={handleToggleMobileMenu}
-				/>
-			</Header>
 			<ContainerDiv>
+				<Header
+					siteTitle={data.site.siteMetadata?.title}
+					toggleMobileMenu={handleToggleMobileMenu}
+					closeMobileMenu={handleCloseMobileMenu}
+					mobileMenuShown={showMobileMenu}
+				>
+					<MobileNavBar
+						show={showMobileMenu}
+						toggleMobileMenu={handleToggleMobileMenu}
+					/>
+				</Header>
 				<Main>{children}</Main>
 				<Footer>
 					<FooterHr />

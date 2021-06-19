@@ -1,6 +1,6 @@
 const darkTheme = {
 	colours: {
-		black: '#111112',
+		black: '#010101',
 		grey: '#252525',
 		lightGrey: '#555555',
 		white: '#F2F2F2',
