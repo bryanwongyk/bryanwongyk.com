@@ -26,7 +26,7 @@ const NavBar: FunctionComponent<{}> = () => {
 				<NavBarLink path="/#about" name="ABOUT" />
 				<NavBarLink path="/#work" name="WORK" />
 				<NavBarLink path="/blog" name="BLOG" />
-				<NavBarLink path="/#contact" name="CONTACT" />
+				<NavBarLink path="/contact" name="CONTACT" />
 			</ul>
 		</span>
 	);

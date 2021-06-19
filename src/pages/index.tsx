@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import styled from '@emotion/styled';
-import { CaretRight } from 'phosphor-react';
+import { CaretRight, ArrowRight } from 'phosphor-react';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
@@ -13,23 +13,28 @@ import SEO from '../components/seo';
 import { BlogData } from '../typings/blog';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
-import ContactForm from '../components/contact-form/contact-form';
 
 import HeroImage from '../content/assets/images/profile-circular.png';
 import mediaQueries from '../styling/breakpoints.utils';
 import DeveloperPortfolioThumb from '../content/assets/images/developer-portfolio-thumb.jpeg';
+import ArtThumb from '../content/assets/images/art-thumb.png';
+import MusicGif from '../content/assets/images/music-production.gif';
 
 import * as THREE from 'three';
 import NET from '../vanta.net.min';
 
 const Section = styled.section`
-	margin-bottom: 72px;
+	margin-bottom: 256px;
 
 	${mediaQueries[0]} {
 		max-width: 848px;
 		margin-left: auto;
 		margin-right: auto;
 	}
+`;
+
+const SectionHeader = styled.h3`
+	margin-bottom: 48px;
 `;
 
 const HeroHeading = styled.h2`
@@ -49,19 +54,12 @@ const HeroImg = styled.img`
 	margin: 0 0 0 56px;
 `;
 
-const WorkDescList = styled.dl`
+const WorkDiv = styled.div`
 	display: grid;
-	grid-template-rows: repeat(2, 1fr);
-	justify-content: center;
-	grid-gap: 20px;
-	margin: 0 auto 0 0;
-
-	${mediaQueries[0]} {
-		grid-template-rows: repeat(2, 1fr);
-		grid-template-columns: repeat(2, 250px);
-		grid-gap: 20px 144px;
-		max-width: 600px;
-		margin: 0 auto;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	&:not(:first-of-type) {
+		margin-top: 160px;
 	}
 `;
 
@@ -72,17 +70,23 @@ const WorkDescTitle = styled.dt`
 `;
 
 const WorkDescDetails = styled.dd`
-	margin-top: 5px;
+	margin-top: 16px;
 	opacity: 50%;
+	display: flex;
+	align-items: center;
+	line-height: 24px;
 `;
 
 const CaretSpan = styled.span`
 	display: flex;
-	padding-top: 2px;
+	position: relative;
+	top: 2px;
+	margin-left: 30px;
+	color: #aaaaaa;
 `;
 
 const BlogPostList = styled.ol`
-	margin: 0;
+	margin: 0 0 24px 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -92,10 +96,25 @@ const BlogPostList = styled.ol`
 	}
 `;
 
-const EmailAnchor = styled.a`
-	&:hover {
-		text-decoration: underline;
-		text-decoration-style: solid;
+const ContactHeader = styled.h3`
+	font-size: 5rem;
+	color: #fdfdfd;
+	opacity: 1;
+	display: flex;
+	flex-direction: column;
+
+	&:before {
+		content: 'CONTACT';
+		color: ${darkTheme.colours.black};
+		text-shadow: -1px 1px 0 #fdfdfd, 1px 1px 0 #fdfdfd, 1px -1px 0 #fdfdfd,
+			-1px -1px 0 #fdfdfd;
+	}
+
+	&:after {
+		content: 'CONTACT';
+		color: ${darkTheme.colours.black};
+		text-shadow: -1px 1px 0 #fdfdfd, 1px 1px 0 #fdfdfd, 1px -1px 0 #fdfdfd,
+			-1px -1px 0 #fdfdfd;
 	}
 `;
 
@@ -137,6 +156,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
+					margin-bottom: 160px;
 				`}
 			>
 				<div>
@@ -163,48 +183,91 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 			</section>
 			<Container>
 				<Section id="work">
-					<h3>CREATING</h3>
-					<WorkDescList>
-						<div>
-							<Link to="/portfolio">
-								<WorkDescTitle>
-									Developer Portfolio{' '}
-								</WorkDescTitle>
-								<WorkDescDetails>
-									View my projects and who I have worked with
-									<CaretSpan>
-										<CaretRight size={18} />
-									</CaretSpan>
-								</WorkDescDetails>
-							</Link>
-							<img src={DeveloperPortfolioThumb} />
-						</div>
-						<a href="https://www.instagram.com/b2uyk/">
-							<WorkDescTitle>
-								Art{' '}
-								<CaretSpan>
-									<CaretRight size={18} />
-								</CaretSpan>
-							</WorkDescTitle>
-							<WorkDescDetails>
-								View my digital art
-							</WorkDescDetails>
-						</a>
-						<a href="https://soundcloud.com/bwyk">
-							<WorkDescTitle>
-								Music{' '}
-								<CaretSpan>
-									<CaretRight size={18} />
-								</CaretSpan>
-							</WorkDescTitle>
-							<WorkDescDetails>
-								I sometimes produce music
-							</WorkDescDetails>
-						</a>
-					</WorkDescList>
+					<SectionHeader>CREATING</SectionHeader>
+					<dl>
+						<WorkDiv>
+							<div
+								css={css`
+									display: flex;
+									justify-content: center;
+									align-items: center;
+								`}
+							>
+								<Link to="/portfolio">
+									<WorkDescTitle>
+										Developer <br /> Portfolio
+									</WorkDescTitle>
+									<WorkDescDetails>
+										View my projects and <br /> who I have
+										worked with
+										<CaretSpan>
+											<CaretRight size={18} />
+										</CaretSpan>
+									</WorkDescDetails>
+								</Link>
+							</div>
+							<img
+								src={DeveloperPortfolioThumb}
+								css={css`
+									width: 400px;
+								`}
+							/>
+						</WorkDiv>
+						<WorkDiv>
+							<img
+								src={ArtThumb}
+								css={css`
+									width: 400px;
+								`}
+							/>
+							<div
+								css={css`
+									display: flex;
+									justify-content: center;
+									align-items: center;
+								`}
+							>
+								<a
+									href="https://www.instagram.com/b2uyk/"
+									css={css`
+										display: inline-block;
+									`}
+								>
+									<WorkDescTitle>Art</WorkDescTitle>
+									<WorkDescDetails>
+										View my digital art
+										<CaretSpan>
+											<CaretRight size={18} />
+										</CaretSpan>
+									</WorkDescDetails>
+								</a>
+							</div>
+						</WorkDiv>
+					</dl>
 				</Section>
 				<Section>
-					<h3>BLOG</h3>
+					<div
+						css={css`
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+						`}
+					>
+						<p
+							css={css`
+								font-size: 1.2rem;
+								text-align: center;
+								margin-bottom: 120px;
+							`}
+						>
+							I also enjoy music production, fitness, and film.
+						</p>
+						<img src={MusicGif} />
+					</div>
+				</Section>
+
+				<Section>
+					<SectionHeader>BLOG</SectionHeader>
 					<BlogPostList>
 						{latestBlogPosts.map(post => {
 							return (
@@ -213,7 +276,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 									css={css`
 										list-style-type: none;
 										${mediaQueries[0]} {
-											width: 50%;
+											width: 30%;
 										}
 									`}
 								>
@@ -236,9 +299,6 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						css={css`
 							display: flex;
 							justify-content: center;
-							${mediaQueries[0]} {
-								justify-content: start;
-							}
 						`}
 					>
 						<AnchorButton link="/blog" isInternalLink={true}>
@@ -246,45 +306,56 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						</AnchorButton>
 					</div>
 				</Section>
-				<Section id="contact">
-					<h3>CONTACT</h3>
-					<p
-						css={css`
-							opacity: 50%;
-						`}
-					>
-						Let's chat about business or work opportunities
-					</p>
+				<Section>
 					<div
 						css={css`
-							display: flex;
-							flex-direction: column;
-							align-items: center;
+							display: grid;
+							grid-template-columns: repeat(2, 1fr);
 						`}
 					>
-						<EmailAnchor
-							href="mailto:bryanwyk@gmail.com"
-							title="Email"
-						>
-							bryanwyk@gmail.com
-						</EmailAnchor>
-						<p
+						<ContactHeader>CONTACT</ContactHeader>
+						<div
 							css={css`
-								margin: 24px 0;
-								opacity: 50%;
+								display: flex;
+								align-items: center;
 							`}
 						>
-							OR
-						</p>
-					</div>
-					<div
-						css={css`
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-						`}
-					>
-						<ContactForm />
+							<p
+								css={css`
+									font-size: 2.5rem;
+									font-weight: bold;
+									margin-left: 100px;
+								`}
+							>
+								Want to work together?
+								<br />
+								<br />
+								<Link
+									to="/contact"
+									css={css`
+										display: flex;
+										align-items: center;
+									`}
+								>
+									<span
+										css={css`
+											border-bottom: 1px solid #f2f2f2;
+										`}
+									>
+										Let's chat.
+									</span>
+
+									<ArrowRight
+										size={40}
+										css={css`
+											margin-left: 16px;
+											position: relative;
+											top: 3px;
+										`}
+									/>
+								</Link>
+							</p>
+						</div>
 					</div>
 				</Section>
 			</Container>
