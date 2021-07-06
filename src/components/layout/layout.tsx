@@ -8,7 +8,7 @@
 
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
 
@@ -18,7 +18,7 @@ import MobileNavBar from '../mobile-navbar/mobile-navbar';
 
 import { darkTheme } from '../../styling/themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ContainerDiv = styled.div`
 	min-height: 100vh;
@@ -29,31 +29,36 @@ const Main = styled.main`
 	flex: 1;
 `;
 
-const FooterHr = styled.hr`
-	width: 80%;
-	background-color: ${darkTheme.colours.lightGrey};
-`;
-
 const Footer = styled.footer`
-	margin: 2rem 0 1rem 0;
+	margin: 32px 64px 16px 64px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	opacity: 0.7;
+	justify-content: space-between;
 	text-align: center;
 	font-size: 0.9rem;
+	border-top: 1px solid ${darkTheme.colours.blue};
+	padding-top: 16px;
 `;
 
 const FooterPara = styled.p`
-	font-weight: bold;
-	opacity: 50%;
+	opacity: 0.5;
 `;
 
 const FooterAnchor = styled.a`
-	opacity: 0.5;
+	opacity: 0.7;
 	transition: opacity 0.3s ease 0s;
-	margin: 0 10px;
+	margin: 0 16px;
+	&:hover {
+		opacity: 1;
+	}
+`;
+
+const FooterList = styled.ul`
+	list-style: none;
+`;
+
+const FooterListItem = styled.li`
+	opacity: 0.7;
+	transition: opacity 0.3s ease 0s;
 	&:hover {
 		opacity: 1;
 	}
@@ -103,20 +108,40 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 				</Header>
 				<Main>{children}</Main>
 				<Footer>
-					<FooterHr />
+					<FooterList
+						css={css`
+							display: flex;
+							flex-direction: column;
+							align-items: flex-start;
+						`}
+					>
+						<FooterListItem>
+							<Link to={'/about'}>ABOUT</Link>
+						</FooterListItem>
+						<FooterListItem>
+							<Link to={'/#work'}>WORK</Link>
+						</FooterListItem>
+						<FooterListItem>
+							<Link to={'/blog'}>BLOG</Link>
+						</FooterListItem>
+						<FooterListItem>
+							<Link to={'/contact'}>CONTACT</Link>
+						</FooterListItem>
+					</FooterList>
+
 					<FooterPara>
 						© {new Date().getFullYear()} Bryan Wong
 					</FooterPara>
-					<div>
+					<FooterList>
 						<FooterAnchor
 							href="https://www.linkedin.com/in/bryanwongyk/"
 							target="_blank"
 							title="LinkedIn"
 						>
 							<FontAwesomeIcon
-								icon={faLinkedin}
+								icon={faLinkedinIn}
 								css={css`
-									font-size: 28px;
+									font-size: 24px;
 								`}
 							/>
 						</FooterAnchor>
@@ -129,11 +154,11 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 							<FontAwesomeIcon
 								icon={faGithub}
 								css={css`
-									font-size: 28px;
+									font-size: 24px;
 								`}
 							/>
 						</FooterAnchor>
-					</div>
+					</FooterList>
 				</Footer>
 			</ContainerDiv>
 		</>

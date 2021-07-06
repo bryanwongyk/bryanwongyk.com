@@ -23,7 +23,7 @@ const NavBar: FunctionComponent<{}> = () => {
 					margin: 0;
 				`}
 			>
-				<NavBarLink path="/#about" name="ABOUT" />
+				<NavBarLink path="/about" name="ABOUT" />
 				<NavBarLink path="/#work" name="WORK" />
 				<NavBarLink path="/blog" name="BLOG" />
 				<NavBarLink path="/contact" name="CONTACT" />

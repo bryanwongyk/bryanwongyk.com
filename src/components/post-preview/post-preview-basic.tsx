@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import React, { FunctionComponent, ReactElement } from 'react';
 import { Link } from 'gatsby';
-import PostPreviewCard from './post-preview-card';
 import styled from '@emotion/styled';
+import { css, jsx } from '@emotion/react';
+import { darkTheme } from '../../styling/themes';
 
 interface PostPreviewBasicProps {
 	thumbnailPath: string;
@@ -12,10 +14,20 @@ interface PostPreviewBasicProps {
 
 const CardHeading = styled.h4`
 	opacity: 80%;
+	transition: color 0.3s ease;
 `;
 
 const CardPara = styled.p`
 	opacity: 50%;
+	transition: color 0.3s ease;
+`;
+
+const CardImg = styled.img`
+	height: 280px;
+	width: 100%;
+	object-fit: cover;
+
+	transition: transform 0.3s ease;
 `;
 
 const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
@@ -25,13 +37,25 @@ const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
 	path,
 }): ReactElement => {
 	return (
-		<div>
+		<div
+			css={css`
+				&:hover {
+					a > div > img {
+						transform: translateY(-1px);
+					}
+
+					a > div > h4 {
+						color: ${darkTheme.colours.red};
+					}
+				}
+			`}
+		>
 			<Link to={path}>
-				<PostPreviewCard>
-					<img src={thumbnailPath} />
+				<div>
+					<CardImg src={thumbnailPath} />
 					<CardHeading>{title}</CardHeading>
 					<CardPara>{description}</CardPara>
-				</PostPreviewCard>
+				</div>
 			</Link>
 		</div>
 	);

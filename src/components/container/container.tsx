@@ -18,7 +18,7 @@ const Container: FunctionComponent<ContainerProps> = ({
 				width: 85%;
 
 				${mediaQueries[0]} {
-					width: 80vw;
+					width: 75vw;
 				}
 			`}
 		>

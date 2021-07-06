@@ -14,6 +14,7 @@ import { Copy, SunDim, Moon } from 'phosphor-react';
 import mediaQueries from '../../styling/breakpoints.utils';
 import IconButton from '../button/icon-button';
 import Tooltip from '../tooltip/tooltip';
+import Logo from '../../content/assets/images/logo.png';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
@@ -76,41 +77,39 @@ const Header: FunctionComponent<HeaderProps> = ({
 				css={css`
 					display: flex;
 					flex-direction: row;
-					justify-content: space-around;
+					justify-content: space-between;
+					align-items: center;
 					${mediaQueries[0]} {
 						width: 88%;
 					}
 				`}
 			>
-				<div
-					css={css`
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-					`}
-				>
-					<LogoLinkSpan>
-						<h1>
-							<Link
-								to="/"
-								css={css`
-									color: ${darkTheme.colours.white};
-									text-decoration: none;
-									transition: color 0.4s, opacity 0.2s ease;
-									${checkHoverMediaQuery} {
-										&:hover {
-											opacity: 0.7;
-										}
-									}
-								`}
-								onClick={handleClickLogo}
-							>
-								{siteTitle}
-							</Link>
-						</h1>
-					</LogoLinkSpan>
-					<NavBar />
-				</div>
+				<LogoLinkSpan>
+					<Link
+						to="/"
+						css={css`
+							color: ${darkTheme.colours.white};
+							text-decoration: none;
+							opacity: 0.7;
+							transition: color 0.4s, opacity 0.2s ease;
+							${checkHoverMediaQuery} {
+								&:hover {
+									opacity: 1;
+								}
+							}
+						`}
+						onClick={handleClickLogo}
+					>
+						<img
+							src={Logo}
+							css={css`
+								width: 48px;
+								margin-bottom: 0;
+							`}
+						/>
+					</Link>
+				</LogoLinkSpan>
+				<NavBar />
 				{!mobileMenuShown ? (
 					<div
 						css={css`

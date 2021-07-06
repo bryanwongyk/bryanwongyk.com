@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html {
 	-ms-text-size-adjust: 100%;
@@ -12,8 +14,12 @@ html {
 	min-height: 100%;
 	scroll-padding-top: 64px;
 }
+::selection {
+	background: #30475e;
+}
+
 header ul li a {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	font-size: 0.9rem;
 	letter-spacing: 1px;
@@ -26,8 +32,8 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: #f2f2f2;
-	font-family: 'Lato', sans-serif;
+	color: #dddddd;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: normal;
 	word-wrap: break-word;
 	font-kerning: normal;
@@ -35,7 +41,7 @@ body {
 	-ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	-webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-	background-color: #010101;
+	background-color: #101318;
 	width: 100%;
 }
 
@@ -149,7 +155,7 @@ h1 {
 	padding-top: 0;
 	margin-bottom: 1.45rem;
 	color: inherit;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
 	/* font-size: 2.25rem; */
@@ -328,7 +334,7 @@ h2 {
 	padding-top: 0;
 	margin-bottom: 1.45rem;
 	color: inherit;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-rendering: optimizeLegibility;
 	font-size: 1rem;
 	line-height: 1.1;
@@ -344,8 +350,8 @@ h3 {
 	padding-top: 0;
 	margin-bottom: 1.45rem;
 	color: inherit;
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Segoe UI,
-		Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
 		sans-serif;
 	font-weight: bold;
 	text-rendering: optimizeLegibility;
@@ -364,7 +370,7 @@ h4 {
 	padding-top: 0;
 	margin-bottom: 10px;
 	color: inherit;
-	font-family: 'Lato', 'Open Sans', sans-serif;
+	font-family: 'Roboto', 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility;
 	font-size: 1rem;
 	line-height: 1.1;
