@@ -20,8 +20,12 @@ import { darkTheme } from '../../styling/themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import mediaQueries from '../../styling/breakpoints.utils';
+
 const ContainerDiv = styled.div`
 	min-height: 100vh;
+	max-width: 1280px;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 `;
@@ -30,13 +34,20 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-	margin: 32px 64px 16px 64px;
+	margin: 32px 32px 16px 32px;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	text-align: center;
 	font-size: 0.9rem;
 	border-top: 1px solid ${darkTheme.colours.white};
 	padding-top: 32px;
+
+	${mediaQueries[0]} {
+		flex-direction: row;
+		align-items: flex-start;
+	}
 `;
 
 const FooterPara = styled.p`
@@ -54,6 +65,7 @@ const FooterAnchor = styled.a`
 
 const FooterList = styled.ul`
 	list-style: none;
+	margin-left: 0;
 `;
 
 const FooterListItem = styled.li`
@@ -112,7 +124,10 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 						css={css`
 							display: flex;
 							flex-direction: column;
-							align-items: flex-start;
+							align-items: center;
+							${mediaQueries[0]} {
+								align-items: flex-start;
+							}
 						`}
 					>
 						<FooterListItem>

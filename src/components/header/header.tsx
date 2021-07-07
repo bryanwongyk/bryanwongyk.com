@@ -20,7 +20,6 @@ const HeaderTag = styled.header`
 	margin-bottom: 0px;
 	padding-top: 48px;
 	padding-bottom: 32px;
-	width: 100vw;
 	z-index: 1000;
 	background-color: ${darkTheme.colours.black};
 	display: flex;

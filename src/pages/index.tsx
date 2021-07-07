@@ -13,6 +13,7 @@ import SEO from '../components/seo';
 import { BlogData } from '../typings/blog';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
+import profile from '../content/assets/images/profile-circular.png';
 
 import mediaQueries from '../styling/breakpoints.utils';
 
@@ -21,20 +22,23 @@ const Section = styled.section`
 
 	${mediaQueries[0]} {
 		max-width: 1220px;
-		padding: 0 64px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 `;
 
-const HeroHeading = styled.h1`
-	text-align: center;
-	color: ${darkTheme.colours.red};
-	font-size: 112px;
+const HeroDiv = styled.div`
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	margin-bottom: 64px;
-	margin-top: 12px;
-	@media (min-height: 800px) {
-		font-size: 144px;
+	margin-top: 32px;
+	transform: scale(0.5);
+
+	@media (min-width: 580px) {
+		transform: scale(1);
 	}
 `;
 
@@ -43,6 +47,8 @@ const HeroSubHeading = styled.h2`
 	margin: 0 0 48px 0;
 	line-height: 24px;
 	font-size: 1rem;
+	max-width: 450px;
+	display: inline-block;
 `;
 
 const WorkDiv = styled.div`
@@ -150,32 +156,51 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<section
-				id="about"
-				css={css`
-					text-align: center;
-					height: 90vh;
-					min-height: 632px;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					align-items: center;
-				`}
-			>
-				<div>
+			<Container>
+				<section
+					id="about"
+					css={css`
+						text-align: center;
+						height: 90vh;
+						min-height: 632px;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+					`}
+				>
 					<div
 						css={css`
+							width: 100%;
 							margin-bottom: 128px;
 						`}
 					>
-						<HeroHeading>
-							BRYAN <br />
-							WONG
-						</HeroHeading>
+						<HeroDiv>
+							<img
+								src={profile}
+								css={css`
+									width: 230px;
+									margin: 0 30px 0 0;
+									z-index: -1;
+									margin: 0;
+									transform: translateX(20px);
+								`}
+							/>
+							<h1
+								css={css`
+									text-align: center;
+									color: ${darkTheme.colours.red};
+									font-size: 112px;
+									transform: translateX(-20px);
+								`}
+							>
+								BRYAN <br />
+								WONG
+							</h1>
+						</HeroDiv>
 						<HeroSubHeading>
 							Hi! I'm a <b>Software Engineer</b> in Australia
-							passionate about creating <br /> user-centered
-							experiences.
+							passionate about creating user-centered experiences.
 						</HeroSubHeading>
 						<div
 							css={css`
@@ -224,9 +249,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<Container>
+				</section>
 				<Section id="work">
 					<h3
 						css={css`
@@ -380,8 +403,9 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							align-items: center;
 
 							${mediaQueries[1]} {
-								display: grid;
-								grid-template-columns: repeat(2, 1fr);
+								flex-direction: row;
+								justify-content: space-around;
+								align-items: center;
 							}
 						`}
 					>
@@ -390,6 +414,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							css={css`
 								display: flex;
 								align-items: center;
+								justify-content: center;
 							`}
 						>
 							<p
@@ -399,49 +424,47 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 									margin-top: 24px;
 									${mediaQueries[1]} {
 										margin-top: 0;
-										margin-left: 50px;
 									}
 									${mediaQueries[2]} {
-										margin-left: 100px;
 										font-size: 2.5rem;
 									}
 								`}
 							>
-								Want to work together?
-								<br />
-								<br />
-								<Link
-									to="/contact"
-									css={css`
-										display: flex;
-										align-items: center;
-										transition: all 0.3s ease;
-										&:hover {
-											color: ${darkTheme.colours.red};
-											span {
-												border-bottom: 1px solid
-													${darkTheme.colours.red};
-											}
-										}
-									`}
-								>
-									<span
+								<div>Want to work together?</div>
+								<div>
+									<Link
+										to="/contact"
 										css={css`
-											border-bottom: 1px solid #f2f2f2;
+											display: flex;
+											align-items: center;
+											transition: all 0.3s ease;
+											&:hover {
+												color: ${darkTheme.colours.red};
+												span {
+													border-bottom: 1px solid
+														${darkTheme.colours.red};
+												}
+											}
 										`}
 									>
-										Let's chat.
-									</span>
+										<span
+											css={css`
+												border-bottom: 1px solid #f2f2f2;
+											`}
+										>
+											Let's chat.
+										</span>
 
-									<ArrowRight
-										size={40}
-										css={css`
-											margin-left: 16px;
-											position: relative;
-											top: 3px;
-										`}
-									/>
-								</Link>
+										<ArrowRight
+											size={40}
+											css={css`
+												margin-left: 16px;
+												position: relative;
+												top: 3px;
+											`}
+										/>
+									</Link>
+								</div>
 							</p>
 						</div>
 					</div>

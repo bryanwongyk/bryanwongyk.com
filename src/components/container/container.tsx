@@ -15,11 +15,7 @@ const Container: FunctionComponent<ContainerProps> = ({
 		<div
 			css={css`
 				margin: 0 auto;
-				width: 85%;
-
-				${mediaQueries[0]} {
-					width: 75vw;
-				}
+				width: 90%;
 			`}
 		>
 			{children}
