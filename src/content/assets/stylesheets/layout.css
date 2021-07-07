@@ -21,7 +21,14 @@ html {
 header ul li a {
 	font-family: 'Poppins', sans-serif;
 	font-weight: bold;
-	font-size: 0.9rem;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+}
+
+footer ul li a {
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	font-size: 0.8rem;
 	letter-spacing: 1px;
 }
 header h1 {

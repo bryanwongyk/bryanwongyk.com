@@ -32,15 +32,17 @@ const HeroHeading = styled.h1`
 	color: ${darkTheme.colours.red};
 	font-size: 112px;
 	margin-bottom: 64px;
-	${mediaQueries[0]} {
+	margin-top: 12px;
+	@media (min-height: 800px) {
 		font-size: 144px;
 	}
 `;
 
 const HeroSubHeading = styled.h2`
 	text-align: center;
-	margin: 0 0 64px 0;
+	margin: 0 0 48px 0;
 	line-height: 24px;
+	font-size: 1rem;
 `;
 
 const WorkDiv = styled.div`
@@ -153,6 +155,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				css={css`
 					text-align: center;
 					height: 90vh;
+					min-height: 632px;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -182,12 +185,17 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						>
 							<div
 								css={css`
+									display: none;
 									height: 42px;
 									width: 24px;
 									border-radius: 14px;
 									transform: none;
 									border: 2px solid white;
 									top: 170px;
+
+									${mediaQueries[0]} {
+										display: block;
+									}
 								`}
 							>
 								<div

@@ -35,16 +35,16 @@ const Footer = styled.footer`
 	justify-content: space-between;
 	text-align: center;
 	font-size: 0.9rem;
-	border-top: 1px solid ${darkTheme.colours.blue};
-	padding-top: 16px;
+	border-top: 1px solid ${darkTheme.colours.white};
+	padding-top: 32px;
 `;
 
 const FooterPara = styled.p`
-	opacity: 0.5;
+	opacity: 0.4;
 `;
 
 const FooterAnchor = styled.a`
-	opacity: 0.7;
+	opacity: 0.5;
 	transition: opacity 0.3s ease 0s;
 	margin: 0 16px;
 	&:hover {
@@ -57,7 +57,7 @@ const FooterList = styled.ul`
 `;
 
 const FooterListItem = styled.li`
-	opacity: 0.7;
+	opacity: 0.5;
 	transition: opacity 0.3s ease 0s;
 	&:hover {
 		opacity: 1;
