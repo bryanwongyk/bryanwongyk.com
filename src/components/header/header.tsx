@@ -18,7 +18,7 @@ import Logo from '../../content/assets/images/logo.png';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
-	padding-top: 48px;
+	padding-top: 36px;
 	padding-bottom: 32px;
 	z-index: 1000;
 	background-color: ${darkTheme.colours.black};

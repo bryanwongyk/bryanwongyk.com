@@ -18,7 +18,7 @@ import profile from '../content/assets/images/profile-circular.png';
 import mediaQueries from '../styling/breakpoints.utils';
 
 const Section = styled.section`
-	margin-bottom: 256px;
+	margin-bottom: 96px;
 
 	${mediaQueries[0]} {
 		max-width: 1220px;
@@ -61,13 +61,18 @@ const WorkDiv = styled.div`
 	}
 
 	&:not(:first-of-type) {
-		margin-top: 160px;
+		margin-top: 32px;
+	}
+	${mediaQueries[0]} {
+		&:not(:first-of-type) {
+			margin-top: 0;
+		}
 	}
 `;
 
 const WorkDescTitle = styled.dt`
 	font-family: 'Roboto', 'serif';
-	font-size: 3rem;
+	font-size: 1.5rem;
 	text-align: center;
 `;
 
@@ -76,6 +81,9 @@ const WorkDescDetails = styled.dd`
 	opacity: 50%;
 	text-align: center;
 	line-height: 24px;
+	${mediaQueries[0]} {
+		margin-bottom: 0;
+	}
 `;
 
 const BlogPostList = styled.ol`
@@ -156,7 +164,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<Container>
+			<Container width={89}>
 				<section
 					id="about"
 					css={css`
@@ -253,7 +261,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				<Section id="work">
 					<h3
 						css={css`
-							margin-bottom: 120px;
+							margin-bottom: 64px;
 						`}
 					>
 						CREATING
@@ -264,6 +272,13 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							flex-direction: column;
 							justify-content: center;
 							align-items: center;
+
+							${mediaQueries[0]} {
+								flex-direction: row;
+								justify-content: space-around;
+								width: 70%;
+								margin: 0 auto;
+							}
 						`}
 					>
 						<WorkDiv>

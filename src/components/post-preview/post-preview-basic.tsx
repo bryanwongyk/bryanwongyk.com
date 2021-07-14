@@ -23,7 +23,7 @@ const CardPara = styled.p`
 `;
 
 const CardImg = styled.img`
-	height: 280px;
+	height: 190px;
 	width: 100%;
 	object-fit: cover;
 

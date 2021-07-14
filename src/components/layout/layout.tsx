@@ -34,14 +34,13 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-	margin: 32px 32px 16px 32px;
+	margin: 32px 56px 16px 56px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 	font-size: 0.9rem;
-	border-top: 1px solid ${darkTheme.colours.white};
 	padding-top: 32px;
 
 	${mediaQueries[0]} {
@@ -69,10 +68,14 @@ const FooterList = styled.ul`
 `;
 
 const FooterListItem = styled.li`
-	opacity: 0.5;
+	opacity: 0.7;
 	transition: opacity 0.3s ease 0s;
+	margin-right: 0;
 	&:hover {
 		opacity: 1;
+	}
+	${mediaQueries[0]} {
+		margin-right: 12px;
 	}
 `;
 
@@ -120,33 +123,45 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 				</Header>
 				<Main>{children}</Main>
 				<Footer>
-					<FooterList
+					<div
 						css={css`
-							display: flex;
-							flex-direction: column;
-							align-items: center;
 							${mediaQueries[0]} {
-								align-items: flex-start;
+								display: flex;
+								flex-direction: column;
+								align-items: start;
 							}
 						`}
 					>
-						<FooterListItem>
-							<Link to={'/about'}>ABOUT</Link>
-						</FooterListItem>
-						<FooterListItem>
-							<Link to={'/#work'}>WORK</Link>
-						</FooterListItem>
-						<FooterListItem>
-							<Link to={'/blog'}>BLOG</Link>
-						</FooterListItem>
-						<FooterListItem>
-							<Link to={'/contact'}>CONTACT</Link>
-						</FooterListItem>
-					</FooterList>
+						<FooterList
+							css={css`
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								margin-bottom: 0;
+								${mediaQueries[0]} {
+									align-items: flex-start;
+									flex-direction: row;
+								}
+							`}
+						>
+							<FooterListItem>
+								<Link to={'/about'}>ABOUT</Link>
+							</FooterListItem>
+							<FooterListItem>
+								<Link to={'/#work'}>WORK</Link>
+							</FooterListItem>
+							<FooterListItem>
+								<Link to={'/blog'}>BLOG</Link>
+							</FooterListItem>
+							<FooterListItem>
+								<Link to={'/contact'}>CONTACT</Link>
+							</FooterListItem>
+						</FooterList>
+						<FooterPara>
+							© {new Date().getFullYear()} Bryan Wong
+						</FooterPara>
+					</div>
 
-					<FooterPara>
-						© {new Date().getFullYear()} Bryan Wong
-					</FooterPara>
 					<FooterList>
 						<FooterAnchor
 							href="https://www.linkedin.com/in/bryanwongyk/"
