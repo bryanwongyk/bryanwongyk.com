@@ -16,7 +16,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges;
 	return (
 		<Layout>
-			<SEO title="All posts" />
+			<SEO title="Blog" />
 			<div>
 				<h1
 					css={css`

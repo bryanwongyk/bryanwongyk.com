@@ -164,7 +164,6 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			{/* <Container width={80}> */}
 			<section
 				id="about"
 				css={css`

@@ -82,18 +82,18 @@ const MobileNavBar: FunctionComponent<MobileNavBarProps> = ({
 						`}
 					>
 						<MobileNavBarLink
-							path="/"
-							name="Home"
+							path="/about"
+							name="ABOUT"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
 						<MobileNavBarLink
 							path="/blog"
-							name="Blog"
+							name="BLOG"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
 						<MobileNavBarLink
-							path="/portfolio"
-							name="Portfolio"
+							path="/contact"
+							name="CONTACT"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
 					</ul>
