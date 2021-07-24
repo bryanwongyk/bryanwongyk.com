@@ -18,13 +18,13 @@ import Logo from '../../content/assets/images/logo.png';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
-	padding-top: 36px;
+	padding-top: 48px;
 	padding-bottom: 32px;
 	z-index: 1000;
 	background-color: ${darkTheme.colours.black};
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 `;
 
 const LogoLinkSpan = styled.span`
@@ -79,7 +79,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 					justify-content: space-between;
 					align-items: center;
 					${mediaQueries[0]} {
-						width: 88%;
+						width: 100%;
 					}
 				`}
 			>

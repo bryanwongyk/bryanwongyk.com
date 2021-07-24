@@ -20,11 +20,11 @@ import mediaQueries from '../styling/breakpoints.utils';
 const Section = styled.section`
 	margin-bottom: 96px;
 
-	${mediaQueries[0]} {
+	/* ${mediaQueries[0]} {
 		max-width: 1220px;
 		margin-left: auto;
 		margin-right: auto;
-	}
+	} */
 `;
 
 const HeroDiv = styled.div`
@@ -160,331 +160,262 @@ const ScrollDown = keyframes`
 
 const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	const latestBlogPosts = data.allMarkdownRemark.edges;
-
+	console.log(latestBlogPosts);
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<Container width={89}>
-				<section
-					id="about"
+			{/* <Container width={80}> */}
+			<section
+				id="about"
+				css={css`
+					text-align: center;
+					height: 90vh;
+					min-height: 632px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				`}
+			>
+				<div
 					css={css`
-						text-align: center;
-						height: 90vh;
-						min-height: 632px;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
+						width: 100%;
+						margin-bottom: 128px;
 					`}
 				>
+					<HeroDiv>
+						<img
+							src={profile}
+							css={css`
+								width: 230px;
+								margin: 0 30px 0 0;
+								z-index: -1;
+								margin: 0;
+								transform: translateX(20px);
+							`}
+						/>
+						<h1
+							css={css`
+								text-align: center;
+								color: ${darkTheme.colours.red};
+								font-size: 112px;
+								transform: translateX(-20px);
+							`}
+						>
+							BRYAN <br />
+							WONG
+						</h1>
+					</HeroDiv>
+					<HeroSubHeading>
+						Hi! I'm a <b>Software Engineer</b> passionate about
+						creating user-centered experiences.
+					</HeroSubHeading>
 					<div
 						css={css`
-							width: 100%;
-							margin-bottom: 128px;
+							display: flex;
+							justify-content: center;
 						`}
 					>
-						<HeroDiv>
-							<img
-								src={profile}
-								css={css`
-									width: 230px;
-									margin: 0 30px 0 0;
-									z-index: -1;
-									margin: 0;
-									transform: translateX(20px);
-								`}
-							/>
-							<h1
-								css={css`
-									text-align: center;
-									color: ${darkTheme.colours.red};
-									font-size: 112px;
-									transform: translateX(-20px);
-								`}
-							>
-								BRYAN <br />
-								WONG
-							</h1>
-						</HeroDiv>
-						<HeroSubHeading>
-							Hi! I'm a <b>Software Engineer</b> in Australia
-							passionate about creating user-centered experiences.
-						</HeroSubHeading>
 						<div
 							css={css`
-								display: flex;
-								justify-content: center;
+								display: none;
+								height: 42px;
+								width: 24px;
+								border-radius: 14px;
+								transform: none;
+								border: 2px solid white;
+								top: 170px;
+
+								${mediaQueries[0]} {
+									display: block;
+								}
 							`}
 						>
 							<div
 								css={css`
-									display: none;
-									height: 42px;
-									width: 24px;
-									border-radius: 14px;
-									transform: none;
-									border: 2px solid white;
-									top: 170px;
-
-									${mediaQueries[0]} {
-										display: block;
-									}
+									height: 100%;
+									animation: ${ScrollDown} 1.5s ease-out
+										infinite;
 								`}
 							>
 								<div
 									css={css`
-										height: 100%;
-										animation: ${ScrollDown} 1.5s ease-out
-											infinite;
-									`}
-								>
-									<div
-										css={css`
-											height: 5px;
-											width: 2px;
-											display: block;
-											margin: 5px auto;
-											background: white;
-											position: relative;
+										height: 5px;
+										width: 2px;
+										display: block;
+										margin: 5px auto;
+										background: white;
+										position: relative;
 
-											height: 4px;
-											width: 4px;
-											border: 2px solid #fff;
-											border-radius: 8px;
-										`}
-									/>
-								</div>
+										height: 4px;
+										width: 4px;
+										border: 2px solid #fff;
+										border-radius: 8px;
+									`}
+								/>
 							</div>
 						</div>
 					</div>
-				</section>
-				<Section id="work">
-					<h3
-						css={css`
-							margin-bottom: 64px;
-						`}
-					>
-						CREATING
-					</h3>
-					<dl
-						css={css`
-							display: flex;
-							flex-direction: column;
-							justify-content: center;
-							align-items: center;
+				</div>
+			</section>
+			<Section id="work">
+				<h3
+					css={css`
+						margin-bottom: 64px;
+					`}
+				>
+					CREATING
+				</h3>
+				<dl
+					css={css`
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
 
-							${mediaQueries[0]} {
-								flex-direction: row;
-								justify-content: space-around;
-								width: 70%;
-								margin: 0 auto;
+						${mediaQueries[0]} {
+							flex-direction: row;
+							justify-content: space-around;
+							margin: 0 auto;
+						}
+					`}
+				>
+					<WorkDiv>
+						<Link to="/portfolio">
+							<WorkDescTitle>
+								Developer <br /> Portfolio
+							</WorkDescTitle>
+
+							<WorkDescDetails>
+								View my projects on GitHub
+								<ArrowSpan>
+									<ArrowRight size={18} />
+								</ArrowSpan>
+							</WorkDescDetails>
+						</Link>
+					</WorkDiv>
+					<WorkDiv>
+						<a
+							href="https://www.instagram.com/b2uyk/"
+							css={css`
+								display: inline;
+							`}
+						>
+							<WorkDescTitle>Art</WorkDescTitle>
+							<WorkDescDetails>
+								View my digital art
+								<span
+									css={css`
+										top: 4px;
+										position: relative;
+										margin-left: 8px;
+									`}
+								>
+									<ArrowRight size={18} />
+								</span>
+							</WorkDescDetails>
+						</a>
+					</WorkDiv>
+				</dl>
+			</Section>
+
+			<Section>
+				<h3
+					css={css`
+						margin-bottom: 56px;
+					`}
+				>
+					BLOG
+				</h3>
+				<BlogPostList>
+					<BlogPostListRow
+						css={css`
+							${mediaQueries[2]} {
+								grid-template-columns: 1fr 330px;
+								grid-gap: 32px;
+								margin-bottom: 32px;
 							}
 						`}
 					>
-						<WorkDiv>
-							<Link to="/portfolio">
-								<WorkDescTitle>
-									Developer <br /> Portfolio
-								</WorkDescTitle>
-
-								<WorkDescDetails>
-									View my projects and <br /> who I have
-									worked with
-									<ArrowSpan>
-										<ArrowRight size={18} />
-									</ArrowSpan>
-								</WorkDescDetails>
-							</Link>
-						</WorkDiv>
-						<WorkDiv>
-							<a
-								href="https://www.instagram.com/b2uyk/"
-								css={css`
-									display: inline;
-								`}
-							>
-								<WorkDescTitle>Art</WorkDescTitle>
-								<WorkDescDetails>
-									View my digital art
-									<span
-										css={css`
-											top: 4px;
-											position: relative;
-											margin-left: 8px;
-										`}
-									>
-										<ArrowRight size={18} />
-									</span>
-								</WorkDescDetails>
-							</a>
-						</WorkDiv>
-					</dl>
-				</Section>
-
-				<Section>
-					<h3
+						{latestBlogPosts.slice(0, 2).map(post => {
+							return (
+								<li
+									key={post.node.id}
+									css={css`
+										list-style-type: none;
+									`}
+								>
+									<PostPreviewBasic
+										thumbnailPath={
+											post.node.frontmatter.featuredImage
+												.publicURL
+										}
+										title={post.node.frontmatter.title}
+										description={
+											post.node.frontmatter.description
+										}
+										date={post.node.frontmatter.date}
+										readingTime={
+											post.node.frontmatter.readingTime
+										}
+										path={post.node.frontmatter.path}
+									/>
+								</li>
+							);
+						})}
+					</BlogPostListRow>
+					<BlogPostListRow
 						css={css`
-							margin-bottom: 56px;
-						`}
-					>
-						BLOG
-					</h3>
-					<BlogPostList>
-						<BlogPostListRow
-							css={css`
-								${mediaQueries[2]} {
-									grid-template-columns: 1fr 330px;
-									grid-gap: 32px;
-								}
-							`}
-						>
-							{latestBlogPosts.slice(0, 2).map(post => {
-								return (
-									<li
-										key={post.node.id}
-										css={css`
-											list-style-type: none;
-										`}
-									>
-										<PostPreviewBasic
-											thumbnailPath={
-												post.node.frontmatter
-													.featuredImage.publicURL
-											}
-											title={post.node.frontmatter.title}
-											description={
-												post.node.frontmatter
-													.description
-											}
-											path={post.node.frontmatter.path}
-										/>
-									</li>
-								);
-							})}
-						</BlogPostListRow>
-						<BlogPostListRow
-							css={css`
-								${mediaQueries[2]} {
-									grid-template-columns: 330px 1fr;
-									grid-gap: 32px;
-								}
-							`}
-						>
-							{latestBlogPosts.slice(2, 4).map(post => {
-								return (
-									<li
-										key={post.node.id}
-										css={css`
-											list-style-type: none;
-										`}
-									>
-										<PostPreviewBasic
-											thumbnailPath={
-												post.node.frontmatter
-													.featuredImage.publicURL
-											}
-											title={post.node.frontmatter.title}
-											description={
-												post.node.frontmatter
-													.description
-											}
-											path={post.node.frontmatter.path}
-										/>
-									</li>
-								);
-							})}
-						</BlogPostListRow>
-					</BlogPostList>
-					<div
-						css={css`
-							display: flex;
-							justify-content: center;
-						`}
-					>
-						<AnchorButton link="/blog" isInternalLink={true}>
-							<b>View all posts </b>
-
-							<ArrowSpan>
-								<ArrowRight size={18} />
-							</ArrowSpan>
-						</AnchorButton>
-					</div>
-				</Section>
-				<Section>
-					<div
-						css={css`
-							display: flex;
-							flex-direction: column;
-							align-items: center;
-
-							${mediaQueries[1]} {
-								flex-direction: row;
-								justify-content: space-around;
-								align-items: center;
+							${mediaQueries[2]} {
+								grid-template-columns: 330px 1fr;
+								grid-gap: 32px;
 							}
 						`}
 					>
-						<ContactHeader>CONTACT</ContactHeader>
-						<div
-							css={css`
-								display: flex;
-								align-items: center;
-								justify-content: center;
-							`}
-						>
-							<p
-								css={css`
-									font-size: 1.5rem;
-									font-weight: bold;
-									margin-top: 24px;
-									${mediaQueries[1]} {
-										margin-top: 0;
-									}
-									${mediaQueries[2]} {
-										font-size: 2.5rem;
-									}
-								`}
-							>
-								<div>Want to work together?</div>
-								<div>
-									<Link
-										to="/contact"
-										css={css`
-											display: flex;
-											align-items: center;
-											transition: all 0.3s ease;
-											&:hover {
-												color: ${darkTheme.colours.red};
-												span {
-													border-bottom: 1px solid
-														${darkTheme.colours.red};
-												}
-											}
-										`}
-									>
-										<span
-											css={css`
-												border-bottom: 1px solid #f2f2f2;
-											`}
-										>
-											Let's chat.
-										</span>
+						{latestBlogPosts.slice(2, 4).map(post => {
+							return (
+								<li
+									key={post.node.id}
+									css={css`
+										list-style-type: none;
+									`}
+								>
+									<PostPreviewBasic
+										thumbnailPath={
+											post.node.frontmatter.featuredImage
+												.publicURL
+										}
+										title={post.node.frontmatter.title}
+										description={
+											post.node.frontmatter.description
+										}
+										date={post.node.frontmatter.date}
+										readingTime={
+											post.node.frontmatter.readingTime
+										}
+										path={post.node.frontmatter.path}
+									/>
+								</li>
+							);
+						})}
+					</BlogPostListRow>
+				</BlogPostList>
+				<div
+					css={css`
+						display: flex;
+						justify-content: center;
+					`}
+				>
+					<AnchorButton link="/blog" isInternalLink={true}>
+						<b>View all posts </b>
 
-										<ArrowRight
-											size={40}
-											css={css`
-												margin-left: 16px;
-												position: relative;
-												top: 3px;
-											`}
-										/>
-									</Link>
-								</div>
-							</p>
-						</div>
-					</div>
-				</Section>
-			</Container>
+						<ArrowSpan>
+							<ArrowRight size={18} />
+						</ArrowSpan>
+					</AnchorButton>
+				</div>
+			</Section>
+			{/* </Container> */}
 		</Layout>
 	);
 };

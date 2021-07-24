@@ -30,83 +30,71 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 				title={post.frontmatter.title}
 				description={post.frontmatter.description || post.excerpt}
 			/>
-			<div
+			<article
+				className="blog-post"
+				itemScope
+				itemType="http://schema.org/Article"
+			>
+				<header
+					css={css`
+						margin: 20px 0;
+					`}
+				>
+					<h1
+						css={css`
+							margin-bottom: 16px;
+						`}
+					>
+						{post.frontmatter.title}
+					</h1>
+					<time>
+						<h5
+							css={css`
+								opacity: 0.5;
+								margin-bottom: 32px;
+							`}
+						>
+							{post.frontmatter.date} ⬩{' '}
+							{post.frontmatter.readingTime}
+						</h5>
+					</time>
+				</header>
+				<section
+					css={css`
+						margin: 0 auto 32px 0;
+					`}
+				>
+					<Img
+						fluid={featuredImgFluid}
+						css={css`
+							object-fit: cover;
+						`}
+					/>
+				</section>
+				<section
+					dangerouslySetInnerHTML={{ __html: post.html }}
+					itemProp="articleBody"
+					css={css`
+						margin-bottom: 60px;
+					`}
+				/>
+			</article>
+			<Link
+				to="/blog"
 				css={css`
-					margin: 0 auto;
-					width: 80%;
-					${mediaQueries[1]} {
-						max-width: 1280px;
+					transition: all 0.3s ease 0s;
+					opacity: 0.8;
+					display: inline-block;
+					height: 22px;
+					margin-bottom: 64px;
+					border-bottom: 1px solid ${darkTheme.colours.white};
+					&:hover {
+						opacity: 0.6;
 					}
 				`}
 			>
-				<Link
-					to="/blog"
-					css={css`
-						margin-left: 5%;
-						transition: all 0.3s ease 0s;
-						opacity: 0.8;
-						display: inline-block;
-						height: 22px;
-						&:hover {
-							opacity: 0.6;
-							border-bottom: 1px solid ${darkTheme.colours.white};
-						}
-					`}
-				>
-					Go Back
-				</Link>
-				<hr />
-				<article
-					className="blog-post"
-					itemScope
-					itemType="http://schema.org/Article"
-				>
-					<time>
-						<h4
-							css={css`
-								font-style: italic;
-								opacity: 0.8;
-								text-align: center;
-							`}
-						>
-							{post.frontmatter.date}
-						</h4>
-					</time>
-					<header
-						css={css`
-							margin: 20px 0;
-							text-align: center;
-						`}
-					>
-						<h1>{post.frontmatter.title}</h1>
-					</header>
-					<section>
-						<Img
-							fluid={featuredImgFluid}
-							css={css`
-								object-fit: cover;
-								max-height: 200px;
-								max-width: 90%;
-								margin: 0 auto;
-							`}
-						></Img>
-					</section>
-					<section
-						dangerouslySetInnerHTML={{ __html: post.html }}
-						itemProp="articleBody"
-						css={css`
-							padding: 40px 9% 12px 9%;
-						`}
-					/>
-					<address
-						css={css`
-							text-align: center;
-						`}
-					>
-						test
-					</address>
-				</article>
-			</div>
+				← Browse more posts
+			</Link>
 		</Layout>
 	);
 };
@@ -123,6 +111,7 @@ export const pageQuery = graphql`
 				description
 				path
 				author
+				readingTime
 				featuredImage {
 					childImageSharp {
 						fluid(maxWidth: 900) {

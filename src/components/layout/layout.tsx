@@ -24,7 +24,8 @@ import mediaQueries from '../../styling/breakpoints.utils';
 
 const ContainerDiv = styled.div`
 	min-height: 100vh;
-	max-width: 1280px;
+	max-width: 1024px;
+	padding: 0 48px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -34,7 +35,7 @@ const Main = styled.main`
 `;
 
 const Footer = styled.footer`
-	margin: 32px 56px 16px 56px;
+	margin: 32px 0 16px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

@@ -9,17 +9,26 @@ interface PostPreviewBasicProps {
 	thumbnailPath: string;
 	title: string;
 	description: string;
+	date: string;
+	readingTime: string;
 	path: string;
 }
 
 const CardHeading = styled.h4`
-	opacity: 80%;
+	font-size: 1rem;
 	transition: color 0.3s ease;
 `;
 
 const CardPara = styled.p`
-	opacity: 50%;
+	opacity: 65%;
+	font-size: 0.9rem;
 	transition: color 0.3s ease;
+	margin-bottom: 8px;
+`;
+
+const CardFooter = styled.footer`
+	font-size: 0.9rem;
+	opacity: 40%;
 `;
 
 const CardImg = styled.img`
@@ -34,10 +43,12 @@ const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
 	thumbnailPath,
 	title,
 	description,
+	date,
+	readingTime,
 	path,
 }): ReactElement => {
 	return (
-		<div
+		<article
 			css={css`
 				&:hover {
 					a > div > img {
@@ -55,9 +66,12 @@ const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
 					<CardImg src={thumbnailPath} />
 					<CardHeading>{title}</CardHeading>
 					<CardPara>{description}</CardPara>
+					<CardFooter>
+						{date} ⬩ {readingTime}
+					</CardFooter>
 				</div>
 			</Link>
-		</div>
+		</article>
 	);
 };
 
