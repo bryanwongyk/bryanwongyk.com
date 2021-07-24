@@ -259,13 +259,13 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				</div>
 			</section>
 			<Section id="work">
-				<h3
+				<h1
 					css={css`
 						margin-bottom: 64px;
 					`}
 				>
 					CREATING
-				</h3>
+				</h1>
 				<dl
 					css={css`
 						display: flex;
@@ -281,7 +281,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 					`}
 				>
 					<WorkDiv>
-						<Link to="/portfolio">
+						<a href="https://github.com/bryanwyk" target="_blank">
 							<WorkDescTitle>
 								Developer <br /> Portfolio
 							</WorkDescTitle>
@@ -292,11 +292,12 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 									<ArrowRight size={18} />
 								</ArrowSpan>
 							</WorkDescDetails>
-						</Link>
+						</a>
 					</WorkDiv>
 					<WorkDiv>
 						<a
 							href="https://www.instagram.com/b2uyk/"
+							target="_blank"
 							css={css`
 								display: inline;
 							`}
@@ -320,13 +321,13 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 			</Section>
 
 			<Section>
-				<h3
+				<h1
 					css={css`
 						margin-bottom: 56px;
 					`}
 				>
 					BLOG
-				</h3>
+				</h1>
 				<BlogPostList>
 					<BlogPostListRow
 						css={css`

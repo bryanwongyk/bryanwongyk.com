@@ -176,19 +176,6 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 								`}
 							/>
 						</FooterAnchor>
-
-						<FooterAnchor
-							href="https://github.com/bryanwyk"
-							target="_blank"
-							title="GitHub"
-						>
-							<FontAwesomeIcon
-								icon={faGithub}
-								css={css`
-									font-size: 24px;
-								`}
-							/>
-						</FooterAnchor>
 					</FooterList>
 				</Footer>
 			</ContainerDiv>
