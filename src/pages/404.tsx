@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import { css, jsx } from '@emotion/react';
 import SEO from '../components/seo';
 
