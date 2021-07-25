@@ -50,7 +50,7 @@
 	--lineHeight-relaxed: 1.625;
 	/* 1.200 Minor Third Type Scale */
 	--fontSize-0: 0.833rem;
-	--fontSize-1: 1rem;
+	--fontSize-1: 1.1rem;
 	--fontSize-2: 1.2rem;
 	--fontSize-3: 1.44rem;
 	--fontSize-4: 1.728rem;
@@ -203,6 +203,7 @@ li > ul {
 blockquote {
 	color: var(--color-text-light);
 	margin-left: calc(-1 * var(--spacing-6));
+	/* margin-left: 24px; */
 	margin-right: var(--spacing-8);
 	padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
 	border-left: var(--spacing-1) solid var(--color-primary);
@@ -308,7 +309,7 @@ a:focus {
 }
 
 .blog-post header h1 {
-	margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+	margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
 }
 
 .blog-post header p {
@@ -347,4 +348,8 @@ article ol {
 article a {
 	color: var(--color-accent);
 	text-decoration: underline;
+}
+
+body {
+	font-kerning: normal;
 }

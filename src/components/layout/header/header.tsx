@@ -140,7 +140,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 								/>
 							</IconButton>
 						</span>
-						<SunDim
+						{/* <SunDim
 							size={24}
 							css={css`
 								cursor: pointer;
@@ -150,7 +150,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 									opacity: 1;
 								}
 							`}
-						/>
+						/> */}
 					</div>
 				) : null}
 			</div>

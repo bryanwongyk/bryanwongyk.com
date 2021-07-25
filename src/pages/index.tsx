@@ -365,6 +365,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 										key={node.id}
 										css={css`
 											list-style-type: none;
+											height: 330px;
 										`}
 									>
 										<PostPreview
@@ -404,6 +405,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 										key={node.id}
 										css={css`
 											list-style-type: none;
+											height: 330px;
 										`}
 									>
 										<PostPreview

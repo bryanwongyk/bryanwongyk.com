@@ -31,6 +31,10 @@ const BlogPost: FunctionComponent<Props> = props => {
 				transition={{
 					duration: 0.5,
 				}}
+				css={css`
+					max-width: 680px;
+					margin: 0 auto;
+				`}
 			>
 				<article
 					className="blog-post"
@@ -67,34 +71,33 @@ const BlogPost: FunctionComponent<Props> = props => {
 					<section
 						css={css`
 							margin: 0 auto 32px 0;
+							max-height: 400px;
 						`}
 					>
 						<Img
 							fluid={featuredImgFluid}
 							css={css`
 								object-fit: cover;
+								max-height: 400px;
 							`}
 						/>
 					</section>
 					<section
 						dangerouslySetInnerHTML={{ __html: post.html }}
 						itemProp="articleBody"
-						css={css`
-							margin-bottom: 60px;
-						`}
 					/>
 				</article>
 				<Link
 					to="/blog"
 					css={css`
 						transition: all 0.3s ease 0s;
-						opacity: 0.8;
+						opacity: 0.6;
 						display: inline-block;
 						height: 22px;
 						margin-bottom: 64px;
 						border-bottom: 1px solid ${darkTheme.colours.white};
 						&:hover {
-							opacity: 0.6;
+							opacity: 0.8;
 						}
 					`}
 				>

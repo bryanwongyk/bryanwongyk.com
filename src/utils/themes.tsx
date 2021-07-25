@@ -4,7 +4,6 @@ const darkTheme = {
 		grey: '#252525',
 		lightGrey: '#555555',
 		white: '#F2F2F2',
-		gold: '#C6A15B',
 		red: '#F05454',
 		blue: '#30475E',
 	},
