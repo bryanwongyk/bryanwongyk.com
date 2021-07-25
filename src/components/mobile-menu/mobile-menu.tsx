@@ -87,6 +87,11 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 						`}
 					>
 						<MobileMenuLink
+							path="/"
+							name="HOME"
+							toggleMobileMenu={toggleMobileMenu}
+						/>
+						<MobileMenuLink
 							path="/about"
 							name="ABOUT"
 							toggleMobileMenu={toggleMobileMenu}
