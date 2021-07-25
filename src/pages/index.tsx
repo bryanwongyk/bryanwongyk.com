@@ -1,52 +1,21 @@
 /** @jsx jsx */
 
-import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
-import { Link, graphql } from 'gatsby';
+import React, { FunctionComponent } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { css, jsx, keyframes } from '@emotion/react';
-import { darkTheme } from '../styling/themes';
-import styled from '@emotion/styled';
-import { CaretRight, ArrowRight } from 'phosphor-react';
-
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import { BlogData } from '../typings/blog';
-import PostPreviewBasic from '../components/post-preview/post-preview-basic';
-import AnchorButton from '../components/anchor-button/anchor-button';
-import profile from '../content/assets/images/profile-2-circular.png';
-
 import { motion } from 'framer-motion';
+import styled from '@emotion/styled';
+import { ArrowRight } from 'phosphor-react';
 
+import SEO from '../components/seo';
+import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
+import PostPreview from '../components/post-preview/post-preview-basic';
+import LinkCTAButton from '../components/buttons/link-cta-button';
+import profile from '../content/assets/images/profile-2-circular.png';
+import PageContainer from '../components/page-container/page-container';
+
+import { darkTheme } from '../styling/themes';
 import mediaQueries from '../styling/breakpoints.utils';
-import { string } from 'prop-types';
-
-const Section = styled.section`
-	margin-bottom: 96px;
-`;
-
-const HeroDiv = styled.div`
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	margin-bottom: 64px;
-	margin-top: 32px;
-	transform: scale(0.5);
-
-	@media (min-width: 580px) {
-		transform: scale(1);
-	}
-`;
-
-const HeroSubHeading = styled.h2`
-	text-align: center;
-	margin: 0 0 48px 0;
-	line-height: 24px;
-	font-size: 1rem;
-	max-width: 450px;
-	display: inline-block;
-	font-weight: normal;
-`;
 
 const WorkDiv = styled.div`
 	display: flex;
@@ -124,13 +93,42 @@ const ScrollDown = keyframes`
 	}
 `;
 
-const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
-	const latestBlogPosts = data.allMarkdownRemark.edges;
+const IndexPage: FunctionComponent<{}> = ({}) => {
+	const data = useStaticQuery(graphql`
+		query LatestBlogPostsQuery {
+			allMarkdownRemark(
+				sort: {
+					order: DESC
+					fields: [frontmatter___date, frontmatter___title]
+				}
+				filter: { frontmatter: { type: { in: "blog" } } }
+				limit: 4
+			) {
+				edges {
+					node {
+						id
+						excerpt
+						frontmatter {
+							date
+							title
+							description
+							path
+							author
+							readingTime
+							featuredImage {
+								publicURL
+							}
+						}
+					}
+				}
+			}
+		}
+	`);
+	const latestBlogPosts: MarkdownRemarkEdge[] = data.allMarkdownRemark.edges;
 	return (
 		<>
 			<SEO title="Home" />
 			<section
-				id="about"
 				css={css`
 					text-align: center;
 					height: 90vh;
@@ -205,10 +203,20 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							delay: 0.7,
 						}}
 					>
-						<HeroSubHeading>
+						<h2
+							css={css`
+								text-align: center;
+								margin: 0 0 48px 0;
+								line-height: 24px;
+								font-size: 1rem;
+								max-width: 450px;
+								display: inline-block;
+								font-weight: normal;
+							`}
+						>
 							Hi! I'm a <b>Software Engineer</b> passionate about
 							creating user-centered experiences.
-						</HeroSubHeading>
+						</h2>
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0 }}
@@ -261,7 +269,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 					</motion.div>
 				</div>
 			</section>
-			<Section id="work">
+			<PageContainer>
 				<h1
 					css={css`
 						margin-bottom: 64px;
@@ -324,9 +332,9 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						</a>
 					</WorkDiv>
 				</dl>
-			</Section>
+			</PageContainer>
 
-			<Section>
+			<PageContainer>
 				<h1
 					css={css`
 						margin-bottom: 56px;
@@ -347,32 +355,36 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							}
 						`}
 					>
-						{latestBlogPosts.slice(0, 2).map(post => {
-							return (
-								<li
-									key={post.node.id}
-									css={css`
-										list-style-type: none;
-									`}
-								>
-									<PostPreviewBasic
-										thumbnailPath={
-											post.node.frontmatter.featuredImage
-												.publicURL
-										}
-										title={post.node.frontmatter.title}
-										description={
-											post.node.frontmatter.description
-										}
-										date={post.node.frontmatter.date}
-										readingTime={
-											post.node.frontmatter.readingTime
-										}
-										path={post.node.frontmatter.path}
-									/>
-								</li>
-							);
-						})}
+						{latestBlogPosts
+							.slice(0, 2)
+							.map(({ node }: { node: MarkdownRemark }) => {
+								const frontmatter: any = node!.frontmatter!;
+
+								return (
+									<li
+										key={node.id}
+										css={css`
+											list-style-type: none;
+										`}
+									>
+										<PostPreview
+											thumbnailPath={
+												frontmatter.featuredImage
+													.publicURL
+											}
+											title={frontmatter.title}
+											description={
+												frontmatter.description
+											}
+											date={frontmatter.date}
+											readingTime={
+												frontmatter.readingTime
+											}
+											path={frontmatter.path}
+										/>
+									</li>
+								);
+							})}
 					</BlogPostListRow>
 					<BlogPostListRow
 						css={css`
@@ -382,32 +394,36 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							}
 						`}
 					>
-						{latestBlogPosts.slice(2, 4).map(post => {
-							return (
-								<li
-									key={post.node.id}
-									css={css`
-										list-style-type: none;
-									`}
-								>
-									<PostPreviewBasic
-										thumbnailPath={
-											post.node.frontmatter.featuredImage
-												.publicURL
-										}
-										title={post.node.frontmatter.title}
-										description={
-											post.node.frontmatter.description
-										}
-										date={post.node.frontmatter.date}
-										readingTime={
-											post.node.frontmatter.readingTime
-										}
-										path={post.node.frontmatter.path}
-									/>
-								</li>
-							);
-						})}
+						{latestBlogPosts
+							.slice(2, 4)
+							.map(({ node }: { node: MarkdownRemark }) => {
+								const frontmatter: any = node!.frontmatter!;
+
+								return (
+									<li
+										key={node.id}
+										css={css`
+											list-style-type: none;
+										`}
+									>
+										<PostPreview
+											thumbnailPath={
+												frontmatter.featuredImage
+													.publicURL
+											}
+											title={frontmatter.title}
+											description={
+												frontmatter.description
+											}
+											date={frontmatter.date}
+											readingTime={
+												frontmatter.readingTime
+											}
+											path={frontmatter.path}
+										/>
+									</li>
+								);
+							})}
 					</BlogPostListRow>
 				</BlogPostList>
 				<div
@@ -416,49 +432,17 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						justify-content: center;
 					`}
 				>
-					<AnchorButton link="/blog" isInternalLink={true}>
+					<LinkCTAButton link="/blog" isInternalLink={true}>
 						<b>View all posts </b>
 
 						<ArrowSpan>
 							<ArrowRight size={18} />
 						</ArrowSpan>
-					</AnchorButton>
+					</LinkCTAButton>
 				</div>
-			</Section>
-			{/* </Container> */}
+			</PageContainer>
 		</>
 	);
 };
 
 export default IndexPage;
-
-export const pageQuery = graphql`
-	query LatestBlogPostsQuery {
-		allMarkdownRemark(
-			sort: {
-				order: DESC
-				fields: [frontmatter___date, frontmatter___title]
-			}
-			filter: { frontmatter: { type: { in: "blog" } } }
-			limit: 4
-		) {
-			edges {
-				node {
-					id
-					excerpt
-					frontmatter {
-						date
-						title
-						description
-						path
-						author
-						readingTime
-						featuredImage {
-							publicURL
-						}
-					}
-				}
-			}
-		}
-	}
-`;

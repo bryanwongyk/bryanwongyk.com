@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css, jsx } from '@emotion/react';
 import styled from '@emotion/styled';
 

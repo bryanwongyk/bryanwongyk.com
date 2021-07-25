@@ -1,5 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import { css } from '@emotion/react';
+/** @jsx jsx */
+
+import { FunctionComponent } from 'react';
+import { css, jsx } from '@emotion/react';
 import SEO from '../components/seo';
 
 const NotFoundPage: FunctionComponent<{}> = () => (

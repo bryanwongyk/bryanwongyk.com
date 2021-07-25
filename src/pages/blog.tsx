@@ -1,24 +1,54 @@
 /** @jsx jsx */
 
-import React, { FunctionComponent } from 'react';
-import { Link, graphql } from 'gatsby';
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../styling/themes';
-import profile from '../content/assets/images/profile-circular.png';
-import PostPreviewBasic from '../components/post-preview/post-preview-basic';
-import SideProfile from '../components/side-profile/side-profile';
-
 import { motion } from 'framer-motion';
+
+import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
+
+import PostPreview from '../components/post-preview/post-preview-basic';
+import SideBio from '../components/side-bio/side-bio';
+import PageContainer from '../components/page-container/page-container';
 
 import mediaQueries from '../styling/breakpoints.utils';
 
-const Blog: FunctionComponent<{}> = ({ data }) => {
-	const posts = data.allMarkdownRemark.edges;
+const Blog = ({}) => {
+	const data = useStaticQuery(graphql`
+		query BlogQuery {
+			allMarkdownRemark(
+				sort: {
+					order: DESC
+					fields: [frontmatter___date, frontmatter___title]
+				}
+				filter: { frontmatter: { type: { in: ["blog"] } } }
+			) {
+				edges {
+					node {
+						id
+						excerpt
+						frontmatter {
+							date
+							title
+							description
+							path
+							author
+							readingTime
+							featuredImage {
+								publicURL
+							}
+						}
+					}
+				}
+			}
+		}
+	`);
+	const posts: MarkdownRemarkEdge[] = data.allMarkdownRemark.edges;
 	return (
 		<>
 			<SEO title="Blog" />
-			<div>
+			<PageContainer>
 				<motion.div
 					initial={{ opacity: 0, x: -50 }}
 					animate={{ opacity: 1, x: 0 }}
@@ -60,7 +90,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 							}
 						`}
 					>
-						<SideProfile />
+						<SideBio />
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0, y: 50 }}
@@ -83,30 +113,30 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 								}
 							`}
 						>
-							{posts.map(post => {
+							{posts.map(({ node }: { node: MarkdownRemark }) => {
+								const frontmatter: any = node!.frontmatter!;
+
 								return (
 									<li
-										key={post.node.id}
+										key={node.id}
 										css={css`
 											margin-bottom: 32px;
 										`}
 									>
-										<PostPreviewBasic
+										<PostPreview
 											thumbnailPath={
-												post.node.frontmatter
-													.featuredImage.publicURL
+												frontmatter.featuredImage
+													.publicURL
 											}
-											title={post.node.frontmatter.title}
+											title={frontmatter.title}
 											description={
-												post.node.frontmatter
-													.description
+												frontmatter.description
 											}
-											date={post.node.frontmatter.date}
+											date={frontmatter.date}
 											readingTime={
-												post.node.frontmatter
-													.readingTime
+												frontmatter.readingTime
 											}
-											path={post.node.frontmatter.path}
+											path={frontmatter.path}
 										/>
 									</li>
 								);
@@ -114,39 +144,9 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						</ol>
 					</motion.div>
 				</section>
-			</div>
+			</PageContainer>
 		</>
 	);
 };
 
 export default Blog;
-
-export const pageQuery = graphql`
-	query BlogQuery {
-		allMarkdownRemark(
-			sort: {
-				order: DESC
-				fields: [frontmatter___date, frontmatter___title]
-			}
-			filter: { frontmatter: { type: { in: ["blog"] } } }
-		) {
-			edges {
-				node {
-					id
-					excerpt
-					frontmatter {
-						date
-						title
-						description
-						path
-						author
-						readingTime
-						featuredImage {
-							publicURL
-						}
-					}
-				}
-			}
-		}
-	}
-`;

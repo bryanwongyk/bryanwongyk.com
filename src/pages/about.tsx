@@ -1,24 +1,18 @@
 /** @jsx jsx */
 
 import React, { FunctionComponent } from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import { css, jsx } from '@emotion/react';
-import styled from '@emotion/styled';
-import { darkTheme } from '../styling/themes';
-import AboutImg from '../content/assets/images/about.jpg';
-
 import { motion } from 'framer-motion';
 
-const Section = styled.section`
-	margin-bottom: 96px;
-`;
+import { css, jsx } from '@emotion/react';
+
+import AboutImg from '../content/assets/images/about.jpg';
+import PageContainer from '../components/page-container/page-container';
 
 const About: FunctionComponent<{}> = ({}) => (
 	<>
 		<SEO title="About" />
-		<Section>
+		<PageContainer>
 			<motion.div
 				initial={{ opacity: 0, x: -50 }}
 				animate={{ opacity: 1, x: 0 }}
@@ -75,7 +69,7 @@ const About: FunctionComponent<{}> = ({}) => (
 				</p>
 				<p>Feel free to reach out to connect or have a chat!</p>
 			</motion.div>
-		</Section>
+		</PageContainer>
 	</>
 );
 

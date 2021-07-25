@@ -34,13 +34,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/content/portfolio`,
-				name: `projects`,
-			},
-		},
-		{
 			resolve: `gatsby-plugin-layout`,
 			options: {
 				component: require.resolve(

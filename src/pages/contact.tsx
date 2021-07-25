@@ -1,24 +1,19 @@
 /** @jsx jsx */
 
 import React, { FunctionComponent } from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../styling/themes';
-import ContactForm from '../components/contact-form/contact-form';
-import styled from '@emotion/styled';
-
 import { motion } from 'framer-motion';
 
-const Section = styled.section`
-	margin-bottom: 96px;
-`;
+import PageContainer from '../components/page-container/page-container';
+import ContactForm from '../components/contact-form/contact-form';
+
+import { darkTheme } from '../styling/themes';
 
 const Contact: FunctionComponent<{}> = ({}) => (
 	<>
 		<SEO title="Contact" />
-		<Section>
+		<PageContainer>
 			<motion.div
 				initial={{ opacity: 0, x: -50 }}
 				animate={{ opacity: 1, x: 0 }}
@@ -76,7 +71,7 @@ const Contact: FunctionComponent<{}> = ({}) => (
 					<ContactForm />
 				</div>
 			</motion.div>
-		</Section>
+		</PageContainer>
 	</>
 );
 

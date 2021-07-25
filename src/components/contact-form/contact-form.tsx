@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactElement } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import styled from '@emotion/styled';
 import { darkTheme } from '../../styling/themes';
-import PrimaryButton from '../button/primary-button';
+import PrimaryButton from '../buttons/primary-button';
 
 const CenteredPara = styled.p`
 	text-align: center;

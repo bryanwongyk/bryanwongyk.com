@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import React, { FunctionComponent, ReactElement } from 'react';
+
+import { FunctionComponent, ReactElement } from 'react';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
 
-interface PostPreviewBasicProps {
+interface PostPreviewProps {
 	thumbnailPath: string;
 	title: string;
 	description: string;
@@ -14,34 +14,7 @@ interface PostPreviewBasicProps {
 	path: string;
 }
 
-const CardHeading = styled.h4`
-	font-size: 1.2rem;
-	transition: color 0.3s ease;
-	margin: 8px 0;
-`;
-
-const CardPara = styled.p`
-	opacity: 65%;
-	font-size: 0.9rem;
-	transition: color 0.3s ease;
-	margin-bottom: 8px;
-`;
-
-const CardFooter = styled.footer`
-	font-size: 0.9rem;
-	opacity: 40%;
-	padding: 0;
-`;
-
-const CardImg = styled.img`
-	height: 190px;
-	width: 100%;
-	object-fit: cover;
-
-	transition: transform 0.3s ease;
-`;
-
-const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
+const PostPreview: FunctionComponent<PostPreviewProps> = ({
 	thumbnailPath,
 	title,
 	description,
@@ -65,16 +38,48 @@ const PostPreviewBasic: FunctionComponent<PostPreviewBasicProps> = ({
 		>
 			<Link to={path}>
 				<div>
-					<CardImg src={thumbnailPath} />
-					<CardHeading>{title}</CardHeading>
-					<CardPara>{description}</CardPara>
-					<CardFooter>
+					<img
+						src={thumbnailPath}
+						css={css`
+							height: 190px;
+							width: 100%;
+							object-fit: cover;
+
+							transition: transform 0.3s ease;
+						`}
+					/>
+					<h4
+						css={css`
+							font-size: 1.2rem;
+							transition: color 0.3s ease;
+							margin: 8px 0;
+						`}
+					>
+						{title}
+					</h4>
+					<p
+						css={css`
+							opacity: 65%;
+							font-size: 0.9rem;
+							transition: color 0.3s ease;
+							margin-bottom: 8px;
+						`}
+					>
+						{description}
+					</p>
+					<footer
+						css={css`
+							font-size: 0.9rem;
+							opacity: 40%;
+							padding: 0;
+						`}
+					>
 						{date} ⬩ {readingTime}
-					</CardFooter>
+					</footer>
 				</div>
 			</Link>
 		</article>
 	);
 };
 
-export default PostPreviewBasic;
+export default PostPreview;
