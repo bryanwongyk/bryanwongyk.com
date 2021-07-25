@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* CSS Custom Properties Definitions */
 
@@ -63,6 +63,7 @@
 	--color-heading: #f2f2f2;
 	--color-heading-black: #f2f2f2;
 	--color-accent: #f05454;
+	--color-hr: #252525;
 }
 
 /* HTML elements */
@@ -92,9 +93,10 @@ footer {
 }
 
 hr {
-	background: var(--color-accent);
+	background: var(--color-hr);
 	height: 1px;
 	border: 0;
+	margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
 }
 
 /* Heading */
