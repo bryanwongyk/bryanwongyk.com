@@ -15,6 +15,18 @@ This is a project I hope I can continuously build upon with new features, sectio
 
 As of the time of writing, I am still new to using GatsbyJS (and all it's companions like GraphQL). So, after I manage to publish the barebones of the Home, Blog, and Projects pages, my main focus will be on refactoring and understanding all the intricacies of this static site generator.
 
+# Hey
+
+## yo
+
+### yoyo
+
+_italic_
+
+**bold**
+
+> this is a blockquote
+
 There are still a lot of commitments on my plate at the moment such as:
 
 -   University work (which will soon include the commencement of my final year-long Software Engineering project)

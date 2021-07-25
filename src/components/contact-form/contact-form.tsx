@@ -21,19 +21,17 @@ const StyledLabel = styled.label`
 `;
 
 const StyledInput = styled.input`
-	border-radius: 5px;
 	border: none;
 	background-color: ${darkTheme.colours.white};
-	margin-bottom: 16px;
+	margin-bottom: 24px;
 `;
 
 const StyledTextArea = styled.textarea`
 	resize: none;
 	height: 80px;
-	border-radius: 5px;
 	border: none;
 	background-color: ${darkTheme.colours.white};
-	margin-bottom: 16px;
+	margin-bottom: 24px;
 `;
 
 const StyledButtonDiv = styled.div`

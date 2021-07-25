@@ -1,11 +1,11 @@
 ---
 date: 'March 10, 2021'
-title: Welcome2
+title: Welcome4
 description: My first post and what's to come...
 readingTime: '2 min read'
 author: Bryan Wong
 featuredImage: waves.jpg
-path: '/welcome2'
+path: '/welcome4'
 type: blog
 ---
 

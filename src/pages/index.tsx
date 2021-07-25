@@ -13,7 +13,7 @@ import SEO from '../components/seo';
 import { BlogData } from '../typings/blog';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
-import profile from '../content/assets/images/profile-circular.png';
+import profile from '../content/assets/images/profile-2-circular.png';
 
 import mediaQueries from '../styling/breakpoints.utils';
 
@@ -49,6 +49,7 @@ const HeroSubHeading = styled.h2`
 	font-size: 1rem;
 	max-width: 450px;
 	display: inline-block;
+	font-weight: normal;
 `;
 
 const WorkDiv = styled.div`
@@ -71,7 +72,8 @@ const WorkDiv = styled.div`
 `;
 
 const WorkDescTitle = styled.dt`
-	font-family: 'Roboto', 'serif';
+	font-family: 'Source Sans Pro', 'serif';
+	font-weight: bold;
 	font-size: 1.5rem;
 	text-align: center;
 `;
@@ -100,38 +102,6 @@ const BlogPostListRow = styled.div`
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 32px;
-	}
-`;
-
-const ContactHeader = styled.h3`
-	font-size: 4rem;
-	color: #fdfdfd;
-	opacity: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	&:before {
-		content: 'CONTACT';
-		color: ${darkTheme.colours.black};
-		text-shadow: -1px 1px 0 #fdfdfd, 1px 1px 0 #fdfdfd, 1px -1px 0 #fdfdfd,
-			-1px -1px 0 #fdfdfd;
-	}
-
-	&:after {
-		content: 'CONTACT';
-		color: ${darkTheme.colours.black};
-		text-shadow: -1px 1px 0 #fdfdfd, 1px 1px 0 #fdfdfd, 1px -1px 0 #fdfdfd,
-			-1px -1px 0 #fdfdfd;
-	}
-
-	${mediaQueries[0]} {
-		align-items: start;
-		font-size: 5rem;
-	}
-
-	${mediaQueries[2]} {
-		font-size: 6rem;
 	}
 `;
 
@@ -199,6 +169,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 								color: ${darkTheme.colours.red};
 								font-size: 112px;
 								transform: translateX(-20px);
+								margin: 8px 0;
 							`}
 						>
 							BRYAN <br />
@@ -261,6 +232,9 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				<h1
 					css={css`
 						margin-bottom: 64px;
+						font-family: 'Source Sans Pro', sans-serif;
+						font-weight: bold;
+						font-size: 1.5rem;
 					`}
 				>
 					CREATING
@@ -323,6 +297,9 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				<h1
 					css={css`
 						margin-bottom: 56px;
+						font-family: 'Source Sans Pro', sans-serif;
+						font-weight: bold;
+						font-size: 1.5rem;
 					`}
 				>
 					BLOG
@@ -425,7 +402,10 @@ export default IndexPage;
 export const pageQuery = graphql`
 	query LatestBlogPostsQuery {
 		allMarkdownRemark(
-			sort: { order: DESC, fields: frontmatter___date }
+			sort: {
+				order: DESC
+				fields: [frontmatter___date, frontmatter___title]
+			}
 			filter: { frontmatter: { type: { in: "blog" } } }
 			limit: 4
 		) {

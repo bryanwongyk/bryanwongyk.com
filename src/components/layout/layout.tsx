@@ -13,7 +13,6 @@ import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
 
 import Header from '../header/header';
-import '../../content/assets/stylesheets/layout.css';
 import MobileNavBar from '../mobile-navbar/mobile-navbar';
 
 import { darkTheme } from '../../styling/themes';
@@ -72,6 +71,11 @@ const FooterListItem = styled.li`
 	opacity: 0.7;
 	transition: opacity 0.3s ease 0s;
 	margin-right: 0;
+	font-family: 'Poppins', sans-serif;
+	font-weight: normal;
+	font-size: 0.75rem;
+	letter-spacing: 1px;
+
 	&:hover {
 		opacity: 1;
 	}
@@ -100,13 +104,6 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 	const handleCloseMobileMenu = (): void => {
 		setShowMobileMenu(false);
 	};
-
-	// Only try to access document once the component has mounted
-	useEffect(() => {
-		showMobileMenu
-			? (document.body.style.position = 'fixed')
-			: (document.body.style.position = 'static');
-	}, [showMobileMenu]);
 
 	return (
 		<>

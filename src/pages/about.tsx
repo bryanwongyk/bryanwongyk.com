@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
 import styled from '@emotion/styled';
 import { darkTheme } from '../styling/themes';
-import profile from '../content/assets/images/profile-circular.png';
+import AboutImg from '../content/assets/images/about.jpg';
 
 const Section = styled.section`
 	margin-bottom: 96px;
@@ -21,39 +21,41 @@ const About: FunctionComponent<{}> = ({}) => (
 	<Layout>
 		<SEO title="About" />
 		<Section>
-			<div
+			{/* <div
 				css={css`
 					display: flex;
 					flex-direction: column;
 					align-items: center;
 					background-color: ${darkTheme.colours.black};
 				`}
-			>
-				<h1>ABOUT</h1>
-			</div>
-			<div
+			> */}
+			<h1
 				css={css`
-					display: flex;
-					justify-content: center;
-					margin: 32px 0;
+					font-size: 1.2rem;
 				`}
 			>
-				<img
-					src={profile}
-					css={css`
-						width: 128px;
-					`}
-				/>
-			</div>
+				ABOUT
+			</h1>
 			<div>
 				<h2>Hi, I'm Bryan!</h2>
+				<div
+					css={css`
+						display: flex;
+						justify-content: center;
+						margin: 64px 0;
+					`}
+				>
+					<img
+						src={AboutImg}
+						css={css`
+							max-height: 480px;
+						`}
+					/>
+				</div>
 				<p>
 					I'm a final year Software Engineering & Accounting student
-					in Melbourne, Australia.
-				</p>
-				<p>
-					As an engineer, I love building web applications (especially
-					on the front-end).
+					in Melbourne, Australia who enjoys building web
+					applications.
 				</p>
 				<p>
 					In my spare time, you'll find me pursuing creative
@@ -61,10 +63,11 @@ const About: FunctionComponent<{}> = ({}) => (
 					creation), working out at the gym, or learning.
 				</p>
 				<p>
-					Lately, I've enjoyed pouring over content related to
+					Lately, I've loved pouring over content related to
 					businesses/start-ups, personal development, and personal
 					finance.
 				</p>
+				<p>Feel free to reach out to connect or have a chat!</p>
 			</div>
 		</Section>
 	</Layout>

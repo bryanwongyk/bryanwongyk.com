@@ -17,6 +17,11 @@ const StyledButton = styled.button`
 	text-align: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
+
+	&:hover {
+		color: ${darkTheme.colours.red};
+		border: 1px solid ${darkTheme.colours.red};
+	}
 `;
 
 const PrimaryButton: FunctionComponent<PrimaryButtonProps> = ({

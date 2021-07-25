@@ -25,6 +25,7 @@ const SideProfile: FunctionComponent = (): ReactElement => {
 		>
 			<h6
 				css={css`
+					margin-top: 8px;
 					${mediaQueries[0]} {
 						margin-bottom: 24px;
 					}
@@ -36,6 +37,7 @@ const SideProfile: FunctionComponent = (): ReactElement => {
 				src={profile}
 				css={css`
 					width: 80px;
+					margin-bottom: 16px;
 					${mediaQueries[0]} {
 						margin: 0 auto 24px auto;
 					}

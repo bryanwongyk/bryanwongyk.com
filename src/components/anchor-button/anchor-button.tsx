@@ -26,7 +26,7 @@ const AnchorButton: FunctionComponent<AnchorButtonProps> = ({
 				border: 1px solid ${darkTheme.colours.white};
 				color: ${darkTheme.colours.white};
 				border-radius: 25px;
-				padding: 3px 18px 6px 24px;
+				padding: 3px 18px 3px 24px;
 				text-align: center;
 				cursor: pointer;
 				transition: all 0.3s ease;

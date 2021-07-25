@@ -21,6 +21,10 @@ const NavBar: FunctionComponent<{}> = () => {
 					display: flex;
 					flex-direction: row;
 					margin: 0;
+					font-family: 'Poppins', sans-serif;
+					font-weight: bold;
+					font-size: 0.8rem;
+					letter-spacing: 1px;
 				`}
 			>
 				<NavBarLink path="/about" name="ABOUT" />

@@ -15,8 +15,9 @@ interface PostPreviewBasicProps {
 }
 
 const CardHeading = styled.h4`
-	font-size: 1rem;
+	font-size: 1.2rem;
 	transition: color 0.3s ease;
+	margin: 8px 0;
 `;
 
 const CardPara = styled.p`
@@ -29,6 +30,7 @@ const CardPara = styled.p`
 const CardFooter = styled.footer`
 	font-size: 0.9rem;
 	opacity: 40%;
+	padding: 0;
 `;
 
 const CardImg = styled.img`

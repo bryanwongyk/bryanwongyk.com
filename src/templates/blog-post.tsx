@@ -43,6 +43,7 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 					<h1
 						css={css`
 							margin-bottom: 16px;
+							font-size: 2.5rem;
 						`}
 					>
 						{post.frontmatter.title}
@@ -51,7 +52,9 @@ const BlogPost: FunctionComponent<{}> = ({ data }) => {
 						<h5
 							css={css`
 								opacity: 0.5;
+								margin-top: 0;
 								margin-bottom: 32px;
+								font-size: 1rem;
 							`}
 						>
 							{post.frontmatter.date} ⬩{' '}

@@ -62,7 +62,12 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 					>
 						{posts.map(post => {
 							return (
-								<li key={post.node.id}>
+								<li
+									key={post.node.id}
+									css={css`
+										margin-bottom: 32px;
+									`}
+								>
 									<PostPreviewBasic
 										thumbnailPath={
 											post.node.frontmatter.featuredImage
@@ -92,7 +97,13 @@ export default Blog;
 
 export const pageQuery = graphql`
 	query BlogQuery {
-		allMarkdownRemark(filter: { frontmatter: { type: { in: ["blog"] } } }) {
+		allMarkdownRemark(
+			sort: {
+				order: DESC
+				fields: [frontmatter___date, frontmatter___title]
+			}
+			filter: { frontmatter: { type: { in: ["blog"] } } }
+		) {
 			edges {
 				node {
 					id

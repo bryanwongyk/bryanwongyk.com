@@ -24,7 +24,7 @@ const TooltipDiv = styled.div`
 	&:after {
 		content: '';
 		position: absolute;
-		bottom: 80%;
+		bottom: 70%;
 		left: 50px;
 		width: 0;
 		height: 0;
