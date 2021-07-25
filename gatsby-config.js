@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `BRYAN WONG`,
+		title: `Bryan Wong`,
 		description: `Bryan Wong's Personal Website`,
 		author: `Bryan Wong`,
 	},
@@ -34,10 +34,11 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-source-filesystem`,
+			resolve: `gatsby-plugin-layout`,
 			options: {
-				path: `${__dirname}/src/content/portfolio`,
-				name: `projects`,
+				component: require.resolve(
+					`${__dirname}/src/components/layout/layout.tsx`,
+				),
 			},
 		},
 		`gatsby-transformer-remark`,
@@ -50,7 +51,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/content/assets/images/profile.png`, // This path is relative to the root of the site.
+				icon: `src/content/assets/images/logo.png`, // This path is relative to the root of the site.
 			},
 		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality

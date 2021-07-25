@@ -1,8 +1,10 @@
-import React, { FunctionComponent, useState } from 'react';
-import { css, useTheme } from '@emotion/react';
-import { darkTheme } from '../../styling/themes';
-import MobileMenuItem from './mobile-menu-item';
-import mediaQueries from '../../styling/breakpoints.utils';
+/** @jsx jsx */
+
+import { FunctionComponent } from 'react';
+import { css, jsx } from '@emotion/react';
+import { darkTheme } from '../../utils/themes';
+import MobileMenuLink from './mobile-menu-link/mobile-menu-link';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 interface MobileMenuProps {
 	show: boolean;
@@ -19,7 +21,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 		<div
 			css={css`
 				position: fixed;
-				z-index: -30;
+				z-index: 10;
 				display: flex;
 
 				${mediaQueries[0]} {
@@ -30,7 +32,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 			<div
 				css={css`
 					position: fixed;
-					background-color: ${darkTheme.colours.gold};
+					background-color: ${darkTheme.colours.grey};
 					width: 100vw;
 					height: 100vh;
 					box-sizing: border-box;
@@ -77,21 +79,31 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							transition: all 0.2s 0.5s linear;
 							text-align: center;
 							margin: 0;
+
+							font-family: 'Poppins', sans-serif;
+							font-weight: bold;
+							font-size: 0.8rem;
+							letter-spacing: 1px;
 						`}
 					>
-						<MobileMenuItem
+						<MobileMenuLink
 							path="/"
-							name="Home"
+							name="HOME"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
-						<MobileMenuItem
+						<MobileMenuLink
+							path="/about"
+							name="ABOUT"
+							toggleMobileMenu={toggleMobileMenu}
+						/>
+						<MobileMenuLink
 							path="/blog"
-							name="Blog"
+							name="BLOG"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
-						<MobileMenuItem
-							path="/portfolio"
-							name="Portfolio"
+						<MobileMenuLink
+							path="/contact"
+							name="CONTACT"
 							toggleMobileMenu={toggleMobileMenu}
 						/>
 					</ul>
