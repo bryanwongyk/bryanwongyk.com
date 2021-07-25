@@ -53,7 +53,8 @@ const About: FunctionComponent<{}> = ({}) => (
 					<img
 						src={AboutImg}
 						css={css`
-							max-height: 480px;
+							width: 100%;
+							max-width: 480px;
 						`}
 					/>
 				</div>

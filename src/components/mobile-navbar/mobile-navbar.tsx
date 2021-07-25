@@ -79,6 +79,11 @@ const MobileNavBar: FunctionComponent<MobileNavBarProps> = ({
 							transition: all 0.2s 0.5s linear;
 							text-align: center;
 							margin: 0;
+
+							font-family: 'Poppins', sans-serif;
+							font-weight: bold;
+							font-size: 0.8rem;
+							letter-spacing: 1px;
 						`}
 					>
 						<MobileNavBarLink

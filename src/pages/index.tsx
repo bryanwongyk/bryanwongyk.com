@@ -21,12 +21,6 @@ import { string } from 'prop-types';
 
 const Section = styled.section`
 	margin-bottom: 96px;
-
-	/* ${mediaQueries[0]} {
-		max-width: 1220px;
-		margin-left: auto;
-		margin-right: auto;
-	} */
 `;
 
 const HeroDiv = styled.div`
@@ -161,42 +155,46 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							stiffness: '25' as any,
 						}}
 						css={css`
-							position: relative;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-
 							margin-bottom: 64px;
 							margin-top: 32px;
-							transform: scale(0.5);
-
-							@media (min-width: 580px) {
-								transform: scale(1);
-							}
 						`}
 					>
-						<img
-							src={profile}
+						<span
 							css={css`
-								width: 230px;
-								margin: 0 30px 0 0;
-								z-index: -1;
-								margin: 0;
-								transform: translateX(20px);
-							`}
-						/>
-						<h1
-							css={css`
-								text-align: center;
-								color: ${darkTheme.colours.red};
-								font-size: 112px;
-								transform: translateX(-20px);
-								margin: 8px 0;
+								transform: scale(0.5);
+								position: relative;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+
+								@media (min-width: 580px) {
+									transform: scale(1);
+								}
 							`}
 						>
-							BRYAN <br />
-							WONG
-						</h1>
+							<img
+								src={profile}
+								css={css`
+									width: 230px;
+									margin: 0 30px 0 0;
+									z-index: -1;
+									margin: 0;
+									transform: translateX(20px);
+								`}
+							/>
+							<h1
+								css={css`
+									text-align: center;
+									color: ${darkTheme.colours.red};
+									font-size: 112px;
+									transform: translateX(-20px);
+									margin: 8px 0;
+								`}
+							>
+								BRYAN <br />
+								WONG
+							</h1>
+						</span>
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0, y: 100 }}

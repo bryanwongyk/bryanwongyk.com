@@ -17,10 +17,11 @@ const NavBarLink: FunctionComponent<MenuItemProps> = ({ path, name }) => {
 				position: relative;
 				margin: 0 0 0 50px;
 				opacity: 0.5;
-				transition: opacity 0.3s ease 0s;
+				transition: all 0.3s ease 0s;
 				color: ${darkTheme.colours.white};
 				&:hover {
 					opacity: 1;
+					color: ${darkTheme.colours.red};
 				}
 			`}
 		>

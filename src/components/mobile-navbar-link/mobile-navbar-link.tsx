@@ -22,12 +22,7 @@ const MobileNavBarLink: FunctionComponent<MobileNavBarLinkProps> = ({
 				position: relative;
 				color: ${darkTheme.colours.white};
 				opacity: 1;
-				font-size: 2rem;
-				transition: opacity 0.3s ease 0s;
-				margin-bottom: 30px;
-				&:hover {
-					opacity: 0.7;
-				}
+				margin-bottom: 48px;
 			`}
 		>
 			<Link to={path} onClick={toggleMobileMenu}>

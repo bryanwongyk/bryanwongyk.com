@@ -55,10 +55,11 @@ const FooterPara = styled.p`
 
 const FooterAnchor = styled.a`
 	opacity: 0.5;
-	transition: opacity 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 	margin: 0 16px;
 	&:hover {
 		opacity: 1;
+		color: ${darkTheme.colours.red};
 	}
 `;
 
@@ -69,7 +70,7 @@ const FooterList = styled.ul`
 
 const FooterListItem = styled.li`
 	opacity: 0.7;
-	transition: opacity 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
 	margin-right: 0;
 	font-family: 'Poppins', sans-serif;
 	font-weight: normal;
@@ -78,6 +79,7 @@ const FooterListItem = styled.li`
 
 	&:hover {
 		opacity: 1;
+		color: ${darkTheme.colours.red};
 	}
 	${mediaQueries[0]} {
 		margin-right: 12px;
@@ -99,7 +101,6 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 
 	const handleToggleMobileMenu = (): void => {
 		setShowMobileMenu(!showMobileMenu);
-		console.log(showMobileMenu);
 	};
 
 	const handleCloseMobileMenu = (): void => {
