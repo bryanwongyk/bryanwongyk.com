@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import PageContainer from '../components/page-container/page-container';
 import ContactForm from '../components/contact-form/contact-form';
 
-import { darkTheme } from '../styling/themes';
+import { darkTheme } from '../utils/themes';
 
 const Contact: FunctionComponent<{}> = ({}) => (
 	<>

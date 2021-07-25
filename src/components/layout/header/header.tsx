@@ -14,9 +14,9 @@ import Logo from '../../../content/assets/images/logo.png';
 
 import { Copy, SunDim, Moon } from 'phosphor-react';
 
-import { darkTheme } from '../../../styling/themes';
-import checkHoverMediaQuery from '../../../styling/checkHover.utils';
-import mediaQueries from '../../../styling/breakpoints.utils';
+import { darkTheme } from '../../../utils/themes';
+import checkHoverMediaQuery from '../../../utils/checkHover.utils';
+import mediaQueries from '../../../utils/breakpoints.utils';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;

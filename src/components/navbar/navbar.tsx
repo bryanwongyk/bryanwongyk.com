@@ -3,7 +3,7 @@
 import { FunctionComponent } from 'react';
 import { css, jsx } from '@emotion/react';
 import NavBarLink from './navbar-link/navbar-link';
-import mediaQueries from '../../styling/breakpoints.utils';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 const NavBar: FunctionComponent<{}> = () => {
 	return (

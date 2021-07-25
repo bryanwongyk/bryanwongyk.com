@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../../styling/themes';
+import { darkTheme } from '../../utils/themes';
 
 interface PostPreviewProps {
 	thumbnailPath: string;

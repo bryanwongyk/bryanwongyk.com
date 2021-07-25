@@ -12,7 +12,7 @@ import PostPreview from '../components/post-preview/post-preview';
 import SideBio from '../components/side-bio/side-bio';
 import PageContainer from '../components/page-container/page-container';
 
-import mediaQueries from '../styling/breakpoints.utils';
+import mediaQueries from '../utils/breakpoints.utils';
 
 const Blog = ({}) => {
 	const data = useStaticQuery(graphql`

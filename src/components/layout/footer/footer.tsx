@@ -7,8 +7,8 @@ import { css, jsx } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import { darkTheme } from '../../../styling/themes';
-import mediaQueries from '../../../styling/breakpoints.utils';
+import { darkTheme } from '../../../utils/themes';
+import mediaQueries from '../../../utils/breakpoints.utils';
 
 const StyledFooter = styled.footer`
 	margin: 32px 0 16px 0;

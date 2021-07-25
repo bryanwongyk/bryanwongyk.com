@@ -2,9 +2,9 @@
 
 import { FunctionComponent } from 'react';
 import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../../styling/themes';
+import { darkTheme } from '../../utils/themes';
 import MobileMenuLink from './mobile-menu-link/mobile-menu-link';
-import mediaQueries from '../../styling/breakpoints.utils';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 interface MobileMenuProps {
 	show: boolean;

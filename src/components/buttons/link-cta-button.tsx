@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactNode } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/react';
-import { darkTheme } from '../../styling/themes';
+import { darkTheme } from '../../utils/themes';
 
 interface LinkCTAButtonProps {
 	link: string;

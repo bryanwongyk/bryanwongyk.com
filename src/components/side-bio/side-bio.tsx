@@ -4,8 +4,8 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css, jsx } from '@emotion/react';
 import profile from '../../content/assets/images/profile-2-circular.png';
 
-import { darkTheme } from '../../styling/themes';
-import mediaQueries from '../../styling/breakpoints.utils';
+import { darkTheme } from '../../utils/themes';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 const SideBio: FunctionComponent = (): ReactElement => {
 	return (

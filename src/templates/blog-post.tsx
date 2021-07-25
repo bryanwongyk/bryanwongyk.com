@@ -7,7 +7,7 @@ import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Img from 'gatsby-image';
-import { darkTheme } from '../styling/themes';
+import { darkTheme } from '../utils/themes';
 
 interface Props extends PageRendererProps {
 	data: Query;

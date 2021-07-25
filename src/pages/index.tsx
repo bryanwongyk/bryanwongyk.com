@@ -14,8 +14,8 @@ import LinkCTAButton from '../components/buttons/link-cta-button';
 import profile from '../content/assets/images/profile-2-circular.png';
 import PageContainer from '../components/page-container/page-container';
 
-import { darkTheme } from '../styling/themes';
-import mediaQueries from '../styling/breakpoints.utils';
+import { darkTheme } from '../utils/themes';
+import mediaQueries from '../utils/breakpoints.utils';
 
 const WorkDiv = styled.div`
 	display: flex;

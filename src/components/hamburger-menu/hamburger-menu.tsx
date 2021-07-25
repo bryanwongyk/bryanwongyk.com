@@ -2,7 +2,7 @@
 
 import { FunctionComponent, useState } from 'react';
 import { css, jsx } from '@emotion/react';
-import mediaQueries from '../../styling/breakpoints.utils';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 // Credit to https://jonsuh.com/hamburgers/ 3DX Hamburger
 // Using a normal .css file here as it is how the library is intended to be used
