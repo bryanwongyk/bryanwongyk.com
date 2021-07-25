@@ -9,7 +9,7 @@ import { ArrowRight } from 'phosphor-react';
 
 import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
-import PostPreview from '../components/post-preview/post-preview-basic';
+import PostPreview from '../components/post-preview/post-preview';
 import LinkCTAButton from '../components/buttons/link-cta-button';
 import profile from '../content/assets/images/profile-2-circular.png';
 import PageContainer from '../components/page-container/page-container';

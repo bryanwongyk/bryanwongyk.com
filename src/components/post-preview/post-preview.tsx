@@ -25,6 +25,11 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 	return (
 		<article
 			css={css`
+				a {
+					color: ${darkTheme.colours.white} !important;
+					text-decoration: none !important;
+				}
+
 				&:hover {
 					a > div > img {
 						transform: translateY(-1px);

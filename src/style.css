@@ -57,7 +57,7 @@
 	--fontSize-5: 2.074rem;
 	--fontSize-6: 2.488rem;
 	--fontSize-7: 2.986rem;
-	--color-primary: F2F2F2;
+	--color-primary: #f2f2f2;
 	--color-text: #f2f2f2;
 	--color-text-light: #f2f2f2;
 	--color-heading: #f2f2f2;
@@ -342,4 +342,9 @@ a:focus {
 article ul,
 article ol {
 	padding-left: 32px;
+}
+
+article a {
+	color: var(--color-accent);
+	text-decoration: underline;
 }

@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 
-import PostPreview from '../components/post-preview/post-preview-basic';
+import PostPreview from '../components/post-preview/post-preview';
 import SideBio from '../components/side-bio/side-bio';
 import PageContainer from '../components/page-container/page-container';
 

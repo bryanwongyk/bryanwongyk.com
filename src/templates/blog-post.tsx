@@ -1,28 +1,21 @@
+/** @jsx jsx */
+
 import React, { FunctionComponent } from 'react';
-import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
+import { Link, graphql, PageRendererProps } from 'gatsby';
+import { Query } from '../graphql-types';
 import SEO from '../components/seo';
-import { css } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
+import { motion } from 'framer-motion';
 import Img from 'gatsby-image';
 import { darkTheme } from '../styling/themes';
-import mediaQueries from '../styling/breakpoints.utils';
 
-import { motion } from 'framer-motion';
-
-interface BlogPostData {
-	markdownRemark: {
-		html: string;
-		frontmatter: {
-			path: string;
-			title: string;
-			author: string;
-			date: string;
-		};
-	};
+interface Props extends PageRendererProps {
+	data: Query;
 }
 
-const BlogPost: FunctionComponent<{}> = ({ data }) => {
-	const post = data.markdownRemark;
+const BlogPost: FunctionComponent<Props> = props => {
+	const data = props.data!;
+	const post: any = data.markdownRemark!;
 	const featuredImgFluid =
 		post.frontmatter.featuredImage.childImageSharp.fluid;
 
