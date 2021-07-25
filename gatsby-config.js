@@ -40,6 +40,14 @@ module.exports = {
 				name: `projects`,
 			},
 		},
+		{
+			resolve: `gatsby-plugin-layout`,
+			options: {
+				component: require.resolve(
+					`${__dirname}/src/components/layout/layout.tsx`,
+				),
+			},
+		},
 		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-plugin-manifest`,

@@ -146,9 +146,6 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 								<Link to={'/about'}>ABOUT</Link>
 							</FooterListItem>
 							<FooterListItem>
-								<Link to={'/#work'}>WORK</Link>
-							</FooterListItem>
-							<FooterListItem>
 								<Link to={'/blog'}>BLOG</Link>
 							</FooterListItem>
 							<FooterListItem>
@@ -168,6 +165,18 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 						>
 							<FontAwesomeIcon
 								icon={faLinkedinIn}
+								css={css`
+									font-size: 24px;
+								`}
+							/>
+						</FooterAnchor>
+						<FooterAnchor
+							href="https://github.com/bryanwyk"
+							target="_blank"
+							title="GitHub"
+						>
+							<FontAwesomeIcon
+								icon={faGithub}
 								css={css`
 									font-size: 24px;
 								`}

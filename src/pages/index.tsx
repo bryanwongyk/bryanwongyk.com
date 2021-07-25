@@ -8,14 +8,16 @@ import styled from '@emotion/styled';
 import { CaretRight, ArrowRight } from 'phosphor-react';
 
 import Layout from '../components/layout/layout';
-import Container from '../components/container/container';
 import SEO from '../components/seo';
 import { BlogData } from '../typings/blog';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import AnchorButton from '../components/anchor-button/anchor-button';
 import profile from '../content/assets/images/profile-2-circular.png';
 
+import { motion } from 'framer-motion';
+
 import mediaQueries from '../styling/breakpoints.utils';
+import { string } from 'prop-types';
 
 const Section = styled.section`
 	margin-bottom: 96px;
@@ -130,9 +132,8 @@ const ScrollDown = keyframes`
 
 const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 	const latestBlogPosts = data.allMarkdownRemark.edges;
-	console.log(latestBlogPosts);
 	return (
-		<Layout>
+		<>
 			<SEO title="Home" />
 			<section
 				id="about"
@@ -152,7 +153,28 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 						margin-bottom: 128px;
 					`}
 				>
-					<HeroDiv>
+					<motion.div
+						initial={{ opacity: 0, y: 100 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{
+							type: 'spring' as any,
+							stiffness: '25' as any,
+						}}
+						css={css`
+							position: relative;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+
+							margin-bottom: 64px;
+							margin-top: 32px;
+							transform: scale(0.5);
+
+							@media (min-width: 580px) {
+								transform: scale(1);
+							}
+						`}
+					>
 						<img
 							src={profile}
 							css={css`
@@ -175,12 +197,25 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 							BRYAN <br />
 							WONG
 						</h1>
-					</HeroDiv>
-					<HeroSubHeading>
-						Hi! I'm a <b>Software Engineer</b> passionate about
-						creating user-centered experiences.
-					</HeroSubHeading>
-					<div
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, y: 100 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{
+							type: 'spring' as any,
+							stiffness: '20' as any,
+							delay: 0.7,
+						}}
+					>
+						<HeroSubHeading>
+							Hi! I'm a <b>Software Engineer</b> passionate about
+							creating user-centered experiences.
+						</HeroSubHeading>
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 1, delay: 1.4 }}
 						css={css`
 							display: flex;
 							justify-content: center;
@@ -225,7 +260,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 								/>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 			<Section id="work">
@@ -393,7 +428,7 @@ const IndexPage: FunctionComponent<BlogData> = ({ data }) => {
 				</div>
 			</Section>
 			{/* </Container> */}
-		</Layout>
+		</>
 	);
 };
 

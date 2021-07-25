@@ -9,34 +9,39 @@ import styled from '@emotion/styled';
 import { darkTheme } from '../styling/themes';
 import AboutImg from '../content/assets/images/about.jpg';
 
+import { motion } from 'framer-motion';
+
 const Section = styled.section`
 	margin-bottom: 96px;
 `;
 
-const StyledListItem = styled.li`
-	margin-bottom: 32px;
-`;
-
 const About: FunctionComponent<{}> = ({}) => (
-	<Layout>
+	<>
 		<SEO title="About" />
 		<Section>
-			{/* <div
-				css={css`
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					background-color: ${darkTheme.colours.black};
-				`}
-			> */}
-			<h1
-				css={css`
-					font-size: 1.2rem;
-				`}
+			<motion.div
+				initial={{ opacity: 0, x: -50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+				}}
 			>
-				ABOUT
-			</h1>
-			<div>
+				<h1
+					css={css`
+						font-size: 1.2rem;
+					`}
+				>
+					ABOUT
+				</h1>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, x: -50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0.5,
+				}}
+			>
 				<h2>Hi, I'm Bryan!</h2>
 				<div
 					css={css`
@@ -68,9 +73,9 @@ const About: FunctionComponent<{}> = ({}) => (
 					finance.
 				</p>
 				<p>Feel free to reach out to connect or have a chat!</p>
-			</div>
+			</motion.div>
 		</Section>
-	</Layout>
+	</>
 );
 
 export default About;

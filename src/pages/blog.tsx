@@ -2,7 +2,6 @@
 
 import React, { FunctionComponent } from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
@@ -10,21 +9,31 @@ import profile from '../content/assets/images/profile-circular.png';
 import PostPreviewBasic from '../components/post-preview/post-preview-basic';
 import SideProfile from '../components/side-profile/side-profile';
 
+import { motion } from 'framer-motion';
+
 import mediaQueries from '../styling/breakpoints.utils';
 
 const Blog: FunctionComponent<{}> = ({ data }) => {
 	const posts = data.allMarkdownRemark.edges;
 	return (
-		<Layout>
+		<>
 			<SEO title="Blog" />
 			<div>
-				<h1
-					css={css`
-						font-size: 1.2rem;
-					`}
+				<motion.div
+					initial={{ opacity: 0, x: -50 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{
+						duration: 0.5,
+					}}
 				>
-					BLOG
-				</h1>
+					<h1
+						css={css`
+							font-size: 1.2rem;
+						`}
+					>
+						BLOG
+					</h1>
+				</motion.div>
 				<section
 					css={css`
 						display: flex;
@@ -36,7 +45,13 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						}
 					`}
 				>
-					<div
+					<motion.div
+						initial={{ opacity: 0, y: 60 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 1,
+							delay: 0.3,
+						}}
 						css={css`
 							${mediaQueries[0]} {
 								grid-row: 1;
@@ -46,50 +61,61 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						`}
 					>
 						<SideProfile />
-					</div>
-					<ol
-						css={css`
-							list-style: none;
-							margin: 0;
-							${mediaQueries[0]} {
-								grid-column: 1;
-								grid-row: 1;
-								display: grid;
-								grid-template-columns: 1fr 1fr;
-								grid-gap: 32px;
-							}
-						`}
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0, y: 60 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{
+							duration: 1,
+							delay: 0.9,
+						}}
 					>
-						{posts.map(post => {
-							return (
-								<li
-									key={post.node.id}
-									css={css`
-										margin-bottom: 32px;
-									`}
-								>
-									<PostPreviewBasic
-										thumbnailPath={
-											post.node.frontmatter.featuredImage
-												.publicURL
-										}
-										title={post.node.frontmatter.title}
-										description={
-											post.node.frontmatter.description
-										}
-										date={post.node.frontmatter.date}
-										readingTime={
-											post.node.frontmatter.readingTime
-										}
-										path={post.node.frontmatter.path}
-									/>
-								</li>
-							);
-						})}
-					</ol>
+						<ol
+							css={css`
+								list-style: none;
+								margin: 0;
+								${mediaQueries[0]} {
+									grid-column: 1;
+									grid-row: 1;
+									display: grid;
+									grid-template-columns: 1fr 1fr;
+									grid-gap: 32px;
+								}
+							`}
+						>
+							{posts.map(post => {
+								return (
+									<li
+										key={post.node.id}
+										css={css`
+											margin-bottom: 32px;
+										`}
+									>
+										<PostPreviewBasic
+											thumbnailPath={
+												post.node.frontmatter
+													.featuredImage.publicURL
+											}
+											title={post.node.frontmatter.title}
+											description={
+												post.node.frontmatter
+													.description
+											}
+											date={post.node.frontmatter.date}
+											readingTime={
+												post.node.frontmatter
+													.readingTime
+											}
+											path={post.node.frontmatter.path}
+										/>
+									</li>
+								);
+							})}
+						</ol>
+					</motion.div>
 				</section>
 			</div>
-		</Layout>
+		</>
 	);
 };
 

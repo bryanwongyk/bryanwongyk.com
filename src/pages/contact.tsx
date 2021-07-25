@@ -7,62 +7,77 @@ import SEO from '../components/seo';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../styling/themes';
 import ContactForm from '../components/contact-form/contact-form';
+import styled from '@emotion/styled';
+
+import { motion } from 'framer-motion';
+
+const Section = styled.section`
+	margin-bottom: 96px;
+`;
 
 const Contact: FunctionComponent<{}> = ({}) => (
-	<Layout>
+	<>
 		<SEO title="Contact" />
-		<header
-			css={css`
-				display: flex;
-				justify-content: center;
-			`}
-		>
-			<h1>CONTACT</h1>
-		</header>
-		<div
-			css={css`
-				margin: 32px 0;
-			`}
-		>
-			<div
+		<Section>
+			<motion.div
+				initial={{ opacity: 0, x: -50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+				}}
+			>
+				<h1
+					css={css`
+						font-size: 1.2rem;
+					`}
+				>
+					CONTACT
+				</h1>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0, x: -50 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{
+					duration: 0.5,
+					delay: 0.5,
+				}}
 				css={css`
-					display: flex;
-					flex-direction: column;
-					align-items: center;
+					margin: 32px 0;
 				`}
 			>
-				<a
-					href="mailto:bryanwyk@gmail.com"
-					title="Email"
-					css={css`
-						&:hover {
-							text-decoration: underline;
-							text-decoration-style: solid;
-						}
-					`}
-				>
-					bryanwyk@gmail.com
-				</a>
-				<p
-					css={css`
-						margin: 24px 0;
-						opacity: 50%;
-					`}
-				>
-					OR
+				<p>
+					Contact me on{' '}
+					<a
+						href="mailto:bryanwyk@gmail.com"
+						title="Email"
+						css={css`
+							border-bottom: 1px solid ${darkTheme.colours.white};
+							transition: all 0.2s ease;
+							padding-bottom: 1px;
+
+							&:hover {
+								border-bottom: 1px solid
+									${darkTheme.colours.red};
+								color: ${darkTheme.colours.red};
+							}
+						`}
+					>
+						bryanwyk@gmail.com
+					</a>{' '}
+					or use the form below.
 				</p>
-			</div>
-			<div
-				css={css`
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-				`}
-			>
-				<ContactForm />
-			</div>
-		</div>
-	</Layout>
+				<div
+					css={css`
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+					`}
+				>
+					<ContactForm />
+				</div>
+			</motion.div>
+		</Section>
+	</>
 );
 
 export default Contact;

@@ -24,6 +24,7 @@ const StyledInput = styled.input`
 	border: none;
 	background-color: ${darkTheme.colours.white};
 	margin-bottom: 24px;
+	padding: 4px 3px;
 `;
 
 const StyledTextArea = styled.textarea`
@@ -32,6 +33,7 @@ const StyledTextArea = styled.textarea`
 	border: none;
 	background-color: ${darkTheme.colours.white};
 	margin-bottom: 24px;
+	padding: 4px 3px;
 `;
 
 const StyledButtonDiv = styled.div`

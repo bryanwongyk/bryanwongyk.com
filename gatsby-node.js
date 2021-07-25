@@ -44,42 +44,4 @@ exports.createPages = ({ actions, graphql }) => {
 			});
 		});
 	});
-
-	const projectTemplate = path.resolve('src/templates/portfolio-project.tsx');
-	const portfolioProjects = graphql(`
-		{
-			allMarkdownRemark(
-				filter: { frontmatter: { type: { in: ["portfolio"] } } }
-			) {
-				edges {
-					node {
-						id
-						frontmatter {
-							title
-							featuredImage {
-								publicURL
-							}
-							description
-							linkToProject
-							linkToGithub
-							path
-						}
-					}
-				}
-			}
-		}
-	`).then(res => {
-		if (res.errors) {
-			return Promise.reject(res.errors);
-		}
-
-		res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-			createPage({
-				path: node.frontmatter.path,
-				component: projectTemplate,
-			});
-		});
-	});
-
-	return Promise.all([blogPosts, portfolioProjects]);
 };
