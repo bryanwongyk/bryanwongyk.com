@@ -8,7 +8,6 @@ import { css, jsx } from '@emotion/react';
 import NavBar from '../navbar/navbar';
 import MobileHamburger from '../mobile-hamburger/mobile-hamburger';
 import { darkTheme } from '../../styling/themes';
-import { useLocation } from '@reach/router';
 import checkHoverMediaQuery from '../../styling/checkHover.utils';
 import { Copy, SunDim, Moon } from 'phosphor-react';
 import mediaQueries from '../../styling/breakpoints.utils';
@@ -48,14 +47,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 	mobileMenuShown,
 	children,
 }) => {
-	const location = useLocation();
-	// If the user is already on the Home page and they click the logo, just close the mobile menu.
-	const handleClickLogo = (): void => {
-		if (mobileMenuShown && location.pathname === '/') {
-			closeMobileMenu();
-		}
-	};
-
 	// Keep track if link is copied
 	const [copied, setCopied] = useState(false);
 	const handleClickCopy = (): void => {
@@ -97,7 +88,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 								}
 							}
 						`}
-						onClick={handleClickLogo}
+						onClick={closeMobileMenu}
 					>
 						<img
 							src={Logo}

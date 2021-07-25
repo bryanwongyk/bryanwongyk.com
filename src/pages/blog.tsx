@@ -49,7 +49,7 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						initial={{ opacity: 0, y: 60 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{
-							duration: 1,
+							duration: 0.8,
 							delay: 0.3,
 						}}
 						css={css`
@@ -63,11 +63,11 @@ const Blog: FunctionComponent<{}> = ({ data }) => {
 						<SideProfile />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0, y: 60 }}
+						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{
-							duration: 1,
-							delay: 0.9,
+							duration: 0.8,
+							delay: 0.7,
 						}}
 					>
 						<ol

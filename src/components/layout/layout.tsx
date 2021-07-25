@@ -99,6 +99,7 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 
 	const handleToggleMobileMenu = (): void => {
 		setShowMobileMenu(!showMobileMenu);
+		console.log(showMobileMenu);
 	};
 
 	const handleCloseMobileMenu = (): void => {

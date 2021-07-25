@@ -4,7 +4,6 @@ import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../styling/themes';
-import { useLocation } from '@reach/router';
 
 interface MobileNavBarLinkProps {
 	path: string;
@@ -17,14 +16,6 @@ const MobileNavBarLink: FunctionComponent<MobileNavBarLinkProps> = ({
 	name,
 	toggleMobileMenu,
 }) => {
-	const location = useLocation();
-	// Note that Gatsby does not reload the pages once they are loaded. If you are on the Home page and click on a Link to home, it will not refresh.
-	// If the user is already on the Home page, just close the mobile menu.
-	const handleClickLink = () => {
-		if (location.pathname === path) {
-			toggleMobileMenu();
-		}
-	};
 	return (
 		<li
 			css={css`
@@ -39,7 +30,7 @@ const MobileNavBarLink: FunctionComponent<MobileNavBarLinkProps> = ({
 				}
 			`}
 		>
-			<Link to={path} onClick={handleClickLink}>
+			<Link to={path} onClick={toggleMobileMenu}>
 				{name}
 			</Link>
 		</li>

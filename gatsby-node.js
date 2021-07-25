@@ -10,10 +10,10 @@ let path = require('path');
 
 // https://stackoverflow.com/questions/64594130/programmatically-create-multiple-types-of-pages-in-gatsby-js
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
 	const { createPage } = actions;
 	const postTemplate = path.resolve('src/templates/blog-post.tsx');
-	const blogPosts = graphql(`
+	const blogPosts = await graphql(`
 		{
 			allMarkdownRemark(
 				filter: { frontmatter: { type: { in: ["blog"] } } }

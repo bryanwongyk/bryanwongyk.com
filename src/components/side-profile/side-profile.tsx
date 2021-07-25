@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css, jsx } from '@emotion/react';
-import profile from '../../content/assets/images/profile-circular.png';
+import profile from '../../content/assets/images/profile-2-circular.png';
 import { darkTheme } from '../../styling/themes';
 
 import mediaQueries from '../../styling/breakpoints.utils';

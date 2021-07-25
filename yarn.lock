@@ -6365,6 +6365,14 @@ gatsby-plugin-emotion@^5.4.0:
     "@babel/runtime" "^7.11.2"
     "@emotion/babel-preset-css-prop" "^11.0.0"
 
+gatsby-plugin-google-gtag@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.10.0.tgz#1fa79a4b98044ce4e939c87b13c3ef438927226a"
+  integrity sha512-bbNXk2aDxKY0gg//doNQNtqgdcxIKUu/cZwUC4QsJn2zUsEVTVwIXmU1zbDDhT/rinBKJri+1FYhivYTMtoRVQ==
+  dependencies:
+    "@babel/runtime" "^7.14.6"
+    minimatch "^3.0.4"
+
 gatsby-plugin-layout@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-layout/-/gatsby-plugin-layout-2.10.0.tgz#edac4b11905bdd2ad71fc5dc98f64bd92fddbc9b"
