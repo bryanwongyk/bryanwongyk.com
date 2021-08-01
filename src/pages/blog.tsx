@@ -20,7 +20,10 @@ const Blog = ({}) => {
 			allMarkdownRemark(
 				sort: {
 					order: DESC
-					fields: [frontmatter___date, frontmatter___title]
+					fields: [
+						frontmatter___dateReverseOrder
+						frontmatter___title
+					]
 				}
 				filter: { frontmatter: { type: { in: ["blog"] } } }
 			) {

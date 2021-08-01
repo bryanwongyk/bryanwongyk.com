@@ -1,5 +1,6 @@
 ---
 date: 'Aug 1, 2021'
+dateReverseOrder: 21/8/1
 title: Understanding JWTs
 description: An explanation on JSON Web Tokens
 readingTime: '10 min read'

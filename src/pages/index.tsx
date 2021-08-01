@@ -99,7 +99,10 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 			allMarkdownRemark(
 				sort: {
 					order: DESC
-					fields: [frontmatter___date, frontmatter___title]
+					fields: [
+						frontmatter___dateReverseOrder
+						frontmatter___title
+					]
 				}
 				filter: { frontmatter: { type: { in: "blog" } } }
 				limit: 4
@@ -131,7 +134,6 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 			<section
 				css={css`
 					text-align: center;
-					height: 90vh;
 					min-height: 632px;
 					display: flex;
 					flex-direction: column;
@@ -142,7 +144,6 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 				<div
 					css={css`
 						width: 100%;
-						margin-bottom: 128px;
 					`}
 				>
 					<motion.div
