@@ -62,7 +62,6 @@ const BlogPostListRow = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	${mediaQueries[0]} {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
