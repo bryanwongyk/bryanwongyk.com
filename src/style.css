@@ -198,7 +198,8 @@ li *:last-child {
 	margin-bottom: var(--spacing-0);
 }
 
-li > ul {
+li > ul,
+li > ol {
 	margin-left: var(--spacing-8);
 	margin-top: calc(var(--spacing-8) / 2);
 }
