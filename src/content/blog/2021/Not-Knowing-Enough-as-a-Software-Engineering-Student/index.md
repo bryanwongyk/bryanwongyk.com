@@ -12,7 +12,7 @@ type: blog
 
 > “I know that I know nothing” - Socrates
 
-I recently stumbled upon a blog post by [Dan Abramov](https://twitter.com/dan_abramov) titled [‘Things I Don’t Know as of 2018’](https://overreacted.io/things-i-dont-know-as-of-2018/). Dan is a software engineer at Facebook known for co-creating the Redux library and working on the React team. I started following him a while ago because I was interested in seeing what he had to say as a prominent front-end developer. In his post, Dan lists the different programming topics he believed he didn’t know much about including algorithms, back-end programming, and deployment. My first reaction was shock. Given Dan's track record, I assumed that he would have been a whiz at everything. My second reaction was a huge sense of relief. I'm not as dumb as I thought I was.
+I recently stumbled upon a blog post by [Dan Abramov](https://twitter.com/dan_abramov) titled [‘Things I Don’t Know as of 2018’](https://overreacted.io/things-i-dont-know-as-of-2018/). Dan is a software engineer at Facebook known for co-creating the Redux library and working on the React team. In his post, Dan lists the different programming topics he believed he didn’t know much about including algorithms, back-end programming, and deployment. My first reaction was shock. Given Dan's track record, I assumed that he would have been a whiz at everything. My second reaction was a huge sense of relief. I'm not as dumb as I thought I was.
 
 ---
 
