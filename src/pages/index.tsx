@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import React, { FunctionComponent } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { css, jsx, keyframes } from '@emotion/react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
@@ -11,18 +11,21 @@ import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 import PostPreview from '../components/post-preview/post-preview';
 import LinkCTAButton from '../components/buttons/link-cta-button';
-import profile from '../content/assets/images/profile-2-circular.png';
+import profile from '../content/assets/images/profile-2.jpg';
 import PageContainer from '../components/page-container/page-container';
 
 import { darkTheme } from '../utils/themes';
 import mediaQueries from '../utils/breakpoints.utils';
 
 const WorkDiv = styled.div`
-	display: flex;
-	flex-direction: column;
-	transition: color 0.3s ease;
+	width: 100%;
 
-	&:hover {
+	/* @media (min-width: 500px) {
+		width: 300px;
+	} */
+
+	&:hover dt {
+		transition: color 0.3s ease;
 		color: ${darkTheme.colours.red};
 	}
 
@@ -30,6 +33,7 @@ const WorkDiv = styled.div`
 		margin-top: 32px;
 	}
 	${mediaQueries[0]} {
+		width: 80%;
 		&:not(:first-of-type) {
 			margin-top: 0;
 		}
@@ -37,16 +41,16 @@ const WorkDiv = styled.div`
 `;
 
 const WorkDescTitle = styled.dt`
-	font-family: 'Source Sans Pro', 'serif';
+	font-family: 'Work Sans';
 	font-weight: bold;
-	font-size: 1.5rem;
-	text-align: center;
+	font-size: 0.95rem;
 `;
 
 const WorkDescDetails = styled.dd`
-	margin-top: 16px;
+	font-family: 'IBM Plex Mono';
+	font-size: 0.9rem;
+	margin: 0;
 	opacity: 50%;
-	text-align: center;
 	line-height: 24px;
 	${mediaQueries[0]} {
 		margin-bottom: 0;
@@ -54,8 +58,8 @@ const WorkDescDetails = styled.dd`
 `;
 
 const BlogPostList = styled.ol`
-	margin: 0 0 24px 0;
-	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
 `;
 
 const BlogPostListRow = styled.div`
@@ -63,9 +67,9 @@ const BlogPostListRow = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	${mediaQueries[0]} {
-		display: grid;
+		/* display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-gap: 32px;
+		grid-gap: 32px; */
 	}
 `;
 
@@ -73,23 +77,6 @@ const ArrowSpan = styled.span`
 	top: 4px;
 	position: relative;
 	margin-left: 8px;
-`;
-
-const ScrollDown = keyframes`
-	from {
-		opacity: 1;
-		transform: translateY(0%);
-	}
-	50% {
-		opacity: 1;
-	}
-	90% {
-		opacity: 0.5;
-	}
-	100% {
-		transform: translateY(60%);
-		opacity: 0;
-	}
 `;
 
 const IndexPage: FunctionComponent<{}> = ({}) => {
@@ -104,7 +91,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					]
 				}
 				filter: { frontmatter: { type: { in: "blog" } } }
-				limit: 4
+				limit: 3
 			) {
 				edges {
 					node {
@@ -133,316 +120,257 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 			<section
 				css={css`
 					text-align: center;
-					min-height: 632px;
 					display: flex;
 					flex-direction: column;
-					justify-content: center;
-					align-items: center;
+
+					@media (min-width: 840px) {
+						margin-top: 96px;
+						margin-bottom: 156px;
+						padding-top: 72px;
+					}
 				`}
 			>
-				<div
-					css={css`
-						width: 100%;
-					`}
+				<motion.div
+					initial={{ opacity: 0, y: 100 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						type: 'spring' as any,
+						stiffness: '25' as any,
+					}}
 				>
-					<motion.div
-						initial={{ opacity: 0, y: 100 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							type: 'spring' as any,
-							stiffness: '25' as any,
-						}}
+					<span
 						css={css`
-							margin-bottom: 64px;
-							margin-top: 32px;
+							position: relative;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
 						`}
 					>
-						<span
+						<h1
 							css={css`
-								transform: scale(0.5);
-								position: relative;
-								display: flex;
-								justify-content: center;
-								align-items: center;
+								text-align: center;
+								color: ${darkTheme.colours.red};
+								font-size: 36px;
+								margin: 0;
 
-								@media (min-width: 580px) {
-									transform: scale(1);
+								@media (min-width: 500px) {
+									font-size: 56px;
+								}
+								@media (min-width: 840px) {
+									transform: translateY(-100px);
+									font-size: 112px;
 								}
 							`}
 						>
-							<img
-								src={profile}
+							BRYAN WONG
+						</h1>
+						<img
+							src={profile}
+							css={css`
+								width: 200px;
+								margin: 24px 0;
+								z-index: -1;
+
+								@media (min-width: 500px) {
+									width: 300px;
+								}
+								@media (min-width: 840px) {
+									/* width: 300px; */
+									position: absolute;
+									transform: translateY(40px);
+								}
+							`}
+						/>
+					</span>
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 100 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						type: 'spring' as any,
+						stiffness: '20' as any,
+						delay: 0.6,
+					}}
+				>
+					<h3
+						css={css`
+							text-align: right;
+							margin: 0;
+							line-height: 24px;
+							font-size: 1rem;
+							max-width: 450px;
+							display: inline-block;
+							transform: translateX(13px);
+
+							@media (min-width: 500px) {
+								transform: translateX(62px);
+							}
+
+							@media (min-width: 840px) {
+								transform: translate(276px, -110px);
+							}
+						`}
+					>
+						Software Engineer, <br />
+						Creator, <br />
+						Thinker
+					</h3>
+				</motion.div>
+			</section>
+			<motion.div
+				initial={{ opacity: 0, y: 100 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					type: 'spring' as any,
+					stiffness: '20' as any,
+					delay: 1,
+				}}
+			>
+				<PageContainer>
+					<h2
+						css={css`
+							margin-bottom: 48px;
+							font-size: 1rem;
+						`}
+					>
+						CREATING
+					</h2>
+					<dl
+						css={css`
+							display: flex;
+							flex-direction: column;
+							justify-content: space-around;
+							align-items: center;
+							padding-left: 48px;
+
+							${mediaQueries[0]} {
+								display: grid;
+								align-items: start;
+								grid-template-columns: repeat(3, 1fr);
+								margin: 0 auto;
+							}
+						`}
+					>
+						<WorkDiv>
+							<Link to="/blog">
+								<WorkDescTitle>
+									BLOG{' '}
+									<ArrowSpan>
+										<ArrowRight size={18} />
+									</ArrowSpan>
+								</WorkDescTitle>
+
+								<WorkDescDetails>
+									Thoughts on business, programming, and life
+								</WorkDescDetails>
+							</Link>
+						</WorkDiv>
+						<WorkDiv>
+							<a
+								href="https://github.com/bryanwyk"
+								target="_blank"
+							>
+								<WorkDescTitle>
+									PORTFOLIO{' '}
+									<ArrowSpan>
+										<ArrowRight size={18} />
+									</ArrowSpan>
+								</WorkDescTitle>
+
+								<WorkDescDetails>
+									View my projects on GitHub
+								</WorkDescDetails>
+							</a>
+						</WorkDiv>
+						<WorkDiv>
+							<a
+								href="https://www.instagram.com/b2uyk/"
+								target="_blank"
 								css={css`
-									width: 230px;
-									margin: 0 30px 0 0;
-									z-index: -1;
-									margin: 0;
-									transform: translateX(20px);
-								`}
-							/>
-							<h1
-								css={css`
-									text-align: center;
-									color: ${darkTheme.colours.red};
-									font-size: 112px;
-									transform: translateX(-20px);
-									margin: 8px 0;
+									display: inline;
 								`}
 							>
-								BRYAN <br />
-								WONG
-							</h1>
-						</span>
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0, y: 100 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							type: 'spring' as any,
-							stiffness: '20' as any,
-							delay: 0.7,
-						}}
+								<WorkDescTitle>
+									ART{' '}
+									<ArrowSpan>
+										<ArrowRight size={18} />
+									</ArrowSpan>
+								</WorkDescTitle>
+								<WorkDescDetails>
+									View my digital art
+								</WorkDescDetails>
+							</a>
+						</WorkDiv>
+					</dl>
+				</PageContainer>
+
+				<PageContainer>
+					<h2
+						css={css`
+							margin-bottom: 48px;
+							font-size: 1rem;
+						`}
 					>
-						<h2
-							css={css`
-								text-align: center;
-								margin: 0 0 48px 0;
-								line-height: 24px;
-								font-size: 1rem;
-								max-width: 450px;
-								display: inline-block;
-								font-weight: normal;
-							`}
-						>
-							Hi! I'm a <b>Software Engineer</b> passionate about
-							creating user-centered experiences.
-						</h2>
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 1, delay: 1.4 }}
+						LATEST POSTS
+					</h2>
+					<BlogPostList>
+						<BlogPostListRow>
+							{latestBlogPosts.map(
+								({ node }: { node: MarkdownRemark }) => {
+									const frontmatter: any = node!.frontmatter!;
+
+									return (
+										<li
+											key={node.id}
+											css={css`
+												list-style-type: none;
+												text-align: center;
+												margin-top: 48px;
+
+												h4 {
+													font-size: 1rem !important;
+												}
+
+												&:first-of-type {
+													margin-top: 0;
+												}
+											`}
+										>
+											<PostPreview
+												title={frontmatter.title}
+												description={
+													frontmatter.description
+												}
+												date={frontmatter.date}
+												readingTime={
+													frontmatter.readingTime
+												}
+												path={frontmatter.path}
+											/>
+										</li>
+									);
+								},
+							)}
+						</BlogPostListRow>
+					</BlogPostList>
+					<div
 						css={css`
 							display: flex;
 							justify-content: center;
+							margin-top: 56px;
 						`}
 					>
-						<div
-							css={css`
-								display: none;
-								height: 42px;
-								width: 24px;
-								border-radius: 14px;
-								transform: none;
-								border: 2px solid white;
-								top: 170px;
+						<LinkCTAButton link="/blog" isInternalLink={true}>
+							<b>View all posts </b>
 
-								${mediaQueries[0]} {
-									display: block;
-								}
-							`}
-						>
-							<div
-								css={css`
-									height: 100%;
-									animation: ${ScrollDown} 1.5s ease-out
-										infinite;
-								`}
-							>
-								<div
-									css={css`
-										height: 5px;
-										width: 2px;
-										display: block;
-										margin: 5px auto;
-										background: white;
-										position: relative;
-
-										height: 4px;
-										width: 4px;
-										border: 2px solid #fff;
-										border-radius: 8px;
-									`}
-								/>
-							</div>
-						</div>
-					</motion.div>
-				</div>
-			</section>
-			<PageContainer>
-				<h1
-					css={css`
-						margin-bottom: 64px;
-						font-family: 'Source Sans Pro', sans-serif;
-						font-weight: bold;
-						font-size: 1.5rem;
-					`}
-				>
-					CREATING
-				</h1>
-				<dl
-					css={css`
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
-
-						${mediaQueries[0]} {
-							flex-direction: row;
-							justify-content: space-around;
-							margin: 0 auto;
-						}
-					`}
-				>
-					<WorkDiv>
-						<a href="https://github.com/bryanwyk" target="_blank">
-							<WorkDescTitle>
-								Developer <br /> Portfolio
-							</WorkDescTitle>
-
-							<WorkDescDetails>
-								View my projects on GitHub
-								<ArrowSpan>
-									<ArrowRight size={18} />
-								</ArrowSpan>
-							</WorkDescDetails>
-						</a>
-					</WorkDiv>
-					<WorkDiv>
-						<a
-							href="https://www.instagram.com/b2uyk/"
-							target="_blank"
-							css={css`
-								display: inline;
-							`}
-						>
-							<WorkDescTitle>Art</WorkDescTitle>
-							<WorkDescDetails>
-								View my digital art
-								<span
-									css={css`
-										top: 4px;
-										position: relative;
-										margin-left: 8px;
-									`}
-								>
-									<ArrowRight size={18} />
-								</span>
-							</WorkDescDetails>
-						</a>
-					</WorkDiv>
-				</dl>
-			</PageContainer>
-
-			<PageContainer>
-				<h1
-					css={css`
-						margin-bottom: 56px;
-						font-family: 'Source Sans Pro', sans-serif;
-						font-weight: bold;
-						font-size: 1.5rem;
-					`}
-				>
-					BLOG
-				</h1>
-				<BlogPostList>
-					<BlogPostListRow
-						css={css`
-							${mediaQueries[2]} {
-								grid-template-columns: 1fr 330px;
-								grid-gap: 32px;
-								margin-bottom: 32px;
-							}
-						`}
-					>
-						{latestBlogPosts
-							.slice(0, 2)
-							.map(({ node }: { node: MarkdownRemark }) => {
-								const frontmatter: any = node!.frontmatter!;
-
-								return (
-									<li
-										key={node.id}
-										css={css`
-											list-style-type: none;
-											height: 330px;
-										`}
-									>
-										<PostPreview
-											thumbnailPath={
-												frontmatter.featuredImage
-													.publicURL
-											}
-											title={frontmatter.title}
-											description={
-												frontmatter.description
-											}
-											date={frontmatter.date}
-											readingTime={
-												frontmatter.readingTime
-											}
-											path={frontmatter.path}
-										/>
-									</li>
-								);
-							})}
-					</BlogPostListRow>
-					<BlogPostListRow
-						css={css`
-							${mediaQueries[2]} {
-								grid-template-columns: 330px 1fr;
-								grid-gap: 32px;
-							}
-						`}
-					>
-						{latestBlogPosts
-							.slice(2, 4)
-							.map(({ node }: { node: MarkdownRemark }) => {
-								const frontmatter: any = node!.frontmatter!;
-
-								return (
-									<li
-										key={node.id}
-										css={css`
-											list-style-type: none;
-											height: 330px;
-										`}
-									>
-										<PostPreview
-											thumbnailPath={
-												frontmatter.featuredImage
-													.publicURL
-											}
-											title={frontmatter.title}
-											description={
-												frontmatter.description
-											}
-											date={frontmatter.date}
-											readingTime={
-												frontmatter.readingTime
-											}
-											path={frontmatter.path}
-										/>
-									</li>
-								);
-							})}
-					</BlogPostListRow>
-				</BlogPostList>
-				<div
-					css={css`
-						display: flex;
-						justify-content: center;
-					`}
-				>
-					<LinkCTAButton link="/blog" isInternalLink={true}>
-						<b>View all posts </b>
-
-						<ArrowSpan>
-							<ArrowRight size={18} />
-						</ArrowSpan>
-					</LinkCTAButton>
-				</div>
-			</PageContainer>
+							<ArrowSpan>
+								<ArrowRight size={18} />
+							</ArrowSpan>
+						</LinkCTAButton>
+					</div>
+				</PageContainer>
+			</motion.div>
 		</>
 	);
 };

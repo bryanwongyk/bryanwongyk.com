@@ -32,7 +32,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 			<div
 				css={css`
 					position: fixed;
-					background-color: ${darkTheme.colours.grey};
+					background-color: ${darkTheme.colours.black};
 					width: 100vw;
 					height: 100vh;
 					box-sizing: border-box;

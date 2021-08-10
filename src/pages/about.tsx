@@ -23,6 +23,7 @@ const About: FunctionComponent<{}> = ({}) => (
 				<h1
 					css={css`
 						font-size: 1.2rem;
+						font-family: 'Poppins';
 					`}
 				>
 					ABOUT

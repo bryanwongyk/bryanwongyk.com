@@ -6,7 +6,6 @@ import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../utils/themes';
 
 interface PostPreviewProps {
-	thumbnailPath: string;
 	title: string;
 	description: string;
 	date: string;
@@ -15,7 +14,6 @@ interface PostPreviewProps {
 }
 
 const PostPreview: FunctionComponent<PostPreviewProps> = ({
-	thumbnailPath,
 	title,
 	description,
 	date,
@@ -31,9 +29,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 				}
 
 				&:hover {
-					a > div > img {
-						transform: translateY(-1px);
-					}
+					transform: translateY(-1px);
 
 					a > div > h4 {
 						color: ${darkTheme.colours.red};
@@ -43,28 +39,28 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 		>
 			<Link to={path}>
 				<div>
-					<img
-						src={thumbnailPath}
-						css={css`
-							height: 190px;
-							width: 100%;
-							object-fit: cover;
-
-							transition: transform 0.3s ease;
-						`}
-					/>
 					<h4
 						css={css`
 							font-size: 1.2rem;
 							transition: color 0.3s ease;
-							margin: 8px 0;
+							margin: 0;
 						`}
 					>
 						{title}
 					</h4>
+					<footer
+						css={css`
+							font-family: 'IBM Plex Mono';
+							font-size: 0.9rem;
+							opacity: 50%;
+							padding: 0;
+							margin: 6px 0;
+						`}
+					>
+						{date} ⬩ {readingTime}
+					</footer>
 					<p
 						css={css`
-							opacity: 65%;
 							font-size: 0.9rem;
 							transition: color 0.3s ease;
 							margin-bottom: 8px;
@@ -72,15 +68,6 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 					>
 						{description}
 					</p>
-					<footer
-						css={css`
-							font-size: 0.9rem;
-							opacity: 40%;
-							padding: 0;
-						`}
-					>
-						{date} ⬩ {readingTime}
-					</footer>
 				</div>
 			</Link>
 		</article>

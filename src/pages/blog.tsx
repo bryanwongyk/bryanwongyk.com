@@ -62,6 +62,8 @@ const Blog = ({}) => {
 					<h1
 						css={css`
 							font-size: 1.2rem;
+							margin-bottom: 32px;
+							font-family: 'Poppins';
 						`}
 					>
 						BLOG
@@ -108,11 +110,7 @@ const Blog = ({}) => {
 								list-style: none;
 								margin: 0;
 								${mediaQueries[0]} {
-									grid-column: 1;
-									grid-row: 1;
-									display: grid;
-									grid-template-columns: 1fr 1fr;
-									grid-gap: 32px;
+									padding-left: 32px;
 								}
 							`}
 						>
@@ -123,14 +121,13 @@ const Blog = ({}) => {
 									<li
 										key={node.id}
 										css={css`
-											margin-bottom: 32px;
+											&:first-of-type {
+												margin-top: 0px;
+											}
+											margin-top: 48px;
 										`}
 									>
 										<PostPreview
-											thumbnailPath={
-												frontmatter.featuredImage
-													.publicURL
-											}
 											title={frontmatter.title}
 											description={
 												frontmatter.description

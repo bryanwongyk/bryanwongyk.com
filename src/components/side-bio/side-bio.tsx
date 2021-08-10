@@ -16,22 +16,24 @@ const SideBio: FunctionComponent = (): ReactElement => {
 				align-items: center;
 				justify-content: center;
 				margin-bottom: 32px;
+
 				${mediaQueries[0]} {
 					flex-direction: column;
-
 					align-items: center;
+
+					transform: translateY(-52px);
 				}
 			`}
 		>
 			<h6
 				css={css`
-					margin-top: 8px;
+					margin-top: 0;
 					${mediaQueries[0]} {
 						margin-bottom: 24px;
 					}
 				`}
 			>
-				BIO
+				ABOUT
 			</h6>
 			<img
 				src={profile}
@@ -48,13 +50,13 @@ const SideBio: FunctionComponent = (): ReactElement => {
 					color: ${darkTheme.colours.white};
 					opacity: 0.8;
 					text-align: center;
+					font-size: 0.9rem;
 					${mediaQueries[0]} {
 						margin: 0;
 					}
 				`}
 			>
-				Hi! I'm a Software Engineer passionate about creating
-				user-centered experiences.
+				Thoughts on business, programming, and life ☕️
 			</p>
 		</section>
 	);
