@@ -1,6 +1,6 @@
 ---
 date: 'Aug 3, 2021'
-dateReverseOrder: 21/8/3
+dateReverseOrder: 2021-08-03
 title: My Favourite Podcasts in 2021
 description: To satiate your information diet
 readingTime: '3 min read'
