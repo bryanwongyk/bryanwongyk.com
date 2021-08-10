@@ -41,6 +41,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 				<div>
 					<h4
 						css={css`
+							font-family: 'Work Sans';
 							font-size: 1.2rem;
 							transition: color 0.3s ease;
 							margin: 0;

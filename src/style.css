@@ -136,12 +136,11 @@ h2 {
 }
 
 h3 {
-	font-family: 'IBM Plex Mono';
 	font-size: var(--fontSize-4);
-	font-weight: normal;
 }
 
 h4 {
+	font-family: 'IBM Plex Mono';
 	font-size: var(--fontSize-3);
 }
 

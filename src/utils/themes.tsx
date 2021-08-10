@@ -3,7 +3,7 @@ const darkTheme = {
 		black: '#010202',
 		grey: '#252525',
 		lightGrey: '#856b6b',
-		white: '#FFFFFFE0',
+		white: '#DDDDDD',
 		red: '#F05454',
 		blue: '#30475E',
 	},

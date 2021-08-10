@@ -49,7 +49,7 @@ const BlogPost: FunctionComponent<Props> = props => {
 						<h1
 							css={css`
 								margin-bottom: 16px;
-								font-size: 2.5rem;
+								/* font-size: 2.5rem; */
 							`}
 						>
 							{post.frontmatter.title}
