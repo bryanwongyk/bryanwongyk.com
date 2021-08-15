@@ -2,24 +2,27 @@
 import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-
 import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
+import { motion } from 'framer-motion';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import SubscriptionForm from '../../subscription-form/subscription-form';
 
 import { darkTheme } from '../../../utils/themes';
 import mediaQueries from '../../../utils/breakpoints.utils';
 
 const StyledFooter = styled.footer`
-	margin: 32px 0 16px 0;
+	margin: 3rem 0 3rem 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	text-align: center;
 	font-size: 0.9rem;
-	padding-top: 32px;
+	/* padding-top: 32px; */
+	padding: 0;
 
 	${mediaQueries[0]} {
 		flex-direction: row;
@@ -83,57 +86,75 @@ const FooterListItem = styled.li`
 
 const Footer: FunctionComponent<{}> = ({ children }) => {
 	return (
-		<StyledFooter>
-			<div
+		<motion.div
+			initial={{ opacity: 0, y: 100 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{
+				type: 'spring' as any,
+				stiffness: '20' as any,
+				delay: 1.5,
+			}}
+		>
+			<hr
 				css={css`
-					${mediaQueries[0]} {
-						display: flex;
-						flex-direction: column;
-						align-items: start;
-					}
+					margin-bottom: 3rem;
 				`}
-			>
-				<FooterList>
-					<FooterListItem>
-						<Link to={'/about'}>ABOUT</Link>
-					</FooterListItem>
-					<FooterListItem>
-						<Link to={'/blog'}>BLOG</Link>
-					</FooterListItem>
-					<FooterListItem>
-						<Link to={'/contact'}>CONTACT</Link>
-					</FooterListItem>
-				</FooterList>
-				<FooterPara>© {new Date().getFullYear()} Bryan Wong</FooterPara>
-			</div>
+			/>
+			<SubscriptionForm />
+			<StyledFooter>
+				<div
+					css={css`
+						${mediaQueries[0]} {
+							display: flex;
+							flex-direction: column;
+							align-items: start;
+						}
+					`}
+				>
+					<FooterList>
+						<FooterListItem>
+							<Link to={'/about'}>ABOUT</Link>
+						</FooterListItem>
+						<FooterListItem>
+							<Link to={'/blog'}>BLOG</Link>
+						</FooterListItem>
+						<FooterListItem>
+							<Link to={'/contact'}>CONTACT</Link>
+						</FooterListItem>
+					</FooterList>
+					<FooterPara>
+						© {new Date().getFullYear()} Bryan Wong
+					</FooterPara>
+				</div>
 
-			<FooterSocialsList>
-				<FooterAnchor
-					href="https://www.linkedin.com/in/bryanwongyk/"
-					target="_blank"
-					title="LinkedIn"
-				>
-					<FontAwesomeIcon
-						icon={faLinkedinIn}
-						css={css`
-							font-size: 24px;
-						`}
-					/>
-				</FooterAnchor>
-				<FooterAnchor
-					href="https://github.com/bryanwyk"
-					target="_blank"
-					title="GitHub"
-				>
-					<FontAwesomeIcon
-						icon={faGithub}
-						css={css`
-							font-size: 24px;
-						`}
-					/>
-				</FooterAnchor>
-			</FooterSocialsList>
-		</StyledFooter>
+				<FooterSocialsList>
+					<FooterAnchor
+						href="https://www.linkedin.com/in/bryanwongyk/"
+						target="_blank"
+						title="LinkedIn"
+					>
+						<FontAwesomeIcon
+							icon={faLinkedinIn}
+							css={css`
+								font-size: 24px;
+							`}
+						/>
+					</FooterAnchor>
+					<FooterAnchor
+						href="https://github.com/bryanwyk"
+						target="_blank"
+						title="GitHub"
+					>
+						<FontAwesomeIcon
+							icon={faGithub}
+							css={css`
+								font-size: 24px;
+							`}
+						/>
+					</FooterAnchor>
+				</FooterSocialsList>
+			</StyledFooter>
+		</motion.div>
 	);
 };
 
