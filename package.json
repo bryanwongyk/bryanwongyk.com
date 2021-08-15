@@ -19,6 +19,7 @@
     "gatsby-plugin-canonical-urls": "^3.11.0",
     "gatsby-plugin-catch-links": "^3.10.0",
     "gatsby-plugin-emotion": "^6.10.0",
+    "gatsby-plugin-google-analytics": "^3.11.0",
     "gatsby-plugin-google-gtag": "^3.10.0",
     "gatsby-plugin-layout": "^2.10.0",
     "gatsby-plugin-manifest": "^3.10.0",

@@ -6,6 +6,7 @@ import { css, jsx, keyframes } from '@emotion/react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowRight } from 'phosphor-react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
@@ -267,7 +268,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 							</Link>
 						</WorkDiv>
 						<WorkDiv>
-							<a
+							<OutboundLink
 								href="https://github.com/bryanwyk"
 								target="_blank"
 							>
@@ -281,10 +282,10 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								<WorkDescDetails>
 									View my projects on GitHub
 								</WorkDescDetails>
-							</a>
+							</OutboundLink>
 						</WorkDiv>
 						<WorkDiv>
-							<a
+							<OutboundLink
 								href="https://www.instagram.com/b2uyk/"
 								target="_blank"
 								css={css`
@@ -300,7 +301,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								<WorkDescDetails>
 									View my digital art
 								</WorkDescDetails>
-							</a>
+							</OutboundLink>
 						</WorkDiv>
 					</dl>
 				</PageContainer>
