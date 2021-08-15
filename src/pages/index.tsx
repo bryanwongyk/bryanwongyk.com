@@ -263,7 +263,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								</WorkDescTitle>
 
 								<WorkDescDetails>
-									Thoughts on business, programming, and life
+									Thoughts on business, coding, and life
 								</WorkDescDetails>
 							</Link>
 						</WorkDiv>

@@ -56,7 +56,7 @@ const SideBio: FunctionComponent = (): ReactElement => {
 					}
 				`}
 			>
-				Thoughts on business, programming, and life ☕️
+				Thoughts on business, coding, and life ☕️
 			</p>
 		</section>
 	);
