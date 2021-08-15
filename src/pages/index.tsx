@@ -6,7 +6,7 @@ import { css, jsx, keyframes } from '@emotion/react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowRight } from 'phosphor-react';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import styled from '@emotion/styled';
 import { css, jsx } from '@emotion/react';
