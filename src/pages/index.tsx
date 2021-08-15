@@ -215,7 +215,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					>
 						Software Engineer, <br />
 						Creator, <br />
-						Thinker
+						Thinker.
 					</h3>
 				</motion.div>
 			</section>
