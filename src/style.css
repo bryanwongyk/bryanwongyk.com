@@ -65,6 +65,7 @@
 	--color-heading-black: #f2f2f2;
 	--color-accent: #f05454;
 	--color-hr: #252525;
+	--color-text-highlight: #3daef5;
 }
 
 /* HTML elements */
@@ -97,14 +98,15 @@ hr {
 	background: var(--color-hr);
 	height: 1px;
 	border: 0;
-	margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+	margin: var(--spacing-10) var(--spacing-0) var(--spacing-10)
+		var(--spacing-0);
 }
 
 /* Heading */
 
 h1,
 h2,
-/* h3, */
+h3,
 h4,
 h5,
 h6 {
@@ -116,7 +118,7 @@ h6 {
 }
 
 h2,
-/* h3, */
+h3,
 h4,
 h5,
 h6 {
@@ -132,21 +134,21 @@ h1 {
 
 h2 {
 	font-family: 'Poppins';
-	font-size: var(--fontSize-5);
+	font-size: var(--fontSize-3);
 }
 
 h3 {
-	font-size: var(--fontSize-4);
+	font-size: var(--fontSize-2);
 }
 
 h4 {
 	font-family: 'IBM Plex Mono';
-	font-size: var(--fontSize-3);
+	font-size: var(--fontSize-2);
 }
 
 h5 {
 	font-family: 'IBM Plex Mono';
-	font-size: var(--fontSize-2);
+	font-size: var(--fontSize-1);
 	font-weight: normal;
 }
 
@@ -171,7 +173,7 @@ h6 > a {
 /* Prose */
 
 p {
-	line-height: var(--lineHeight-relaxed);
+	/* line-height: var(--lineHeight-relaxed); */
 	--baseline-multiplier: 0.179;
 	--x-height-multiplier: 0.35;
 	margin: var(--spacing-0) var(--spacing-0) var(--spacing-6) var(--spacing-0);
@@ -212,12 +214,13 @@ blockquote {
 	color: var(--color-text-light);
 	margin-left: calc(-1 * var(--spacing-6));
 	/* margin-left: 24px; */
-	margin-right: var(--spacing-8);
+	/* margin-right: var(--spacing-8); */
 	padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
 	border-left: var(--spacing-1) solid var(--color-primary);
-	font-size: var(--fontSize-2);
+	font-size: var(--fontSize-1);
 	font-style: italic;
-	margin-bottom: var(--spacing-8);
+	margin-top: var(--spacing-12);
+	margin-bottom: var(--spacing-12);
 }
 
 blockquote > :last-child {

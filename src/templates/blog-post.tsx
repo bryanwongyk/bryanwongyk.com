@@ -60,7 +60,7 @@ const BlogPost: FunctionComponent<Props> = props => {
 									opacity: 0.5;
 									margin-top: 0;
 									margin-bottom: 32px;
-									font-size: 1rem;
+									/* font-size: 0.9rem; */
 								`}
 							>
 								{post.frontmatter.date} ⬩{' '}

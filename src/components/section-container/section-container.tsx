@@ -2,7 +2,6 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css, jsx } from '@emotion/react';
-import mediaQueries from '../../utils/breakpoints.utils';
 
 interface SectionContainerProps {
 	children: ReactNode;
@@ -11,19 +10,13 @@ interface SectionContainerProps {
 const SectionContainer: FunctionComponent<SectionContainerProps> = ({
 	children,
 }): ReactElement => (
-	<div
+	<section
 		css={css`
-			max-width: 1024px;
-			padding: 0 32px;
-			margin: 0 auto;
-
-			${mediaQueries[0]} {
-				padding: 0 48px;
-			}
+			margin-bottom: 96px;
 		`}
 	>
 		{children}
-	</div>
+	</section>
 );
 
 export default SectionContainer;

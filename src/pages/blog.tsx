@@ -122,9 +122,9 @@ const Blog = ({}) => {
 										key={node.id}
 										css={css`
 											&:first-of-type {
-												margin-top: 0px;
+												margin-top: 1rem;
 											}
-											margin-top: 48px;
+											margin-top: 3rem;
 										`}
 									>
 										<PostPreview

@@ -13,6 +13,7 @@ import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 import PostPreview from '../components/post-preview/post-preview';
 import LinkCTAButton from '../components/buttons/link-cta-button';
 import profile from '../content/assets/images/profile-2.jpg';
+import SectionContainer from '../components/section-container/section-container';
 import PageContainer from '../components/page-container/page-container';
 
 import { darkTheme } from '../utils/themes';
@@ -116,7 +117,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 	`);
 	const latestBlogPosts: MarkdownRemarkEdge[] = data.allMarkdownRemark.edges;
 	return (
-		<>
+		<PageContainer>
 			<SEO title="Home" />
 			<section
 				css={css`
@@ -228,7 +229,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					delay: 1,
 				}}
 			>
-				<PageContainer>
+				<SectionContainer>
 					<h2
 						css={css`
 							margin-bottom: 48px;
@@ -304,9 +305,9 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 							</OutboundLink>
 						</WorkDiv>
 					</dl>
-				</PageContainer>
+				</SectionContainer>
 
-				<PageContainer>
+				<SectionContainer>
 					<h2
 						css={css`
 							margin-bottom: 48px;
@@ -370,9 +371,9 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 							</ArrowSpan>
 						</LinkCTAButton>
 					</div>
-				</PageContainer>
+				</SectionContainer>
 			</motion.div>
-		</>
+		</PageContainer>
 	);
 };
 

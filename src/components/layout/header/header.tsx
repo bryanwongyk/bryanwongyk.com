@@ -75,6 +75,13 @@ const Header: FunctionComponent<HeaderProps> = ({
 					${mediaQueries[0]} {
 						width: 100%;
 					}
+					/* padding: 0 32px;
+					max-width: 1024px;
+					margin: 0 auto;
+					${mediaQueries[0]} {
+						width: 100%;
+						padding: 0 48px;
+					} */
 				`}
 			>
 				<LogoLinkSpan>
@@ -96,7 +103,7 @@ const Header: FunctionComponent<HeaderProps> = ({
 						<img
 							src={Logo}
 							css={css`
-								width: 48px;
+								width: 40px;
 								margin-bottom: 0;
 							`}
 						/>

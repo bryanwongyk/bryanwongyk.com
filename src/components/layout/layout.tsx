@@ -15,6 +15,8 @@ import Header from './header/header';
 import Footer from './footer/footer';
 import MobileMenu from '../mobile-menu/mobile-menu';
 
+import mediaQueries from '../../utils/breakpoints.utils';
+
 const Layout: FunctionComponent<{}> = ({ children }) => {
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
@@ -41,24 +43,41 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 			<div
 				css={css`
 					min-height: 100vh;
-					max-width: 1024px;
-					padding: 0 48px;
-					margin: 0 auto;
+					/* max-width: 1024px; */
+					/* width: 100vw; */
+					/* padding: 0 32px; */
+					/* margin: 0 auto; */
 					display: flex;
 					flex-direction: column;
+
+					/* ${mediaQueries[0]} {
+						padding: 0 48px; 
+					} */
 				`}
 			>
-				<Header
-					siteTitle={data.site.siteMetadata?.title}
-					toggleMobileMenu={handleToggleMobileMenu}
-					closeMobileMenu={handleCloseMobileMenu}
-					mobileMenuShown={showMobileMenu}
+				<div
+					css={css`
+						width: 100vw;
+						max-width: 1024px;
+						padding: 0 32px;
+						margin: 0 auto;
+						${mediaQueries[0]} {
+							padding: 0 48px;
+						}
+					`}
 				>
-					<MobileMenu
-						show={showMobileMenu}
+					<Header
+						siteTitle={data.site.siteMetadata?.title}
 						toggleMobileMenu={handleToggleMobileMenu}
-					/>
-				</Header>
+						closeMobileMenu={handleCloseMobileMenu}
+						mobileMenuShown={showMobileMenu}
+					>
+						<MobileMenu
+							show={showMobileMenu}
+							toggleMobileMenu={handleToggleMobileMenu}
+						/>
+					</Header>
+				</div>
 				<main
 					css={css`
 						flex: 1;

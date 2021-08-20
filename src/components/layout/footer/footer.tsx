@@ -94,6 +94,16 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 				stiffness: '20' as any,
 				delay: 1.5,
 			}}
+			css={css`
+				background-color: ${darkTheme.colours.black};
+				padding: 0 32px;
+				max-width: 1024px;
+				margin: 0 auto;
+				${mediaQueries[0]} {
+					width: 100%;
+					padding: 0 48px;
+				}
+			`}
 		>
 			<hr
 				css={css`

@@ -5,7 +5,7 @@ const darkTheme = {
 		lightGrey: '#856b6b',
 		white: '#DDDDDD',
 		red: '#F05454',
-		blue: '#30475E',
+		blue: '#327BA8',
 	},
 };
 
