@@ -22,7 +22,7 @@ const MobileMenuLink: FunctionComponent<MobileMenuLinkProps> = ({
 				position: relative;
 				color: ${darkTheme.colours.white};
 				opacity: 1;
-				margin-bottom: 48px;
+				margin-bottom: 3rem;
 			`}
 		>
 			<Link to={path} onClick={toggleMobileMenu}>

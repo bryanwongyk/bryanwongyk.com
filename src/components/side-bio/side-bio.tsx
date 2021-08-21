@@ -27,13 +27,13 @@ const SideBio: FunctionComponent = (): ReactElement => {
 		>
 			<h6
 				css={css`
-					margin-top: 0;
+					margin-top: 0.2rem;
 					${mediaQueries[0]} {
 						margin-bottom: 24px;
 					}
 				`}
 			>
-				ABOUT
+				BIO
 			</h6>
 			<img
 				src={profile}
@@ -50,13 +50,14 @@ const SideBio: FunctionComponent = (): ReactElement => {
 					color: ${darkTheme.colours.white};
 					opacity: 0.8;
 					text-align: center;
-					font-size: 0.9rem;
+					font-size: 0.833rem;
 					${mediaQueries[0]} {
 						margin: 0;
 					}
 				`}
 			>
-				Thoughts on business, coding, and life ☕️
+				Your weekly dose on building businesses, happiness, and coding
+				☕️
 			</p>
 		</section>
 	);

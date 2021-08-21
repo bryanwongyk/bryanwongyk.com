@@ -7,7 +7,11 @@ import { css, jsx } from '@emotion/react';
 import { motion } from 'framer-motion';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {
+	faLinkedinIn,
+	faGithub,
+	faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import SubscriptionForm from '../../subscription-form/subscription-form';
 
 import { darkTheme } from '../../../utils/themes';
@@ -21,7 +25,6 @@ const StyledFooter = styled.footer`
 	align-items: center;
 	text-align: center;
 	font-size: 0.9rem;
-	/* padding-top: 32px; */
 	padding: 0;
 
 	${mediaQueries[0]} {
@@ -37,10 +40,9 @@ const FooterPara = styled.p`
 const FooterAnchor = styled(OutboundLink)`
 	opacity: 0.5;
 	transition: all 0.3s ease 0s;
-	margin: 0 16px;
+	margin: 0 24px 0 0;
 	&:hover {
 		opacity: 1;
-		color: ${darkTheme.colours.red};
 	}
 `;
 
@@ -107,7 +109,8 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 		>
 			<hr
 				css={css`
-					margin-bottom: 3rem;
+					margin-top: 0;
+					margin-bottom: 4rem;
 				`}
 			/>
 			<SubscriptionForm />
@@ -139,12 +142,12 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 
 				<FooterSocialsList>
 					<FooterAnchor
-						href="https://www.linkedin.com/in/bryanwongyk/"
+						href="https://twitter.com/bryanwongyk"
 						target="_blank"
-						title="LinkedIn"
+						title="Twitter"
 					>
 						<FontAwesomeIcon
-							icon={faLinkedinIn}
+							icon={faTwitter}
 							css={css`
 								font-size: 24px;
 							`}
@@ -157,6 +160,18 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 					>
 						<FontAwesomeIcon
 							icon={faGithub}
+							css={css`
+								font-size: 24px;
+							`}
+						/>
+					</FooterAnchor>
+					<FooterAnchor
+						href="https://www.linkedin.com/in/bryanwongyk/"
+						target="_blank"
+						title="LinkedIn"
+					>
+						<FontAwesomeIcon
+							icon={faLinkedinIn}
 							css={css`
 								font-size: 24px;
 							`}

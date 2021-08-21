@@ -52,7 +52,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 					<footer
 						css={css`
 							font-family: 'IBM Plex Mono';
-							font-size: 0.9rem;
+							font-size: 0.833rem;
 							opacity: 50%;
 							padding: 0;
 							margin: 6px 0;
@@ -62,7 +62,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 					</footer>
 					<p
 						css={css`
-							font-size: 0.9rem;
+							font-size: 0.833rem;
 							transition: color 0.3s ease;
 							margin-bottom: 8px;
 						`}

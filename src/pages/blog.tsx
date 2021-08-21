@@ -11,6 +11,7 @@ import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 import PostPreview from '../components/post-preview/post-preview';
 import SideBio from '../components/side-bio/side-bio';
 import PageContainer from '../components/page-container/page-container';
+import SectionContainer from '../components/section-container/section-container';
 
 import mediaQueries from '../utils/breakpoints.utils';
 
@@ -52,98 +53,102 @@ const Blog = ({}) => {
 		<>
 			<SEO title="Blog" />
 			<PageContainer>
-				<motion.div
-					initial={{ opacity: 0, x: -50 }}
-					animate={{ opacity: 1, x: 0 }}
-					transition={{
-						duration: 0.5,
-					}}
-				>
-					<h1
-						css={css`
-							font-size: 1.2rem;
-							margin-bottom: 32px;
-							font-family: 'Poppins';
-						`}
-					>
-						BLOG
-					</h1>
-				</motion.div>
-				<section
-					css={css`
-						display: flex;
-						flex-direction: column;
-
-						${mediaQueries[0]} {
-							display: grid;
-							grid-template-columns: 2.4fr 1fr;
-						}
-					`}
-				>
+				<SectionContainer>
 					<motion.div
-						initial={{ opacity: 0, y: 60 }}
-						animate={{ opacity: 1, y: 0 }}
+						initial={{ opacity: 0, x: -50 }}
+						animate={{ opacity: 1, x: 0 }}
 						transition={{
-							duration: 0.8,
-							delay: 0.3,
+							duration: 0.5,
 						}}
+					>
+						<h1
+							css={css`
+								font-size: 1rem;
+								margin-bottom: 2rem;
+							`}
+						>
+							BLOG
+						</h1>
+					</motion.div>
+					<section
 						css={css`
+							display: flex;
+							flex-direction: column;
+
 							${mediaQueries[0]} {
-								grid-row: 1;
-								grid-column: 2;
-								padding-left: 64px;
+								display: grid;
+								grid-template-columns: 2.4fr 1fr;
 							}
 						`}
 					>
-						<SideBio />
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0, y: 50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{
-							duration: 0.8,
-							delay: 0.7,
-						}}
-					>
-						<ol
+						<motion.div
+							initial={{ opacity: 0, y: 60 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								delay: 0.3,
+							}}
 							css={css`
-								list-style: none;
-								margin: 0;
 								${mediaQueries[0]} {
-									padding-left: 32px;
+									grid-row: 1;
+									grid-column: 2;
+									padding-left: 64px;
 								}
 							`}
 						>
-							{posts.map(({ node }: { node: MarkdownRemark }) => {
-								const frontmatter: any = node!.frontmatter!;
+							<SideBio />
+						</motion.div>
+						<motion.div
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								delay: 0.7,
+							}}
+						>
+							<ol
+								css={css`
+									list-style: none;
+									margin: 0;
+									${mediaQueries[0]} {
+										padding-left: 32px;
+									}
+								`}
+							>
+								{posts.map(
+									({ node }: { node: MarkdownRemark }) => {
+										const frontmatter: any =
+											node!.frontmatter!;
 
-								return (
-									<li
-										key={node.id}
-										css={css`
-											&:first-of-type {
-												margin-top: 1rem;
-											}
-											margin-top: 3rem;
-										`}
-									>
-										<PostPreview
-											title={frontmatter.title}
-											description={
-												frontmatter.description
-											}
-											date={frontmatter.date}
-											readingTime={
-												frontmatter.readingTime
-											}
-											path={frontmatter.path}
-										/>
-									</li>
-								);
-							})}
-						</ol>
-					</motion.div>
-				</section>
+										return (
+											<li
+												key={node.id}
+												css={css`
+													&:first-of-type {
+														margin-top: 1rem;
+													}
+													margin-top: 3rem;
+												`}
+											>
+												<PostPreview
+													title={frontmatter.title}
+													description={
+														frontmatter.description
+													}
+													date={frontmatter.date}
+													readingTime={
+														frontmatter.readingTime
+													}
+													path={frontmatter.path}
+												/>
+											</li>
+										);
+									},
+								)}
+							</ol>
+						</motion.div>
+					</section>
+				</SectionContainer>
 			</PageContainer>
 		</>
 	);

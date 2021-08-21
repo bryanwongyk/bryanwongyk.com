@@ -23,7 +23,7 @@ const NavBar: FunctionComponent<{}> = () => {
 					margin: 0;
 					font-family: 'Poppins', sans-serif;
 					font-weight: bold;
-					font-size: 0.8rem;
+					font-size: 0.833rem;
 					letter-spacing: 1px;
 				`}
 			>

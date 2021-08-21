@@ -4,7 +4,7 @@ import React, { FunctionComponent } from 'react';
 import { Link, graphql, PageRendererProps } from 'gatsby';
 import { Query } from '../graphql-types';
 import SEO from '../components/seo';
-import { css, jsx } from '@emotion/react';
+import { css, jsx, Global } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Img from 'gatsby-image';
 import { darkTheme } from '../utils/themes';
@@ -21,89 +21,135 @@ const BlogPost: FunctionComponent<Props> = props => {
 
 	return (
 		<>
-			<SEO
-				title={post.frontmatter.title}
-				description={post.frontmatter.description || post.excerpt}
+			<Global
+				styles={css`
+					body {
+						color: #424242;
+					}
+
+					h1 {
+						color: #121212;
+					}
+
+					h2,
+					h3,
+					h4,
+					h6 {
+						color: #121212;
+					}
+
+					h5 {
+						color: #a8a8a8;
+					}
+
+					blockquote {
+						color: #121212;
+						border-left: 0.25rem solid #121212;
+					}
+
+					article a {
+						color: #f05454;
+						transition: all 0.3s ease;
+
+						&:hover {
+							color: #f2f2f2;
+							background-color: #f05454;
+						}
+					}
+				`}
 			/>
-			<motion.div
-				initial={{ opacity: 0, x: -50 }}
-				animate={{ opacity: 1, x: 0 }}
-				transition={{
-					duration: 0.5,
-				}}
+			<div
 				css={css`
-					max-width: 680px;
-					margin: 0 auto;
+					background-color: #fefefe;
+					padding: 3rem 0 4rem 0;
 				`}
 			>
-				<article
-					className="blog-post"
-					itemScope
-					itemType="http://schema.org/Article"
-				>
-					<header
-						css={css`
-							margin: 20px 0;
-						`}
-					>
-						<h1
-							css={css`
-								margin-bottom: 16px;
-								/* font-size: 2.5rem; */
-							`}
-						>
-							{post.frontmatter.title}
-						</h1>
-						<time>
-							<h5
-								css={css`
-									opacity: 0.5;
-									margin-top: 0;
-									margin-bottom: 32px;
-									/* font-size: 0.9rem; */
-								`}
-							>
-								{post.frontmatter.date} ⬩{' '}
-								{post.frontmatter.readingTime}
-							</h5>
-						</time>
-					</header>
-					<section
-						css={css`
-							margin: 0 auto 32px 0;
-							max-height: 400px;
-						`}
-					>
-						<Img
-							fluid={featuredImgFluid}
-							css={css`
-								object-fit: cover;
-								max-height: 400px;
-							`}
-						/>
-					</section>
-					<section
-						dangerouslySetInnerHTML={{ __html: post.html }}
-						itemProp="articleBody"
-					/>
-				</article>
-				<Link
-					to="/blog"
+				<SEO
+					title={post.frontmatter.title}
+					description={post.frontmatter.description || post.excerpt}
+				/>
+				<div
 					css={css`
-						transition: all 0.3s ease 0s;
-						opacity: 0.6;
-						display: inline-block;
-						height: 22px;
-						margin-bottom: 64px;
-						border-bottom: 1px solid ${darkTheme.colours.white};
-						&:hover {
-							opacity: 0.8;
-						}
+						max-width: 680px;
+						margin: 0 auto;
 					`}
 				>
-					← Browse more posts
-				</Link>
-			</motion.div>
+					<article
+						className="blog-post"
+						itemScope
+						itemType="http://schema.org/Article"
+					>
+						<motion.header
+							initial={{ opacity: 0, x: -50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{
+								duration: 0.5,
+							}}
+						>
+							<h1
+								css={css`
+									margin-bottom: 1rem;
+								`}
+							>
+								{post.frontmatter.title}
+							</h1>
+							<time>
+								<h5
+									css={css`
+										margin-top: 0;
+										margin-bottom: 2rem;
+									`}
+								>
+									{post.frontmatter.date} ⬩{' '}
+									{post.frontmatter.readingTime}
+								</h5>
+							</time>
+						</motion.header>
+						<motion.div
+							initial={{ opacity: 0, y: 100 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{
+								duration: 0.8,
+								delay: 0.5,
+							}}
+						>
+							<section
+								css={css`
+									margin: 0 auto 2rem 0;
+									max-height: 400px;
+								`}
+							>
+								<Img
+									fluid={featuredImgFluid}
+									css={css`
+										object-fit: cover;
+										max-height: 400px;
+									`}
+								/>
+							</section>
+							<section
+								dangerouslySetInnerHTML={{ __html: post.html }}
+								itemProp="articleBody"
+							/>
+							<Link
+								to="/blog"
+								css={css`
+									transition: all 0.3s ease 0s;
+									display: inline-block;
+									height: 22px;
+									margin-top: 3rem;
+									color: ${darkTheme.colours.red};
+									&:hover {
+										color: ${darkTheme.colours.white};
+									}
+								`}
+							>
+								← Browse more posts
+							</Link>
+						</motion.div>
+					</article>
+				</div>
+			</div>
 		</>
 	);
 };

@@ -75,13 +75,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 					${mediaQueries[0]} {
 						width: 100%;
 					}
-					/* padding: 0 32px;
-					max-width: 1024px;
-					margin: 0 auto;
-					${mediaQueries[0]} {
-						width: 100%;
-						padding: 0 48px;
-					} */
 				`}
 			>
 				<LogoLinkSpan>
@@ -147,17 +140,6 @@ const Header: FunctionComponent<HeaderProps> = ({
 								/>
 							</IconButton>
 						</span>
-						{/* <SunDim
-							size={24}
-							css={css`
-								cursor: pointer;
-								opacity: 0.5;
-								transition: opacity 0.3s ease 0s;
-								&:hover {
-									opacity: 1;
-								}
-							`}
-						/> */}
 					</div>
 				) : null}
 			</div>

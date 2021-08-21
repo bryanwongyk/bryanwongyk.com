@@ -3,9 +3,9 @@ const darkTheme = {
 		black: '#010202',
 		grey: '#252525',
 		lightGrey: '#856b6b',
-		white: '#DDDDDD',
+		white: '#f2f2f2',
 		red: '#F05454',
-		blue: '#327BA8',
+		blue: '#5998C5',
 	},
 };
 

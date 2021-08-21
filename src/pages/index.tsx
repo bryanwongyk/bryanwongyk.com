@@ -31,6 +31,10 @@ const WorkDiv = styled.div`
 		color: ${darkTheme.colours.red};
 	}
 
+	&:hover {
+		transform: translateY(-1px);
+	}
+
 	&:not(:first-of-type) {
 		margin-top: 32px;
 	}

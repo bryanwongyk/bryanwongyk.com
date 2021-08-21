@@ -83,6 +83,10 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+	background: #5998c5;
+}
+
 body {
 	font-family: var(--font-body);
 	font-size: var(--fontSize-1);
@@ -213,8 +217,6 @@ li > ol {
 blockquote {
 	color: var(--color-text-light);
 	margin-left: calc(-1 * var(--spacing-6));
-	/* margin-left: 24px; */
-	/* margin-right: var(--spacing-8); */
 	padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-6);
 	border-left: var(--spacing-1) solid var(--color-primary);
 	font-size: var(--fontSize-1);
@@ -354,11 +356,6 @@ a:focus {
 article ul,
 article ol {
 	padding-left: 32px;
-}
-
-article a {
-	color: var(--color-accent);
-	text-decoration: underline;
 }
 
 body {

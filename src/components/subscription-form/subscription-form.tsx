@@ -57,6 +57,7 @@ const SubscriptionForm = (): ReactElement => {
 				css={css`
 					margin-top: 0;
 					font-size: 1rem;
+					color: #f2f2f2;
 				`}
 			>
 				Join the newsletter
@@ -64,28 +65,49 @@ const SubscriptionForm = (): ReactElement => {
 			<p
 				css={css`
 					font-size: 0.9rem;
+					color: #f2f2f2;
 				`}
 			>
 				Get a once-per-month email on my latest articles 👾
 			</p>
 
 			{status === 'SUCCESS' && (
-				<p
+				<div
 					css={css`
-						font-size: 0.9rem;
+						background-color: #44cf6c;
+						margin-bottom: 2rem;
+						padding: 1rem;
 					`}
 				>
-					Please go confirm your subscription!
-				</p>
+					<p
+						css={css`
+							font-size: 0.9rem;
+							color: #424242;
+							margin: 0;
+						`}
+					>
+						Please go to your inbox to confirm your subscription!
+					</p>
+				</div>
 			)}
 			{status === 'ERROR' && (
-				<p
+				<div
 					css={css`
-						font-size: 0.9rem;
+						background-color: #f23838;
+						margin-bottom: 2rem;
+						padding: 1rem;
 					`}
 				>
-					Oops, Something went wrong! try again.
-				</p>
+					<p
+						css={css`
+							font-size: 0.9rem;
+							color: #424242;
+							margin: 0;
+						`}
+					>
+						Oops, Something went wrong! Try again.
+					</p>
+				</div>
 			)}
 
 			<form
@@ -126,6 +148,7 @@ const SubscriptionForm = (): ReactElement => {
 					margin-bottom: 0;
 					font-family: 'IBM Plex Mono';
 					font-size: 0.75rem;
+					color: #f2f2f2;
 				`}
 			>
 				I won't send you spam. Unsubscribe at any time.
