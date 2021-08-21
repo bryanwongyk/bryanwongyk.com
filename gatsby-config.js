@@ -25,7 +25,6 @@ module.exports = {
 				siteUrl: `https://www.bryanwongyk.com/`,
 			},
 		},
-		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-typescript`,
