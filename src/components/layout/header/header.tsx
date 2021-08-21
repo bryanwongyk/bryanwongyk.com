@@ -20,8 +20,8 @@ import mediaQueries from '../../../utils/breakpoints.utils';
 
 const HeaderTag = styled.header`
 	margin-bottom: 0px;
-	padding-top: 48px;
-	padding-bottom: 32px;
+	padding-top: 24px;
+	padding-bottom: 12px;
 	z-index: 1000;
 	background-color: ${darkTheme.colours.black};
 	display: flex;

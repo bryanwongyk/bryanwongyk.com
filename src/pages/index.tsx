@@ -128,10 +128,10 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					text-align: center;
 					display: flex;
 					flex-direction: column;
-
+					margin-top: 40px;
 					@media (min-width: 840px) {
-						margin-top: 96px;
-						margin-bottom: 156px;
+						margin-top: 130px;
+						margin-bottom: 160px;
 						padding-top: 72px;
 					}
 				`}

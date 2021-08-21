@@ -40,7 +40,7 @@ const FooterPara = styled.p`
 const FooterAnchor = styled(OutboundLink)`
 	opacity: 0.5;
 	transition: all 0.3s ease 0s;
-	margin: 0 24px 0 0;
+	width: 48px;
 	&:hover {
 		opacity: 1;
 	}
