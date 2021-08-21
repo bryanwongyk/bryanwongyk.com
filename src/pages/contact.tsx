@@ -23,7 +23,7 @@ const Contact: FunctionComponent<{}> = ({}) => (
 			>
 				<h1
 					css={css`
-						font-size: 1.2rem;
+						font-size: 1rem;
 					`}
 				>
 					CONTACT

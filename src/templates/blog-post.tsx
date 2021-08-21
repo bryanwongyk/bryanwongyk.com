@@ -8,7 +8,7 @@ import { css, jsx, Global } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Img from 'gatsby-image';
 import { darkTheme } from '../utils/themes';
-import PageContainer from '../components/page-container/page-container';
+import BlogPostContainer from '../components/blog-post-container/blog-post-container';
 
 interface Props extends PageRendererProps {
 	data: Query;
@@ -69,7 +69,7 @@ const BlogPost: FunctionComponent<Props> = props => {
 					title={post.frontmatter.title}
 					description={post.frontmatter.description || post.excerpt}
 				/>
-				<PageContainer>
+				<BlogPostContainer>
 					<article
 						className="blog-post"
 						itemScope
@@ -144,7 +144,7 @@ const BlogPost: FunctionComponent<Props> = props => {
 							</Link>
 						</motion.div>
 					</article>
-				</PageContainer>
+				</BlogPostContainer>
 			</div>
 		</>
 	);

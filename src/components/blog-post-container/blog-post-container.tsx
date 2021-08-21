@@ -4,16 +4,16 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css, jsx } from '@emotion/react';
 import mediaQueries from '../../utils/breakpoints.utils';
 
-interface PageContainerProps {
+interface BlogPostContainerProps {
 	children: ReactNode;
 }
 
-const PageContainer: FunctionComponent<PageContainerProps> = ({
+const BlogPostContainer: FunctionComponent<BlogPostContainerProps> = ({
 	children,
 }): ReactElement => (
 	<div
 		css={css`
-			max-width: 1024px;
+			max-width: 750px;
 			padding: 0 32px;
 			margin: 0 auto;
 
@@ -26,4 +26,4 @@ const PageContainer: FunctionComponent<PageContainerProps> = ({
 	</div>
 );
 
-export default PageContainer;
+export default BlogPostContainer;

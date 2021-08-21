@@ -135,7 +135,7 @@ const SubscriptionForm = (): ReactElement => {
 						border: none;
 						width: 100%;
 						${mediaQueries[0]} {
-							width: 380px;
+							width: 240px;
 						}
 					`}
 				/>
@@ -149,7 +149,7 @@ const SubscriptionForm = (): ReactElement => {
 					margin-top: 1.5rem;
 					margin-bottom: 0;
 					font-family: 'IBM Plex Mono';
-					font-size: 0.75rem;
+					font-size: 0.833rem;
 					color: #f2f2f2;
 				`}
 			>

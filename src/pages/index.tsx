@@ -130,7 +130,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					flex-direction: column;
 					margin-top: 40px;
 					@media (min-width: 840px) {
-						margin-top: 130px;
+						margin-top: 118px;
 						margin-bottom: 160px;
 						padding-top: 72px;
 					}

@@ -93,7 +93,6 @@ body {
 	font-size: var(--fontSize-1);
 	color: var(--color-text);
 	background-color: #010202;
-	/* line-height: var(--fontSize-4); */
 }
 
 footer {

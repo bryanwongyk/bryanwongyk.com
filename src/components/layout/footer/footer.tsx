@@ -18,7 +18,7 @@ import { darkTheme } from '../../../utils/themes';
 import mediaQueries from '../../../utils/breakpoints.utils';
 
 const StyledFooter = styled.footer`
-	margin: 3rem 0 3rem 0;
+	margin: 2rem 0 1rem 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -110,7 +110,7 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 			<hr
 				css={css`
 					margin-top: 0;
-					margin-bottom: 4rem;
+					margin-bottom: 2rem;
 				`}
 			/>
 			<SubscriptionForm />

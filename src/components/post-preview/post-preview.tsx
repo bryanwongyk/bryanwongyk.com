@@ -61,7 +61,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 					</footer>
 					<p
 						css={css`
-							font-size: 0.833rem;
+							font-size: 1rem;
 							transition: color 0.3s ease;
 							margin-bottom: 8px;
 						`}

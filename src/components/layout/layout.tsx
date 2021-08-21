@@ -43,16 +43,8 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 			<div
 				css={css`
 					min-height: 100vh;
-					/* max-width: 1024px; */
-					/* width: 100vw; */
-					/* padding: 0 32px; */
-					/* margin: 0 auto; */
 					display: flex;
 					flex-direction: column;
-
-					/* ${mediaQueries[0]} {
-						padding: 0 48px; 
-					} */
 				`}
 			>
 				<div
