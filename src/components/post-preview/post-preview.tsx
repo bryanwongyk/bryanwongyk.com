@@ -31,7 +31,7 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 				&:hover {
 					transform: translateY(-1px);
 
-					a > div > h4 {
+					a > div > h3 {
 						color: ${darkTheme.colours.red};
 					}
 				}
@@ -39,16 +39,15 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 		>
 			<Link to={path}>
 				<div>
-					<h4
+					<h3
 						css={css`
-							font-family: 'Work Sans';
-							font-size: 1.2rem;
+							font-size: 1rem;
 							transition: color 0.3s ease;
 							margin: 0;
 						`}
 					>
 						{title}
-					</h4>
+					</h3>
 					<footer
 						css={css`
 							font-family: 'IBM Plex Mono';

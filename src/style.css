@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Work+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:ital,wght@0,700;1,400;1,700&display=swap');
 
 /* CSS Custom Properties Definitions */
 
@@ -34,7 +35,7 @@
 		'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
 		'Noto Color Emoji';
-	--fontFamily-serif: 'Work Sans', 'Merriweather', 'Georgia', Cambria,
+	--fontFamily-serif: 'Lato', 'Work Sans', 'Merriweather', 'Georgia', Cambria,
 		'Times New Roman', Times, serif;
 	--font-body: var(--fontFamily-serif);
 	--font-heading: var(--fontFamily-sans);
@@ -92,6 +93,7 @@ body {
 	font-size: var(--fontSize-1);
 	color: var(--color-text);
 	background-color: #010202;
+	/* line-height: var(--fontSize-4); */
 }
 
 footer {
@@ -137,7 +139,6 @@ h1 {
 }
 
 h2 {
-	font-family: 'Poppins';
 	font-size: var(--fontSize-3);
 }
 

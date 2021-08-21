@@ -72,7 +72,7 @@ const FooterListItem = styled.li`
 	opacity: 0.7;
 	transition: all 0.3s ease 0s;
 	margin-right: 0;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Work Sans', sans-serif;
 	font-weight: normal;
 	font-size: 0.75rem;
 	letter-spacing: 1px;

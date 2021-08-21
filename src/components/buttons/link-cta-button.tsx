@@ -33,7 +33,7 @@ const LinkCTAButton: FunctionComponent<LinkCTAButtonProps> = ({
 				transition: all 0.3s ease;
 
 				font-size: 0.9rem;
-				font-family: 'Poppins';
+				font-family: 'Work Sans', sans-serif;
 
 				&:hover {
 					color: ${darkTheme.colours.red};

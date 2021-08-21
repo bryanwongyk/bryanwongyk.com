@@ -80,7 +80,7 @@ const MobileMenu: FunctionComponent<MobileMenuProps> = ({
 							text-align: center;
 							margin: 0;
 
-							font-family: 'Poppins', sans-serif;
+							font-family: 'Work Sans', sans-serif;
 							font-weight: bold;
 							font-size: 0.8rem;
 							letter-spacing: 1px;

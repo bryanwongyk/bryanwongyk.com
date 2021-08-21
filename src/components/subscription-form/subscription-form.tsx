@@ -58,14 +58,16 @@ const SubscriptionForm = (): ReactElement => {
 					margin-top: 0;
 					font-size: 1rem;
 					color: #f2f2f2;
+					margin-bottom: 1rem;
 				`}
 			>
 				Join the newsletter
 			</h2>
 			<p
 				css={css`
-					font-size: 0.9rem;
+					font-size: 0.833rem;
 					color: #f2f2f2;
+					margin-bottom: 1rem;
 				`}
 			>
 				Get a once-per-month email on my latest articles 👾

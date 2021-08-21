@@ -21,7 +21,7 @@ const NavBar: FunctionComponent<{}> = () => {
 					display: flex;
 					flex-direction: row;
 					margin: 0;
-					font-family: 'Poppins', sans-serif;
+					font-family: 'Work Sans', sans-serif;
 					font-weight: bold;
 					font-size: 0.833rem;
 					letter-spacing: 1px;

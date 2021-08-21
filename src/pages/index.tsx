@@ -49,12 +49,12 @@ const WorkDiv = styled.div`
 const WorkDescTitle = styled.dt`
 	font-family: 'Work Sans';
 	font-weight: bold;
-	font-size: 0.95rem;
+	font-size: 1rem;
 `;
 
 const WorkDescDetails = styled.dd`
 	font-family: 'IBM Plex Mono';
-	font-size: 0.9rem;
+	font-size: 0.833rem;
 	margin: 0;
 	opacity: 50%;
 	line-height: 24px;
