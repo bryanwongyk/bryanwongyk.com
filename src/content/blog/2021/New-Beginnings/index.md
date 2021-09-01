@@ -1,6 +1,6 @@
 ---
-date: 'August 21, 2021'
-dateReverseOrder: 2021-08-21
+date: 'September 1, 2021'
+dateReverseOrder: 2021-09-01
 title: New Beginnings
 description: Discovering my personal monopoly
 readingTime: '3 min read'
