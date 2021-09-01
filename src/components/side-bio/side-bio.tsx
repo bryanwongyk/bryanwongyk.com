@@ -15,49 +15,36 @@ const SideBio: FunctionComponent = (): ReactElement => {
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
-				margin-bottom: 32px;
-
 				${mediaQueries[0]} {
-					flex-direction: column;
-					align-items: center;
-
-					transform: translateY(-52px);
+					flex-direction: row;
 				}
 			`}
 		>
-			<h6
-				css={css`
-					margin-top: 0.2rem;
-					${mediaQueries[0]} {
-						margin-bottom: 24px;
-					}
-				`}
-			>
-				BIO
-			</h6>
 			<img
 				src={profile}
 				css={css`
-					width: 80px;
-					margin-bottom: 16px;
+					width: 60px;
+					margin-bottom: 24px;
 					${mediaQueries[0]} {
-						margin: 0 auto 24px auto;
+						margin-right: 16px;
+						margin-bottom: 0;
 					}
 				`}
 			/>
 			<p
 				css={css`
-					color: ${darkTheme.colours.white};
+					color: ${darkTheme.colours.black};
 					opacity: 0.8;
-					text-align: center;
 					font-size: 0.833rem;
+					text-align: center;
 					${mediaQueries[0]} {
 						margin: 0;
+						text-align: left;
 					}
 				`}
 			>
-				Your weekly dose on building businesses, happiness, and coding
-				☕️
+				Your dose of <b>front-end engineering</b> and other cool, new
+				things I learn about ☕️
 			</p>
 		</section>
 	);

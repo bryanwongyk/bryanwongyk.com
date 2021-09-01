@@ -64,18 +64,12 @@ const WorkDescDetails = styled.dd`
 `;
 
 const BlogPostList = styled.ol`
-	max-width: 600px;
-	margin: 0 auto;
-`;
-
-const BlogPostListRow = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	list-style: none;
+	margin: 0;
 	${mediaQueries[0]} {
-		/* display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 32px; */
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1rem;
 	}
 `;
 
@@ -97,7 +91,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					]
 				}
 				filter: { frontmatter: { type: { in: "blog" } } }
-				limit: 3
+				limit: 2
 			) {
 				edges {
 					node {
@@ -268,7 +262,8 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								</WorkDescTitle>
 
 								<WorkDescDetails>
-									Thoughts on business, coding, and life
+									View my articles on front-end engineering
+									(and sometimes other things)
 								</WorkDescDetails>
 							</Link>
 						</WorkDiv>
@@ -321,44 +316,38 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 						LATEST POSTS
 					</h2>
 					<BlogPostList>
-						<BlogPostListRow>
-							{latestBlogPosts.map(
-								({ node }: { node: MarkdownRemark }) => {
-									const frontmatter: any = node!.frontmatter!;
+						{latestBlogPosts.map(
+							({ node }: { node: MarkdownRemark }) => {
+								const frontmatter: any = node!.frontmatter!;
 
-									return (
-										<li
-											key={node.id}
-											css={css`
-												list-style-type: none;
-												text-align: center;
-												margin-top: 48px;
-
-												h4 {
-													font-size: 1rem !important;
-												}
-
-												&:first-of-type {
-													margin-top: 0;
-												}
-											`}
-										>
-											<PostPreview
-												title={frontmatter.title}
-												description={
-													frontmatter.description
-												}
-												date={frontmatter.date}
-												readingTime={
-													frontmatter.readingTime
-												}
-												path={frontmatter.path}
-											/>
-										</li>
-									);
-								},
-							)}
-						</BlogPostListRow>
+								return (
+									<li
+										key={node.id}
+										css={css`
+											h4 {
+												font-size: 1rem !important;
+											}
+										`}
+									>
+										<PostPreview
+											title={frontmatter.title}
+											description={
+												frontmatter.description
+											}
+											date={frontmatter.date}
+											readingTime={
+												frontmatter.readingTime
+											}
+											thumbnailPath={
+												frontmatter.featuredImage
+													.publicURL
+											}
+											path={frontmatter.path}
+										/>
+									</li>
+								);
+							},
+						)}
 					</BlogPostList>
 					<div
 						css={css`

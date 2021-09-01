@@ -70,13 +70,7 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
 						/>
 					</Header>
 				</div>
-				<main
-					css={css`
-						flex: 1;
-					`}
-				>
-					{children}
-				</main>
+				<main>{children}</main>
 				<Footer />
 			</div>
 		</>

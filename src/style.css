@@ -361,3 +361,8 @@ article ol {
 body {
 	font-kerning: normal;
 }
+
+nav ul,
+footer ul {
+	padding-left: 0;
+}

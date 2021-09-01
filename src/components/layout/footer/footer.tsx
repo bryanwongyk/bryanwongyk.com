@@ -35,6 +35,7 @@ const StyledFooter = styled.footer`
 
 const FooterPara = styled.p`
 	opacity: 0.4;
+	color: #f2f2f2;
 `;
 
 const FooterAnchor = styled(OutboundLink)`
@@ -113,7 +114,7 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 					margin-bottom: 2rem;
 				`}
 			/>
-			<SubscriptionForm />
+			{/* <SubscriptionForm /> */}
 			<StyledFooter>
 				<div
 					css={css`

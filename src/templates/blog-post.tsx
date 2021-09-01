@@ -4,7 +4,9 @@ import React, { FunctionComponent } from 'react';
 import { Link, graphql, PageRendererProps } from 'gatsby';
 import { Query } from '../graphql-types';
 import SEO from '../components/seo';
-import { css, jsx, Global } from '@emotion/react';
+import { css, jsx } from '@emotion/react';
+import GlobalBlogStyle from '../components/global-blog-style/GlobalBlogStyle';
+
 import { motion } from 'framer-motion';
 import Img from 'gatsby-image';
 import { darkTheme } from '../utils/themes';
@@ -22,43 +24,7 @@ const BlogPost: FunctionComponent<Props> = props => {
 
 	return (
 		<>
-			<Global
-				styles={css`
-					body {
-						color: #424242;
-					}
-
-					h1 {
-						color: #121212;
-					}
-
-					h2,
-					h3,
-					h4,
-					h6 {
-						color: #121212;
-					}
-
-					h5 {
-						color: #a8a8a8;
-					}
-
-					blockquote {
-						color: #121212;
-						border-left: 0.25rem solid #121212;
-					}
-
-					article a {
-						color: #f05454;
-						transition: all 0.3s ease;
-
-						&:hover {
-							color: #f2f2f2;
-							background-color: #f05454;
-						}
-					}
-				`}
-			/>
+			<GlobalBlogStyle />
 			<div
 				css={css`
 					background-color: #fefefe;
