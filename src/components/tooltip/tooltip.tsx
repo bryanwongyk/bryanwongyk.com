@@ -2,6 +2,7 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css, jsx } from '@emotion/react';
 import styled from '@emotion/styled';
+import { darkTheme } from '../../utils/themes';
 
 interface TooltipProps {
 	children: ReactNode;
@@ -24,7 +25,7 @@ const TooltipDiv = styled.div`
 	&:after {
 		content: '';
 		position: absolute;
-		bottom: 67%;
+		bottom: 68%;
 		left: 50px;
 		width: 0;
 		height: 0;
@@ -44,7 +45,8 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
 		<TooltipDiv
 			css={css`
 				opacity: ${visible ? `1` : `0`};
-				transform: ${visible ? `translateY(0)` : `translateY(5px)`};
+				transform: ${visible ? `translateY(3px)` : `translateY(5px)`};
+				color: ${darkTheme.colours.white};
 			`}
 		>
 			{children}

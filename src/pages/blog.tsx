@@ -8,10 +8,12 @@ import { motion } from 'framer-motion';
 
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 
-import PostPreview from '../components/post-preview/post-preview';
+import PostPreviewBlog from '../components/post-preview-blog/post-preview-blog';
 import SideBio from '../components/side-bio/side-bio';
 import PageContainer from '../components/page-container/page-container';
 import SectionContainer from '../components/section-container/section-container';
+import BlogPostContainer from '../components/blog-post-container/blog-post-container';
+import GlobalBlogStyle from '../components/global-blog-style/GlobalBlogStyle';
 
 import mediaQueries from '../utils/breakpoints.utils';
 
@@ -49,11 +51,19 @@ const Blog = ({}) => {
 		}
 	`);
 	const posts: MarkdownRemarkEdge[] = data.allMarkdownRemark.edges;
+	console.log(posts);
 	return (
 		<>
 			<SEO title="Blog" />
-			<PageContainer>
-				<SectionContainer>
+			<GlobalBlogStyle />
+			<div
+				css={css`
+					background-color: #fefefe;
+					padding: 3rem 0 4rem 0;
+				`}
+			>
+				<PageContainer>
+					{/* <SectionContainer> */}
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
@@ -64,7 +74,7 @@ const Blog = ({}) => {
 						<h1
 							css={css`
 								font-size: 1rem;
-								margin-bottom: 2rem;
+								margin-top: 0;
 							`}
 						>
 							BLOG
@@ -74,11 +84,6 @@ const Blog = ({}) => {
 						css={css`
 							display: flex;
 							flex-direction: column;
-
-							${mediaQueries[0]} {
-								display: grid;
-								grid-template-columns: 2.4fr 1fr;
-							}
 						`}
 					>
 						<motion.div
@@ -89,11 +94,7 @@ const Blog = ({}) => {
 								delay: 0.3,
 							}}
 							css={css`
-								${mediaQueries[0]} {
-									grid-row: 1;
-									grid-column: 2;
-									padding-left: 64px;
-								}
+								margin-bottom: 24px;
 							`}
 						>
 							<SideBio />
@@ -111,7 +112,9 @@ const Blog = ({}) => {
 									list-style: none;
 									margin: 0;
 									${mediaQueries[0]} {
-										padding-left: 32px;
+										display: grid;
+										grid-template-columns: repeat(2, 1fr);
+										grid-gap: 1rem;
 									}
 								`}
 							>
@@ -121,19 +124,16 @@ const Blog = ({}) => {
 											node!.frontmatter!;
 
 										return (
-											<li
-												key={node.id}
-												css={css`
-													&:first-of-type {
-														margin-top: 1rem;
-													}
-													margin-top: 3rem;
-												`}
-											>
-												<PostPreview
+											<li key={node.id}>
+												<PostPreviewBlog
 													title={frontmatter.title}
 													description={
 														frontmatter.description
+													}
+													thumbnailPath={
+														frontmatter
+															.featuredImage
+															.publicURL
 													}
 													date={frontmatter.date}
 													readingTime={
@@ -148,8 +148,9 @@ const Blog = ({}) => {
 							</ol>
 						</motion.div>
 					</section>
-				</SectionContainer>
-			</PageContainer>
+					{/* </SectionContainer> */}
+				</PageContainer>
+			</div>
 		</>
 	);
 };

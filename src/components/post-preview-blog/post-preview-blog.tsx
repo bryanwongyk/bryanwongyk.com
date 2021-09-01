@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../utils/themes';
 
-interface PostPreviewProps {
+interface PostPreviewBlogProps {
 	title: string;
 	description: string;
 	thumbnailPath: string;
@@ -14,7 +14,7 @@ interface PostPreviewProps {
 	path: string;
 }
 
-const PostPreview: FunctionComponent<PostPreviewProps> = ({
+const PostPreviewBlog: FunctionComponent<PostPreviewBlogProps> = ({
 	title,
 	description,
 	thumbnailPath,
@@ -22,11 +22,12 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 	readingTime,
 	path,
 }): ReactElement => {
+	console.log(thumbnailPath);
 	return (
 		<article
 			css={css`
 				a {
-					color: ${darkTheme.colours.white} !important;
+					color: ${darkTheme.colours.black} !important;
 					text-decoration: none !important;
 				}
 
@@ -72,7 +73,8 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 						css={css`
 							font-size: 0.833rem;
 							transition: color 0.3s ease;
-							margin-bottom: 0.5rem;
+							margin: 0.5rem 0;
+							opacity: 0.8;
 						`}
 					>
 						{description}
@@ -83,4 +85,4 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 	);
 };
 
-export default PostPreview;
+export default PostPreviewBlog;

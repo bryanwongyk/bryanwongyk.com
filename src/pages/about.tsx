@@ -3,6 +3,7 @@
 import React, { FunctionComponent } from 'react';
 import SEO from '../components/seo';
 import { motion } from 'framer-motion';
+import { Link } from 'gatsby';
 
 import { css, jsx } from '@emotion/react';
 
@@ -18,6 +19,7 @@ import { ArrowRight } from 'phosphor-react';
 
 const About: FunctionComponent<{}> = ({}) => (
 	<>
+		<SEO title="About" />
 		<GlobalBlogStyle />
 		<div
 			css={css`
@@ -25,7 +27,6 @@ const About: FunctionComponent<{}> = ({}) => (
 				padding: 3rem 0 4rem 0;
 			`}
 		>
-			<SEO title="About" />
 			<BlogPostContainer>
 				<motion.div
 					initial={{ opacity: 0, x: -50 }}
@@ -70,15 +71,36 @@ const About: FunctionComponent<{}> = ({}) => (
 						/>
 					</div>
 					<p>
-						I'm on a mission to inspire, inform, and entertain
-						across the following four pillars:
+						I'm currently a final year Software Engineering &
+						Accounting student in Melbourne, Australia.
 					</p>
-					<ul>
-						<li>Software engineering</li>
-						<li>Creative thinking</li>
-						<li>Personal development</li>
-						<li>Business building</li>
-					</ul>
+					<p>
+						I specialise in front-end development and design, but I
+						also enjoy gathering knowledge in all areas.
+					</p>
+					<p>
+						Outside of programming, I am passionate about everything
+						related to:
+						<ul>
+							<li>
+								{' '}
+								Creativity (digital art, video-making, music
+								production)
+							</li>
+							<li>Personal development</li>
+							<li>
+								Businesses (sometimes I lurk on{' '}
+								<a href="https://www.indiehackers.com/bryanwongyk">
+									Indie Hackers
+								</a>
+								)
+							</li>
+						</ul>
+					</p>
+					<p>
+						You'll also find me working out at the gym, learning to
+						ride my skateboard, and enjoying time with friends.
+					</p>
 					<div
 						css={css`
 							display: flex;
@@ -94,24 +116,17 @@ const About: FunctionComponent<{}> = ({}) => (
 						/>
 					</div>
 					<p>
-						Each week, I'll be sharing content about the cool, new
-						things I learn about on this blog.
+						This website is my personal landing page, but you can
+						check out the <Link to="/blog">technical blog</Link>{' '}
+						where I'll be sharing content mostly related to{' '}
+						<b>front-end development</b>, and sometimes other cool,
+						new things I learn about.
 					</p>
 					<p>
-						If this sounds interesting, consider subscribing to the
-						monthly newsletter to not miss out.
-					</p>
-					<p>
-						You can also find me on{' '}
-						<a
-							href="https://twitter.com/bryanwongyk"
-							target="_blank"
-						>
-							Twitter
-						</a>
-						, or e-mail me at{' '}
+						You can also find me on my social media profiles at the
+						bottom of the page, or e-mail me at{' '}
 						<a href="mailto:bryanwyk@gmail.com" title="Email">
-							bryanwongteam@gmail.com
+							bryanwyk@gmail.com
 						</a>
 						.
 					</p>

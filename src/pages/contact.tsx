@@ -7,71 +7,63 @@ import { motion } from 'framer-motion';
 
 import PageContainer from '../components/page-container/page-container';
 import ContactForm from '../components/contact-form/contact-form';
+import BlogPostContainer from '../components/blog-post-container/blog-post-container';
+import GlobalBlogStyle from '../components/global-blog-style/GlobalBlogStyle';
+import ContactImg from '../content/assets/images/contact.png';
 
 import { darkTheme } from '../utils/themes';
 
 const Contact: FunctionComponent<{}> = ({}) => (
 	<>
 		<SEO title="Contact" />
-		<PageContainer>
-			<motion.div
-				initial={{ opacity: 0, x: -50 }}
-				animate={{ opacity: 1, x: 0 }}
-				transition={{
-					duration: 0.5,
-				}}
-			>
-				<h1
-					css={css`
-						font-size: 1rem;
-					`}
+		<GlobalBlogStyle />
+		<div
+			css={css`
+				background-color: #fefefe;
+				padding: 3rem 0 4rem 0;
+			`}
+		>
+			<PageContainer>
+				<motion.div
+					initial={{ opacity: 0, x: -50 }}
+					animate={{ opacity: 1, x: 0 }}
+					transition={{
+						duration: 0.5,
+					}}
 				>
-					CONTACT
-				</h1>
-			</motion.div>
-			<motion.div
-				initial={{ opacity: 0, x: -50 }}
-				animate={{ opacity: 1, x: 0 }}
-				transition={{
-					duration: 0.5,
-					delay: 0.5,
-				}}
-				css={css`
-					margin: 32px 0;
-				`}
-			>
-				<p>
-					Contact me on{' '}
-					<a
-						href="mailto:bryanwyk@gmail.com"
-						title="Email"
+					<h1
 						css={css`
-							border-bottom: 1px solid ${darkTheme.colours.white};
-							transition: all 0.2s ease;
-							padding-bottom: 1px;
-
-							&:hover {
-								border-bottom: 1px solid
-									${darkTheme.colours.red};
-								color: ${darkTheme.colours.red};
-							}
+							font-size: 1rem;
+							margin-top: 0;
 						`}
 					>
-						bryanwyk@gmail.com
-					</a>{' '}
-					or use the form below.
-				</p>
-				<div
+						CONTACT
+					</h1>
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						duration: 0.8,
+						delay: 0.7,
+					}}
 					css={css`
-						display: flex;
-						flex-direction: column;
-						align-items: center;
+						margin: 32px 0;
 					`}
 				>
-					<ContactForm />
-				</div>
-			</motion.div>
-		</PageContainer>
+					<article>
+						<p>
+							The best way to get in touch with me is by e-mail at{' '}
+							<a href="mailto:bryanwyk@gmail.com" title="Email">
+								bryanwyk@gmail.com
+							</a>{' '}
+							or via my social media profiles at the bottom of the
+							page.
+						</p>
+					</article>
+				</motion.div>
+			</PageContainer>
+		</div>
 	</>
 );
 

@@ -16,6 +16,7 @@ const PageContainer: FunctionComponent<PageContainerProps> = ({
 			max-width: 1024px;
 			padding: 0 32px;
 			margin: 0 auto;
+			min-height: 70vh;
 
 			${mediaQueries[0]} {
 				padding: 0 48px;
