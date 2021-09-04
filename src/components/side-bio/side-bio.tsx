@@ -44,7 +44,7 @@ const SideBio: FunctionComponent = (): ReactElement => {
 				`}
 			>
 				Your dose of <b>web development</b> and other cool, new things I
-				learn about ☕️. This is part of my mission to learn in public.
+				learn about ☕️
 			</p>
 		</section>
 	);

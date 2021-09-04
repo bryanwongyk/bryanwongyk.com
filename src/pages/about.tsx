@@ -53,7 +53,7 @@ const About: FunctionComponent<{}> = ({}) => (
 					}}
 				>
 					<h2>
-						Hi, I'm Bryan - a software engineer who aims to build
+						Hi, I'm Bryan - a software engineer who enjoys building
 						beautiful and robust web applications
 					</h2>
 					<div
@@ -120,9 +120,9 @@ const About: FunctionComponent<{}> = ({}) => (
 					<p>
 						This website is my personal landing page, but you can
 						check out the <Link to="/blog">technical blog</Link>{' '}
-						where I'll be sharing content mostly related to{' '}
-						<b>web development</b>, and sometimes other cool, new
-						things I learn about.
+						where I'll be learning in public with content mostly
+						related to <b>web development</b>, and sometimes other
+						cool, new things I come across.
 					</p>
 					<p>
 						You can also find me on my social media profiles at the
