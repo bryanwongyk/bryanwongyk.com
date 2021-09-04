@@ -22,7 +22,7 @@ These functions can be written in Node.js, Java, C#, Python, Ruby, Go, or PowerS
 
 ### Example Use-Case: Basic Web Application
 
-In a basic web application, we might have a Node.js back-end where we define an API with endpoints for HTTP requests (e.g. with Express), and code which triggers on these HTTP requests.
+In a basic web application, we might have a Node.js back-end where we define an API with endpoints for HTTP requests (e.g. with Express), and code which triggers on these end points.
 
 When we deploy this web application to the public, the back-end would need to be deployed on some server (on the cloud or your own hardware) so that requests can be made to it.
 
@@ -46,11 +46,11 @@ Alternatively, with AWS Lambda you can:
 **Your Own Server in the Cloud (e.g. AWS EC2)**
 
 -   Pay per period of time as it runs continuously
--   Need to manually configure and manage infrastructure
 -   Suitable for high-performance or frequently running applications
+-   Need to manually configure and manage infrastructure
 
 ## Got something wrong?
 
 This is part of my initiative to learn in public where I post tidbits whenever I feel like it for my own growth, and to potentially even help someone.
 
-If you see anything wrong, please let me know. Cheers!
+If you see anything wrong, connect with me on Twitter or LinkedIn and please let me know. Cheers!
