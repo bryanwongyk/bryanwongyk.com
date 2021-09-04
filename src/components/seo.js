@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, thumbnail }) {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -27,6 +27,14 @@ function SEO({ description, lang, meta, title }) {
 
 	const metaDescription = description || site.siteMetadata.description;
 	const defaultTitle = site.siteMetadata?.title;
+
+	// Create social cards
+	const imageSrc = thumbnail && thumbnail.childImageSharp.fluid.src;
+	let origin = '';
+	if (typeof window !== 'undefined') {
+		origin = window.location.origin;
+	}
+	const image = origin + imageSrc;
 
 	return (
 		<Helmet
@@ -67,6 +75,10 @@ function SEO({ description, lang, meta, title }) {
 				{
 					name: `twitter:description`,
 					content: metaDescription,
+				},
+				{
+					name: `twitter:image`,
+					content: image,
 				},
 			].concat(meta)}
 		/>

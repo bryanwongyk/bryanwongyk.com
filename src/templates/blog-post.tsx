@@ -24,6 +24,11 @@ const BlogPost: FunctionComponent<Props> = props => {
 
 	return (
 		<>
+			<SEO
+				title={post.frontmatter.title}
+				description={post.frontmatter.description || post.excerpt}
+				thumbnail={post.frontmatter.featuredImage}
+			/>
 			<GlobalBlogStyle />
 			<div
 				css={css`
@@ -31,10 +36,6 @@ const BlogPost: FunctionComponent<Props> = props => {
 					padding: 3rem 0 4rem 0;
 				`}
 			>
-				<SEO
-					title={post.frontmatter.title}
-					description={post.frontmatter.description || post.excerpt}
-				/>
 				<BlogPostContainer>
 					<article
 						className="blog-post"
