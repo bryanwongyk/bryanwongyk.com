@@ -5,7 +5,7 @@ title: AWS Lambda High-Level Overview
 description: From a newbie's perspective
 readingTime: '4 min read'
 author: Bryan Wong
-featuredImage: AWS-Lambda-High-Level-Overview.png
+featuredImage: ./AWS-Lambda-High-Level-Overview.png
 path: '/AWS-Lambda-High-Level-Overview'
 type: blog
 ---

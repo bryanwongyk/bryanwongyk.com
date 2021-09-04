@@ -5,7 +5,7 @@ title: New Beginnings
 description: Discovering my personal monopoly
 readingTime: '3 min read'
 author: Bryan Wong
-featuredImage: new-beginnings.png
+featuredImage: ./new-beginnings.png
 path: '/new-beginnings'
 type: blog
 ---
