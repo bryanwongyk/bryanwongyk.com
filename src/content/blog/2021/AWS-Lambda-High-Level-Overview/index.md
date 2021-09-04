@@ -26,14 +26,14 @@ In a basic web application, we might have a Node.js back-end where we define an 
 
 When we deploy this web application to the public, the back-end would need to be deployed on some server (on the cloud or your own hardware) so that requests can be made to it.
 
-Alternatively, with AWS Lambda you can:
+Alternatively, if you create your back-end (or back-end services) on AWS Lambda, you just need to:
 
 -   Define Lambda functions
 -   Invoke/call the functions from your front-end through:
     -   Using the Lambda API or;
     -   Creating API end-points on Amazon API Gateway that trigger the Lambda functions
 
-## 😫 Why is it used?
+## 🤔 Why is it used?
 
 ### AWS Lambda vs. Your Own Server in the Cloud
 
