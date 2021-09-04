@@ -80,6 +80,10 @@ function SEO({ description, lang, meta, title, thumbnail }) {
 					name: `twitter:image`,
 					content: image,
 				},
+				{
+					property: `og:image`,
+					content: image,
+				},
 			].concat(meta)}
 		/>
 	);
