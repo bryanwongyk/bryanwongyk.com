@@ -6114,6 +6114,13 @@ gatsby-plugin-page-creator@^3.12.0:
     globby "^11.0.4"
     lodash "^4.17.21"
 
+gatsby-plugin-react-helmet@^4.13.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-4.13.0.tgz#58f50bc9afb0f04a0726453c0827a59d7a159c7a"
+  integrity sha512-GwIqbhFtPDryftM6NEWdjgWNDpWhyifgshDxtIh8PMSEIs7VMg2tgLQf8W8EpSP7yXu3aKDm/pxFXRlPZPk9cA==
+  dependencies:
+    "@babel/runtime" "^7.14.8"
+
 gatsby-plugin-sharp@^3.10.2:
   version "3.12.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.12.0.tgz"
@@ -6140,11 +6147,6 @@ gatsby-plugin-sharp@^3.10.2:
     sharp "^0.28.3"
     svgo "1.3.2"
     uuid "3.4.0"
-
-gatsby-plugin-social-cards@^0.5.18-rc5:
-  version "0.5.18-rc5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-social-cards/-/gatsby-plugin-social-cards-0.5.18-rc5.tgz#f8c5afb399649b5aa179fc614c09ffd6be231198"
-  integrity sha512-gVIsKD4Y6BxsP3C0asgg58nnyTDWVeRdqQ3+XLPzA9bNbjdiaIeKbqiScoYYxyTULXshXJhZ7qlMSTB8A7YkUQ==
 
 gatsby-plugin-twitter@^3.12.0:
   version "3.12.0"
