@@ -51,6 +51,6 @@ Alternatively, if you create your back-end (or back-end services) on AWS Lambda,
 
 ## Got something wrong?
 
-This is part of my initiative to learn in public where I post tidbits whenever I feel like it for my own growth, and to potentially even help someone.
+This is part of my initiative to learn in public where I post tidbits whenever I feel like it for my own growth, and to potentially even help others.
 
 If you see anything wrong, please let me know on [Twitter](https://twitter.com/bryanwongyk) or [LinkedIn](https://www.linkedin.com/in/bryanwongyk/). Cheers!
