@@ -53,4 +53,4 @@ Alternatively, with AWS Lambda you can:
 
 This is part of my initiative to learn in public where I post tidbits whenever I feel like it for my own growth, and to potentially even help someone.
 
-If you see anything wrong, connect with me on Twitter or LinkedIn and please let me know. Cheers!
+If you see anything wrong, connect with me on Twitter or LinkedIn and please let me know on [Twitter](https://twitter.com/bryanwongyk) or [LinkedIn](https://www.linkedin.com/in/bryanwongyk/). Cheers!
