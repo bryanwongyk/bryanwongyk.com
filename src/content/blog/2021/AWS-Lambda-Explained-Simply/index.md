@@ -1,18 +1,20 @@
 ---
 date: 'September 4, 2021'
 dateReverseOrder: 2021-09-04
-title: AWS Lambda High-Level Overview
+title: AWS Lambda Explained Simply
 description: From a newbie's perspective
 readingTime: '4 min read'
 author: Bryan Wong
-featuredImage: ./AWS-Lambda-High-Level-Overview.png
-path: '/AWS-Lambda-High-Level-Overview'
+featuredImage: ./AWS-Lambda-Explained-Simply.png
+path: '/AWS-Lambda-Explained-Simply'
 type: blog
 ---
 
 ## 😵‍💫 What is it?
 
 ### Functions-as-a-service
+
+AWS Lambda is is a service provided by AWS.
 
 We can define functions ('Lambda functions') on the AWS Lambda console that trigger based on 'events'.
 
