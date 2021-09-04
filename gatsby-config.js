@@ -3,6 +3,7 @@ module.exports = {
 		title: `Bryan Wong`,
 		description: `Bryan Wong's Personal Website`,
 		author: `Bryan Wong`,
+		siteUrl: `https://www.bryanwongyk.com/`,
 	},
 	plugins: [
 		{

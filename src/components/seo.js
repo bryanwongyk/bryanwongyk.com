@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, thumbnail }) {
 						title
 						description
 						author
+						siteUrl
 					}
 				}
 			}
@@ -30,11 +31,7 @@ function SEO({ description, lang, meta, title, thumbnail }) {
 
 	// Create social cards
 	const imageSrc = thumbnail && thumbnail.childImageSharp.fluid.src;
-	let origin = '';
-	if (typeof window !== 'undefined') {
-		origin = window.location.origin;
-	}
-	const image = origin + imageSrc;
+	const image = site.siteMetadata?.siteUrl + imageSrc;
 
 	return (
 		<Helmet
