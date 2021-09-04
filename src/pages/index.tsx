@@ -268,7 +268,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 						</WorkDiv>
 						<WorkDiv>
 							<OutboundLink
-								href="https://github.com/bryanwyk"
+								href="https://github.com/bryanwongyk"
 								target="_blank"
 							>
 								<WorkDescTitle>

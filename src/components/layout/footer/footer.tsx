@@ -155,7 +155,7 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 						/>
 					</FooterAnchor>
 					<FooterAnchor
-						href="https://github.com/bryanwyk"
+						href="https://github.com/bryanwongyk"
 						target="_blank"
 						title="GitHub"
 					>
