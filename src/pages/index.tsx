@@ -262,8 +262,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								</WorkDescTitle>
 
 								<WorkDescDetails>
-									View my articles on front-end engineering
-									(and sometimes other things)
+									View my articles on web development
 								</WorkDescDetails>
 							</Link>
 						</WorkDiv>

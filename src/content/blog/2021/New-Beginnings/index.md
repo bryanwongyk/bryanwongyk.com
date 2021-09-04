@@ -22,11 +22,11 @@ This blog space was originally intended to be a free-for-all to broadcast my tho
 
 My focus was spread too thinly across many different things and I was having an identity crisis.
 
-During the past few weeks, I seek answers by consuming online content around having a niche or [personal monopoly](https://perell.com/note/build-a-personal-monopoly/). This made me realise that <b>focus</b> was the key for both accelerating my personal growth, as well as for creating compelling content.
+During the past few weeks, I seek answers by consuming online content around having a niche or [personal monopoly](https://perell.com/note/build-a-personal-monopoly/). This made me realise that <b>focus</b> and having an <b>end goal</b> is the key for both accelerating my personal growth, as well as for creating compelling content.
 
 As a software engineer, this meant focusing primarily on building skills to becoming a great front-end engineer and anything supplementing that. This blog will become a space where I document this technical growth. I won't be holding myself to any sort of schedule for this, nor will I always post anything extensive.
 
-For everything else I'm passionate about, I'm pondering upon using YouTube as a creative outlet. This means covering topics like lifestyle, productivity, and business. The great thing about video is that it would allow me to combine my love for film-making, design, and music.
+For everything else I'm passionate about, I'm pondering upon using YouTube as a creative outlet. This means covering topics like lifestyle, thoughts on philosophy, and business. The great thing about video is that it would allow me to combine my love for film-making, design, and music.
 
 Anyway, that's for later in the future.
 

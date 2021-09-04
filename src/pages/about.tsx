@@ -75,31 +75,33 @@ const About: FunctionComponent<{}> = ({}) => (
 						Accounting student in Melbourne, Australia.
 					</p>
 					<p>
-						I specialise in front-end development and design, but I
-						also enjoy gathering knowledge in all areas.
+						I love front-end and design, but I am always actively
+						pursuing new skills in all areas.
 					</p>
 					<p>
-						Outside of programming, I am passionate about everything
+						In my spare time, I am passionate about everything
 						related to:
 						<ul>
 							<li>
 								{' '}
-								Creativity (digital art, video-making, music
+								Being creative (digital art, video-making, music
 								production)
 							</li>
-							<li>Personal development</li>
 							<li>
-								Businesses (sometimes I lurk on{' '}
+								Learning about online businesses (sometimes I
+								lurk on{' '}
 								<a href="https://www.indiehackers.com/bryanwongyk">
 									Indie Hackers
 								</a>
 								)
 							</li>
+							<li>Figuring out ways to optimise my life</li>
+							<li>Working out at the gym</li>
+							<li>
+								Pursuing fun things (currently learning to ride
+								a skateboard)
+							</li>
 						</ul>
-					</p>
-					<p>
-						You'll also find me working out at the gym, learning to
-						ride my skateboard, and enjoying time with friends.
 					</p>
 					<div
 						css={css`
@@ -119,8 +121,8 @@ const About: FunctionComponent<{}> = ({}) => (
 						This website is my personal landing page, but you can
 						check out the <Link to="/blog">technical blog</Link>{' '}
 						where I'll be sharing content mostly related to{' '}
-						<b>front-end development</b>, and sometimes other cool,
-						new things I learn about.
+						<b>web development</b>, and sometimes other cool, new
+						things I learn about.
 					</p>
 					<p>
 						You can also find me on my social media profiles at the
