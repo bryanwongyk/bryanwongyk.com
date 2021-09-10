@@ -124,7 +124,12 @@ const Blog = ({}) => {
 											node!.frontmatter!;
 
 										return (
-											<li key={node.id}>
+											<li
+												key={node.id}
+												css={css`
+													margin-bottom: 2.5rem;
+												`}
+											>
 												<PostPreviewBlog
 													title={frontmatter.title}
 													description={
