@@ -87,14 +87,7 @@ const About: FunctionComponent<{}> = ({}) => (
 								Being creative (digital art, video-making, music
 								production)
 							</li>
-							<li>
-								Learning about online businesses (sometimes I
-								lurk on{' '}
-								<a href="https://www.indiehackers.com/bryanwongyk">
-									Indie Hackers
-								</a>
-								)
-							</li>
+							<li>Learning about online businesses</li>
 							<li>Figuring out ways to optimise my life</li>
 							<li>Working out at the gym</li>
 							<li>
