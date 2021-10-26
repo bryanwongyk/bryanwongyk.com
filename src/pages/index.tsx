@@ -247,7 +247,8 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 							${mediaQueries[0]} {
 								display: grid;
 								align-items: start;
-								grid-template-columns: repeat(3, 1fr);
+								grid-template-columns: repeat(2, 1fr);
+								grid-gap: 48px;
 								margin: 0 auto;
 							}
 						`}
@@ -299,6 +300,25 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 								</WorkDescTitle>
 								<WorkDescDetails>
 									View my digital art
+								</WorkDescDetails>
+							</OutboundLink>
+						</WorkDiv>
+						<WorkDiv>
+							<OutboundLink
+								href="https://soundcloud.com/bwyk"
+								target="_blank"
+								css={css`
+									display: inline;
+								`}
+							>
+								<WorkDescTitle>
+									MUSIC{' '}
+									<ArrowSpan>
+										<ArrowRight size={18} />
+									</ArrowSpan>
+								</WorkDescTitle>
+								<WorkDescDetails>
+									View my electronic music
 								</WorkDescDetails>
 							</OutboundLink>
 						</WorkDiv>

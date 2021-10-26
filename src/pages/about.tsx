@@ -88,11 +88,14 @@ const About: FunctionComponent<{}> = ({}) => (
 								production)
 							</li>
 							<li>Learning about online businesses</li>
-							<li>Figuring out ways to optimise my life</li>
+							<li>
+								Figuring out ways to optimise my life for
+								efficiency, wellness, and happiness
+							</li>
 							<li>Working out at the gym</li>
 							<li>
-								Pursuing fun things (currently learning to ride
-								a skateboard)
+								Pursuing fun things in life (currently learning
+								to ride a skateboard)
 							</li>
 						</ul>
 					</p>
