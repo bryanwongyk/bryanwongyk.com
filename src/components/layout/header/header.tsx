@@ -102,46 +102,60 @@ const Header: FunctionComponent<HeaderProps> = ({
 						/>
 					</Link>
 				</LogoLinkSpan>
-				<NavBar />
-				{!mobileMenuShown ? (
-					<div
+				<div
+					css={css`
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+					`}
+				>
+					<span
 						css={css`
-							display: none;
-
-							${mediaQueries[0]} {
-								display: flex;
-								align-items: center;
-								justify-content: space-between;
-								width: 80px;
-							}
+							margin-right: 24px;
 						`}
 					>
-						<span
+						<NavBar />
+					</span>
+					{!mobileMenuShown ? (
+						<div
 							css={css`
-								position: relative;
-								opacity: 0.5;
-								transition: opacity 0.3s ease 0s;
-								&:hover {
-									opacity: 1;
+								display: none;
+
+								${mediaQueries[0]} {
+									display: flex;
+									align-items: center;
+									justify-content: space-between;
+									width: 80px;
 								}
 							`}
 						>
-							<Tooltip visible={copied}>Copied!</Tooltip>
-							<IconButton
-								title="Copy URL"
-								onClick={handleClickCopy}
+							<span
+								css={css`
+									position: relative;
+									opacity: 0.5;
+									transition: opacity 0.3s ease 0s;
+									&:hover {
+										opacity: 1;
+									}
+								`}
 							>
-								<Copy
-									size={24}
-									css={css`
-										cursor: pointer;
-										color: ${darkTheme.colours.white};
-									`}
-								/>
-							</IconButton>
-						</span>
-					</div>
-				) : null}
+								<Tooltip visible={copied}>Copied!</Tooltip>
+								<IconButton
+									title="Copy URL"
+									onClick={handleClickCopy}
+								>
+									<Copy
+										size={24}
+										css={css`
+											cursor: pointer;
+											color: ${darkTheme.colours.white};
+										`}
+									/>
+								</IconButton>
+							</span>
+						</div>
+					) : null}
+				</div>
 			</div>
 			<HamburgerMenu
 				toggleMobileMenu={toggleMobileMenu}

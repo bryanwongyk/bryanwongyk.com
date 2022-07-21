@@ -15,8 +15,8 @@ const NavBarLink: FunctionComponent<NavBarLinkProps> = ({ path, name }) => {
 		<li
 			css={css`
 				position: relative;
-				margin: 0 0 0 50px;
-				opacity: 0.5;
+				margin: 0;
+				opacity: 0.6;
 				transition: all 0.3s ease 0s;
 				color: ${darkTheme.colours.white};
 				&:hover {

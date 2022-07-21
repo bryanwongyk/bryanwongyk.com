@@ -12,7 +12,7 @@ const SectionContainer: FunctionComponent<SectionContainerProps> = ({
 }): ReactElement => (
 	<section
 		css={css`
-			margin-bottom: 5rem;
+			margin-bottom: 7rem;
 		`}
 	>
 		{children}

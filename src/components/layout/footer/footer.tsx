@@ -36,6 +36,8 @@ const StyledFooter = styled.footer`
 const FooterPara = styled.p`
 	opacity: 0.4;
 	color: #f2f2f2;
+	font-size: 0.694rem;
+	margin-top: 0.4rem;
 `;
 
 const FooterAnchor = styled(OutboundLink)`
@@ -76,7 +78,6 @@ const FooterListItem = styled.li`
 	font-family: 'Work Sans', sans-serif;
 	font-weight: normal;
 	font-size: 0.75rem;
-	letter-spacing: 1px;
 
 	&:hover {
 		opacity: 1;
@@ -127,13 +128,7 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 				>
 					<FooterList>
 						<FooterListItem>
-							<Link to={'/about'}>ABOUT</Link>
-						</FooterListItem>
-						<FooterListItem>
 							<Link to={'/blog'}>BLOG</Link>
-						</FooterListItem>
-						<FooterListItem>
-							<Link to={'/contact'}>CONTACT</Link>
 						</FooterListItem>
 					</FooterList>
 					<FooterPara>

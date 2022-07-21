@@ -6,6 +6,7 @@ const darkTheme = {
 		white: '#f2f2f2',
 		red: '#F05454',
 		blue: '#5998C5',
+		orange: '#E3B505',
 	},
 };
 
