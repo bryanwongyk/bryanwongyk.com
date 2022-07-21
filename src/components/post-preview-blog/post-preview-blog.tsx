@@ -57,7 +57,6 @@ const PostPreviewBlog: FunctionComponent<PostPreviewBlogProps> = ({
 					>
 						<h4
 							css={css`
-								font-size: 1rem;
 								transition: color 0.3s ease;
 								margin: 0.5rem 0;
 							`}
@@ -67,7 +66,7 @@ const PostPreviewBlog: FunctionComponent<PostPreviewBlogProps> = ({
 						<footer
 							css={css`
 								font-family: 'IBM Plex Mono';
-								font-size: 0.833rem;
+								font-size: 0.694rem;
 								opacity: 50%;
 								padding: 0;
 								margin: 0.5rem 0;

@@ -11,8 +11,6 @@ import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
 import PostPreviewBlog from '../components/post-preview-blog/post-preview-blog';
 import SideBio from '../components/side-bio/side-bio';
 import PageContainer from '../components/page-container/page-container';
-import SectionContainer from '../components/section-container/section-container';
-import BlogPostContainer from '../components/blog-post-container/blog-post-container';
 import GlobalBlogStyle from '../components/global-blog-style/GlobalBlogStyle';
 
 import mediaQueries from '../utils/breakpoints.utils';
@@ -63,7 +61,6 @@ const Blog = ({}) => {
 				`}
 			>
 				<PageContainer>
-					{/* <SectionContainer> */}
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
@@ -153,7 +150,6 @@ const Blog = ({}) => {
 							</ol>
 						</motion.div>
 					</section>
-					{/* </SectionContainer> */}
 				</PageContainer>
 			</div>
 		</>
