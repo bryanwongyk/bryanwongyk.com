@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowRight } from 'phosphor-react';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
@@ -91,7 +92,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					]
 				}
 				filter: { frontmatter: { type: { in: "blog" } } }
-				limit: 2
+				limit: 4
 			) {
 				edges {
 					node {
@@ -124,8 +125,8 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					flex-direction: column;
 					margin-top: 40px;
 					@media (min-width: 840px) {
-						margin-top: 118px;
-						margin-bottom: 160px;
+						margin-top: 128px;
+						margin-bottom: 180px;
 						padding-top: 72px;
 					}
 				`}
@@ -158,7 +159,7 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 									font-size: 56px;
 								}
 								@media (min-width: 840px) {
-									transform: translateY(-100px);
+									transform: translateY(-120px);
 									font-size: 112px;
 								}
 							`}
@@ -208,13 +209,12 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 							}
 
 							@media (min-width: 840px) {
-								transform: translate(276px, -110px);
+								transform: translate(276px, -130px);
 							}
 						`}
 					>
-						Software Engineer, <br />
-						Creator, <br />
-						Thinker.
+						Software Engineer. <br />
+						Creator. <br />
 					</h3>
 				</motion.div>
 			</section>
