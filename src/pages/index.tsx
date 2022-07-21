@@ -5,9 +5,8 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import { css, jsx, keyframes } from '@emotion/react';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
-import { ArrowRight } from 'phosphor-react';
+import { ArrowRight, Lightning, LightbulbFilament } from 'phosphor-react';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import SEO from '../components/seo';
 import { MarkdownRemarkEdge, MarkdownRemark } from '../graphql-types';
@@ -22,10 +21,6 @@ import mediaQueries from '../utils/breakpoints.utils';
 
 const WorkDiv = styled.div`
 	width: 100%;
-
-	/* @media (min-width: 500px) {
-		width: 300px;
-	} */
 
 	&:hover dt {
 		transition: color 0.3s ease;
@@ -42,7 +37,7 @@ const WorkDiv = styled.div`
 	${mediaQueries[0]} {
 		width: 80%;
 		&:not(:first-of-type) {
-			margin-top: 0;
+			margin-top: 32px;
 		}
 	}
 `;
@@ -50,12 +45,12 @@ const WorkDiv = styled.div`
 const WorkDescTitle = styled.dt`
 	font-family: 'Work Sans';
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: 0.833rem;
 `;
 
 const WorkDescDetails = styled.dd`
 	font-family: 'IBM Plex Mono';
-	font-size: 0.833rem;
+	font-size: 0.694rem;
 	margin: 0;
 	opacity: 50%;
 	line-height: 24px;
@@ -75,7 +70,7 @@ const BlogPostList = styled.ol`
 `;
 
 const ArrowSpan = styled.span`
-	top: 4px;
+	top: 3px;
 	position: relative;
 	margin-left: 8px;
 `;
@@ -194,12 +189,11 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 						delay: 0.6,
 					}}
 				>
-					<h3
+					<h4
 						css={css`
 							text-align: right;
 							margin: 0;
 							line-height: 24px;
-							font-size: 1rem;
 							max-width: 450px;
 							display: inline-block;
 							transform: translateX(13px);
@@ -215,7 +209,8 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 					>
 						Software Engineer. <br />
 						Creator. <br />
-					</h3>
+						Based in Australia. <br />
+					</h4>
 				</motion.div>
 			</section>
 			<motion.div
@@ -228,61 +223,44 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 				}}
 			>
 				<SectionContainer>
-					<h2
+					<h4
 						css={css`
-							margin-bottom: 48px;
-							font-size: 1rem;
+							margin-bottom: 2.5rem;
 						`}
 					>
+						<Lightning
+							size={18}
+							color={darkTheme.colours.orange}
+							css={css`
+								position: relative;
+								top: 4px;
+								margin-right: 0.8rem;
+							`}
+						/>
 						CREATING
-					</h2>
+					</h4>
 					<dl
 						css={css`
 							display: flex;
 							flex-direction: column;
 							justify-content: space-around;
 							align-items: center;
-							padding-left: 48px;
-
-							${mediaQueries[0]} {
-								display: grid;
-								align-items: start;
-								grid-template-columns: repeat(2, 1fr);
-								grid-gap: 48px;
-								margin: 0 auto;
-							}
+							text-align: center;
 						`}
 					>
 						<WorkDiv>
 							<Link to="/blog">
 								<WorkDescTitle>
-									BLOG{' '}
+									BLOG
 									<ArrowSpan>
 										<ArrowRight size={18} />
 									</ArrowSpan>
 								</WorkDescTitle>
 
 								<WorkDescDetails>
-									View my articles on web development
+									Engineering, business & life
 								</WorkDescDetails>
 							</Link>
-						</WorkDiv>
-						<WorkDiv>
-							<OutboundLink
-								href="https://github.com/bryanwongyk"
-								target="_blank"
-							>
-								<WorkDescTitle>
-									PORTFOLIO{' '}
-									<ArrowSpan>
-										<ArrowRight size={18} />
-									</ArrowSpan>
-								</WorkDescTitle>
-
-								<WorkDescDetails>
-									View my projects on GitHub
-								</WorkDescDetails>
-							</OutboundLink>
 						</WorkDiv>
 						<WorkDiv>
 							<OutboundLink
@@ -326,14 +304,22 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 				</SectionContainer>
 
 				<SectionContainer>
-					<h2
+					<h4
 						css={css`
-							margin-bottom: 48px;
-							font-size: 1rem;
+							margin-bottom: 2.5rem;
 						`}
 					>
+						<LightbulbFilament
+							size={18}
+							color={darkTheme.colours.orange}
+							css={css`
+								position: relative;
+								top: 4px;
+								margin-right: 0.8rem;
+							`}
+						/>
 						LATEST POSTS
-					</h2>
+					</h4>
 					<BlogPostList>
 						{latestBlogPosts.map(
 							({ node }: { node: MarkdownRemark }) => {
@@ -372,14 +358,19 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 						css={css`
 							display: flex;
 							justify-content: center;
-							margin-top: 56px;
+							margin-top: 4rem;
 						`}
 					>
 						<LinkCTAButton link="/blog" isInternalLink={true}>
-							<b>View all posts </b>
-
+							<b
+								css={css`
+									font-size: 0.694rem;
+								`}
+							>
+								VIEW ALL POSTS
+							</b>
 							<ArrowSpan>
-								<ArrowRight size={18} />
+								<ArrowRight size={14} />
 							</ArrowSpan>
 						</LinkCTAButton>
 					</div>

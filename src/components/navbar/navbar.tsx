@@ -24,12 +24,9 @@ const NavBar: FunctionComponent<{}> = () => {
 					font-family: 'Work Sans', sans-serif;
 					font-weight: bold;
 					font-size: 0.833rem;
-					letter-spacing: 1px;
 				`}
 			>
-				<NavBarLink path="/about" name="ABOUT" />
 				<NavBarLink path="/blog" name="BLOG" />
-				<NavBarLink path="/contact" name="CONTACT" />
 			</ul>
 		</span>
 	);

@@ -34,7 +34,7 @@ const PostPreviewBlog: FunctionComponent<PostPreviewBlogProps> = ({
 				&:hover {
 					transform: translateY(-1px);
 
-					a > div > h3 {
+					h4 {
 						color: ${darkTheme.colours.red};
 					}
 				}
@@ -47,38 +47,45 @@ const PostPreviewBlog: FunctionComponent<PostPreviewBlogProps> = ({
 						css={css`
 							width: 100%;
 							transition: transform 0.3s ease;
+							margin-bottom: 0.4rem;
 						`}
 					/>
-					<h3
+					<div
 						css={css`
-							font-size: 1rem;
-							transition: color 0.3s ease;
-							margin: 0.5rem 0;
+							margin-left: 6px;
 						`}
 					>
-						{title}
-					</h3>
-					<footer
-						css={css`
-							font-family: 'IBM Plex Mono';
-							font-size: 0.833rem;
-							opacity: 50%;
-							padding: 0;
-							margin: 0.5rem 0;
-						`}
-					>
-						{date} ⬩ {readingTime}
-					</footer>
-					<p
-						css={css`
-							font-size: 0.833rem;
-							transition: color 0.3s ease;
-							margin: 0.5rem 0;
-							opacity: 0.8;
-						`}
-					>
-						{description}
-					</p>
+						<h4
+							css={css`
+								font-size: 1rem;
+								transition: color 0.3s ease;
+								margin: 0.5rem 0;
+							`}
+						>
+							{title}
+						</h4>
+						<footer
+							css={css`
+								font-family: 'IBM Plex Mono';
+								font-size: 0.833rem;
+								opacity: 50%;
+								padding: 0;
+								margin: 0.5rem 0;
+							`}
+						>
+							{date} ⬩ {readingTime}
+						</footer>
+						<p
+							css={css`
+								font-size: 0.833rem;
+								transition: color 0.3s ease;
+								margin: 0.5rem 0;
+								opacity: 0.8;
+							`}
+						>
+							{description}
+						</p>
+					</div>
 				</div>
 			</Link>
 		</article>
