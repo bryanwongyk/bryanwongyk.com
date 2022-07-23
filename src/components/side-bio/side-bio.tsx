@@ -43,7 +43,7 @@ const SideBio: FunctionComponent = (): ReactElement => {
 					}
 				`}
 			>
-				Your dose of engineering, business & life ☕️
+				Explaining engineering and business concepts simply ☕️
 			</p>
 		</section>
 	);
