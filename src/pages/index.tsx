@@ -79,13 +79,10 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 	const data = useStaticQuery(graphql`
 		query LatestBlogPostsQuery {
 			allMarkdownRemark(
-				sort: {
-					order: DESC
-					fields: [
-						frontmatter___dateReverseOrder
-						frontmatter___title
-					]
-				}
+				sort: [
+					{ frontmatter: { dateReverseOrder: DESC } }
+					{ frontmatter: { title: ASC } }
+				]
 				filter: { frontmatter: { type: { in: "blog" } } }
 				limit: 4
 			) {

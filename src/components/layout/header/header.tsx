@@ -53,15 +53,18 @@ const Header: FunctionComponent<HeaderProps> = ({
 	// Keep track if link is copied
 	const [copied, setCopied] = useState(false);
 	const handleClickCopy = (): void => {
-		const el = document.createElement('input');
-		el.value = window.location.href;
-		document.body.appendChild(el);
-		el.select();
-		document.execCommand('copy');
-		document.body.removeChild(el);
-		setCopied(true);
+		const isBrowser = typeof window !== 'undefined';
+		if (isBrowser) {
+			const el = document.createElement('input');
+			el.value = window.location.href;
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand('copy');
+			document.body.removeChild(el);
+			setCopied(true);
 
-		setTimeout(() => setCopied(false), 2000);
+			setTimeout(() => setCopied(false), 2000);
+		}
 	};
 
 	return (
