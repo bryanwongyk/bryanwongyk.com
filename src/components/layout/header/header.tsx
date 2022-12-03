@@ -12,7 +12,7 @@ import IconButton from '../../buttons/icon-button';
 import Tooltip from '../../tooltip/tooltip';
 import Logo from '../../../content/assets/images/logo.png';
 
-import { Copy, SunDim, Moon } from 'phosphor-react';
+import { Copy } from 'phosphor-react';
 
 import { darkTheme } from '../../../utils/themes';
 import checkHoverMediaQuery from '../../../utils/checkHover.utils';

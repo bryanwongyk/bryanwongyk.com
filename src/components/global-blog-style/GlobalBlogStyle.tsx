@@ -3,7 +3,7 @@
 import { FunctionComponent } from 'react';
 import { css, jsx, Global } from '@emotion/react';
 
-const GlobalBlogStyle: FunctionComponent<{}> = props => {
+const GlobalBlogStyle: FunctionComponent<unknown> = props => {
 	return (
 		<Global
 			styles={css`

@@ -88,7 +88,7 @@ const FooterListItem = styled.li`
 	}
 `;
 
-const Footer: FunctionComponent<{}> = ({ children }) => {
+const Footer: FunctionComponent<unknown> = ({ children }) => {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 100 }}
@@ -115,7 +115,6 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 					margin-bottom: 2rem;
 				`}
 			/>
-			{/* <SubscriptionForm /> */}
 			<StyledFooter>
 				<div
 					css={css`

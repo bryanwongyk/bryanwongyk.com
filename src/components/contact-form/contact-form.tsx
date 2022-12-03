@@ -42,7 +42,7 @@ const StyledButtonDiv = styled.div`
 	margin-top: 16px;
 `;
 
-const ContactForm: FunctionComponent<{}> = (): ReactElement => {
+const ContactForm: FunctionComponent<unknown> = (): ReactElement => {
 	const [state, handleSubmit] = useForm('xyyljyyj');
 	if (state.succeeded) {
 		return <CenteredPara>Message successfully sent!</CenteredPara>;
