@@ -210,7 +210,7 @@ li *:last-child {
 
 li > ul,
 li > ol {
-	margin-left: var(--spacing-8);
+	/* margin-left: var(--spacing-8); */
 	margin-top: calc(var(--spacing-8) / 2);
 }
 
@@ -346,10 +346,6 @@ a:focus {
 			var(--spacing-4);
 		margin-left: var(--spacing-0);
 	}
-	ul,
-	ol {
-		list-style-position: inside;
-	}
 }
 
 /* My custom styles */
@@ -365,4 +361,8 @@ body {
 nav ul,
 footer ul {
 	padding-left: 0;
+}
+
+.language-text {
+	color: orange !important;
 }

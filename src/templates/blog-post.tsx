@@ -126,7 +126,6 @@ export const pageQuery = graphql`
 			frontmatter {
 				date
 				title
-				description
 				path
 				author
 				readingTime

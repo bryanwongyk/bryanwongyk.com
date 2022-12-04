@@ -138,18 +138,6 @@ const Footer: FunctionComponent<{}> = ({ children }) => {
 
 				<FooterSocialsList>
 					<FooterAnchor
-						href="https://twitter.com/bryanwongyk"
-						target="_blank"
-						title="Twitter"
-					>
-						<FontAwesomeIcon
-							icon={faTwitter}
-							css={css`
-								font-size: 24px;
-							`}
-						/>
-					</FooterAnchor>
-					<FooterAnchor
 						href="https://github.com/bryanwongyk"
 						target="_blank"
 						title="GitHub"

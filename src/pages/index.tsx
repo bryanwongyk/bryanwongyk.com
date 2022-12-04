@@ -96,7 +96,6 @@ const IndexPage: FunctionComponent<{}> = ({}) => {
 						frontmatter {
 							date
 							title
-							description
 							path
 							author
 							readingTime
