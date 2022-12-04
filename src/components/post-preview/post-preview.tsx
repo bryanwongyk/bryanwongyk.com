@@ -4,6 +4,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/react';
 import { darkTheme } from '../../utils/themes';
+import mediaQueries from '../../utils/breakpoints.utils';
 
 interface PostPreviewProps {
 	title: string;
@@ -47,6 +48,11 @@ const PostPreview: FunctionComponent<PostPreviewProps> = ({
 							width: 100%;
 							transition: transform 0.3s ease;
 							margin-bottom: 0.4rem;
+
+							${mediaQueries[0]} {
+								height: 228px;
+								object-fit: cover;
+							}
 						`}
 					/>
 					<div

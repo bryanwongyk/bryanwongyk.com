@@ -2,7 +2,6 @@
 date: 'September 4, 2021'
 dateReverseOrder: 2021-09-04
 title: AWS Lambda Explained Simply
-description: From a newbie's perspective
 readingTime: '4 min read'
 author: Bryan Wong
 featuredImage: ./AWS-Lambda-Explained-Simply.png
@@ -50,9 +49,3 @@ Alternatively, if you create your back-end (or back-end services) on AWS Lambda,
 -   Pay per period of time as it runs continuously
 -   Suitable for high-performance or frequently running applications
 -   Need to manually configure and manage infrastructure
-
-## Got something wrong?
-
-This is part of my initiative to learn in public where I post tidbits whenever I feel like it for my own growth, and to potentially even help others.
-
-If you see anything wrong, please let me know on [Twitter](https://twitter.com/bryanwongyk). Cheers!

@@ -35,7 +35,6 @@ const Blog = ({}) => {
 						frontmatter {
 							date
 							title
-							description
 							path
 							author
 							readingTime
